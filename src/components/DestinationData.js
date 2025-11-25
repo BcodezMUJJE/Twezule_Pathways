@@ -1,6 +1,4 @@
 import { Component } from "react";
-import Pyramid from "../assets/piramid.jpg"
-import Egypt from "../assets/egypt.jpg"
 import "./DestinationStyles.css"
 
 class DestinationData extends Component{

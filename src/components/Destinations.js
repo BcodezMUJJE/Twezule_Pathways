@@ -1,35 +1,60 @@
-import Pyramid from "../assets/praying.jpg";
-import Egypt from "../assets/pray.jpg";
-import Everest from "../assets/hands.jpg"
-import Everest2 from "../assets/worship.jpg"
+import WomenSaving from "../assets/praying.jpg";
+import WomenTraining from "../assets/pray.jpg";
+import Leadership from "../assets/hands.jpg"
+import Community from "../assets/worship.jpg"
 import DestinationData from "./DestinationData";
 import "./DestinationStyles.css";
 
-
-const Destination = () =>{
+const Destination = () => {
     return (
         <div className="destination">
-            <h1>Church Programs</h1>
-            <p>Here Are Some Of Our Weekly Church Program</p>
+            <div className="programs-header">
+                <h1>Our Programs</h1>
+                <p>Empowering women and communities through comprehensive training and support programs</p>
+            </div>
 
             <DestinationData 
-            className="first-des"
-            heading="Sunday Services"
-            text="Join Us for Sunday Services!
-We warmly invite you to be part of our Sunday services at Lighthouse Grace Church, Bulindo. Come and experience uplifting worship, inspiring teachings, and a loving community. We look forward to seeing you there!" 
-            img1={Pyramid}
-            img2={Egypt}
+                className="first-des"
+                heading="Self Help Group (SHG) Training"
+                text="Women come together to save, invest, and lift each other. Our SHG program strengthens the culture of savings, promotes innovation of community-led solutions and social support among women at the grassroots." 
+                img1={WomenSaving}
+                img2={WomenTraining}
             />
+            
             <DestinationData 
-            className="first-des-reverse"
-            heading="Tuesday and Friday Prayer Altar:"
-            text="Join Us for Prayer Altar on Tuesdays and Fridays!
-We invite you to our Prayer Altar sessions every Tuesday and Friday at Lighthouse Grace Church, Bulindo. Come together with us for powerful prayer, spiritual growth, and communal support. Let’s unite in faith and strengthen our connection through prayer." 
-            img1={Everest}
-            img2={Everest2}
+                className="first-des-reverse"
+                heading="Safety & Power Training"
+                text="Addressing Sexual Reproductive Health and Rights and Gender-Based Violence through education, dialogue, and empowerment. This training helps women recognize their rights, build confidence, and find pathways to safety." 
+                img1={Leadership}
+                img2={Community}
             />
+
+            <DestinationData 
+                className="first-des"
+                heading="Leadership & Community Empowerment"
+                text="We nurture women leaders who champion change in their families and communities — building unity, inclusion, and collective progress." 
+                img1={WomenSaving}
+                img2={Leadership}
+            />
+
+            {/* Future Programs Section */}
+            <div className="future-programs">
+                <h2>Future Programs</h2>
+                <p className="coming-soon">Coming Soon</p>
+                <div className="future-programs-grid">
+                    <div className="future-program-card">
+                        <h3>Adolescent Girls Mentorship</h3>
+                        <p>Empowering the next generation of women leaders through mentorship and guidance programs.</p>
+                        <span className="status-badge">In Development</span>
+                    </div>
+                    <div className="future-program-card">
+                        <h3>Women-Led Microenterprise Support</h3>
+                        <p>Supporting women entrepreneurs through social enterprise development and business skills training.</p>
+                        <span className="status-badge">In Development</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        
     )
 }
 

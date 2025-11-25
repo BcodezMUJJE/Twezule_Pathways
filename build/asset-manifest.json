@@ -1,13 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.fc5c2c69.css",
-    "main.js": "/static/js/main.adbd2e26.js",
+    "main.css": "/static/css/main.a1fe734a.css",
+    "main.js": "/static/js/main.3df86c00.js",
+    "static/media/hands.jpg": "/static/media/hands.8653fc2f3f717d001e5d.jpg",
+    "static/media/pray.jpg": "/static/media/pray.909bbab717cdda65acf5.jpg",
+    "static/media/praying.jpg": "/static/media/praying.bcadf1ceef8633accb2f.jpg",
+    "static/media/piramid.jpg": "/static/media/piramid.221985646ae69567a75e.jpg",
+    "static/media/egypt.jpg": "/static/media/egypt.e87f933b372786698af6.jpg",
+    "static/media/afrigalPraise.jpg": "/static/media/afrigalPraise.09a3d67ce5736c152e43.jpg",
+    "static/media/BIBLE.jpg": "/static/media/BIBLE.369e7932dbc725cc9e29.jpg",
+    "static/media/worship.jpg": "/static/media/worship.c089ab7fa176e232f637.jpg",
+    "static/media/logo1.jpeg": "/static/media/logo1.ce328ff7a25cd5eee1c8.jpeg",
     "index.html": "/index.html",
-    "main.fc5c2c69.css.map": "/static/css/main.fc5c2c69.css.map",
-    "main.adbd2e26.js.map": "/static/js/main.adbd2e26.js.map"
+    "main.a1fe734a.css.map": "/static/css/main.a1fe734a.css.map",
+    "main.3df86c00.js.map": "/static/js/main.3df86c00.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc5c2c69.css",
-    "static/js/main.adbd2e26.js"
+    "static/css/main.a1fe734a.css",
+    "static/js/main.3df86c00.js"
   ]
 }

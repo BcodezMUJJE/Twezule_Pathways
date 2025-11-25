@@ -2,31 +2,27 @@ export const MenuItems = [
     {
       title: "Home",
       url: "/",
-      cName: "nav-links",
-      icon: "fa-solid fa-house-user"
+      cName: "nav-links"
     },
     {
       title: "About",
       url: "/about",
-      cName: "nav-links",
-      icon: "fa-solid fa-circle-info"
+      cName: "nav-links"
     },
     {
-      title: "Service",
-      url: "/service",
-      cName: "nav-links",
-      icon: "fa-solid fa-briefcase"
+      title: "Programs",
+      url: "/programs",
+      cName: "nav-links"
+    },
+    {
+      title: "Our Impact",
+      url: "/impact",
+      cName: "nav-links"
     },
     {
       title: "Contact",
       url: "/contact",
-      cName: "nav-links",
-      icon: "fa-solid fa-address-book"
-    },
-    {
-      title: "Sign Up",
-      url: "/signup",
-      cName: "nav-links-mobile"
+      cName: "nav-links"
     }
   ];
   
