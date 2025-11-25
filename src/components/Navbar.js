@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./NavbarStyles.css";
 import { MenuItems } from "./MenuItems";
-import logo from "../assets/logo1.jpeg";
 
 class Navbar extends Component {
   state = { 
