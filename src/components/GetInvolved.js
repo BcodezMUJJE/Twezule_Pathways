@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaHandshake, FaUsers, FaStar } from 'react-icons/fa';
 import "./GetInvolvedStyles.css";
 
 const GetInvolved = () => {

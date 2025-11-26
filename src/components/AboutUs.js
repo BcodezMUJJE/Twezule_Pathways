@@ -1,5 +1,6 @@
-import "./AboutUsStyles.css"
 import React from "react";
+import { FaBriefcase, FaHandshake, FaStar } from 'react-icons/fa';
+import "./AboutUsStyles.css"
 
 function AboutUs() {
     return(
