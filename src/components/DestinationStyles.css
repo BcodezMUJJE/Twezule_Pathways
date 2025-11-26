@@ -1,11 +1,14 @@
-/* Programs Page Styles for Twezule Pathways */
+/* Programs Page Styles - Twezule Pathways Design System */
 
 .destination {
-    margin: 4rem 0;
-    padding: 0 2rem;
-    max-width: 1200px;
+    margin: 0;
+    padding: var(--section-padding) 0;
+    max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    padding-top: calc(var(--section-padding) + 2rem); /* Extra top padding for pages without hero */
 }
 
 .programs-header {
@@ -14,178 +17,268 @@
 }
 
 .destination h1 {
-    font-size: 3rem;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 700;
-    color: #333;
-    margin-bottom: 1rem;
+    color: var(--plum);
+    margin-bottom: 1.5rem;
 }
 
 .programs-header p {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 600px;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    color: var(--text-medium);
+    max-width: 700px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-family: var(--font-body);
 }
 
 .first-des {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 4.5rem;
-    margin-bottom: 4.5rem;
-    gap: 3rem;
+    gap: 4rem;
+    margin: 5rem 0;
+    padding: 3rem 0;
 }
 
 .first-des-reverse {
-    display: flex;
-    flex-direction: row-reverse;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 4.5rem;
-    margin-bottom: 4.5rem;
-    gap: 3rem;
+    gap: 4rem;
+    margin: 5rem 0;
+    padding: 3rem 0;
+}
+
+.first-des-reverse .des-text {
+    order: 2;
+}
+
+.first-des-reverse .image {
+    order: 1;
 }
 
 .des-text {
-    width: 45%;
     text-align: left;
-    font-size: 1.1rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.2rem);
     line-height: 1.7;
 }
 
 .des-text h2 {
-    padding-bottom: 1rem;
-    font-size: 2.2rem;
-    color: #333;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--plum);
     font-weight: 600;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     position: relative;
 }
 
 .des-text h2::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -8px;
     left: 0;
-    width: 60px;
-    height: 3px;
-    background: #DAA520;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--gold), var(--sage));
     border-radius: 2px;
 }
 
 .des-text p {
-    color: #666;
-    font-size: 1.1rem;
+    color: var(--text-medium);
+    font-size: clamp(1rem, 2vw, 1.1rem);
     line-height: 1.8;
-    text-align: justify;
+    font-family: var(--font-body);
+    margin-bottom: 1rem;
 }
 
 .image {
     position: relative;
-    width: 50%;
     display: flex;
     gap: 1rem;
 }
 
 .image img {
-    width: 49%;
+    width: 48%;
     height: 350px;
     object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
 }
 
 .image img:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03) translateY(-8px);
+    box-shadow: var(--shadow-lg);
 }
 
 .image img:nth-child(1) {
-    top: -50px;
-    position: relative;
+    transform: translateY(-30px);
 }
 
 .image img:nth-child(2) {
-    top: 50px;
-    position: relative;
+    transform: translateY(30px);
 }
 
 /* Future Programs Section */
 .future-programs {
     margin-top: 5rem;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 20px;
+    padding: var(--section-padding) 0;
+    background: linear-gradient(135deg, var(--sage-light) 0%, var(--background-cream) 100%);
+    border-radius: var(--border-radius);
     text-align: center;
 }
 
 .future-programs h2 {
-    font-size: 2.5rem;
-    color: #333;
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: var(--plum);
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .coming-soon {
-    font-size: 1.2rem;
-    color: #DAA520;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--gold-dark);
     font-weight: 600;
     margin-bottom: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: var(--font-body);
 }
 
 .future-programs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
 
 .future-program-card {
-    background: #fff;
+    background: white;
     padding: 2.5rem 2rem;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
     position: relative;
-    border-left: 4px solid #DAA520;
+    border-left: 4px solid var(--gold);
 }
 
 .future-program-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
 }
 
 .future-program-card h3 {
+    font-family: var(--font-heading);
     font-size: 1.5rem;
-    color: #333;
+    color: var(--plum);
     margin-bottom: 1rem;
     font-weight: 600;
 }
 
 .future-program-card p {
-    color: #666;
+    color: var(--text-medium);
     line-height: 1.6;
     margin-bottom: 1.5rem;
     text-align: left;
+    font-family: var(--font-body);
 }
 
 .status-badge {
     display: inline-block;
-    background: #DAA520;
-    color: #fff;
+    background: var(--sage);
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-family: var(--font-body);
 }
 
 /* Responsive Design */
+
+/* Tablet and Mobile Styles */
+@media (max-width: 1024px) {
+    .first-des, .first-des-reverse {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .first-des-reverse .des-text,
+    .first-des-reverse .image {
+        order: unset;
+    }
+    
+    .image {
+        justify-content: center;
+    }
+    
+    .image img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .destination {
+        padding: var(--section-padding) var(--container-padding);
+    }
+    
+    .first-des, .first-des-reverse {
+        margin: 3rem 0;
+        padding: 2rem 0;
+        gap: 2rem;
+    }
+    
+    .image {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .image img {
+        width: 100%;
+        height: 250px;
+        transform: none !important;
+    }
+    
+    .image img:nth-child(1),
+    .image img:nth-child(2) {
+        transform: none;
+    }
+    
+    .future-programs {
+        margin-top: 3rem;
+        padding: 2rem 1rem;
+    }
+    
+    .future-programs-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .programs-header {
+        margin-bottom: 3rem;
+    }
+    
+    .des-text h2::after {
+        width: 60px;
+        height: 3px;
+    }
+    
+    .future-program-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .image img {
+        height: 200px;
+    }
+}
 
 /* Extra Large Screens (1200px and above) */
 @media screen and (min-width: 1200px) {

@@ -38,17 +38,17 @@ function AboutUs() {
                     <h2 className="section-title">Our Approach</h2>
                     <div className="approach-grid">
                         <div className="approach-item">
-                            <div className="approach-icon">💼</div>
+                            <div className="approach-icon"><FaBriefcase /></div>
                             <h3>Empower</h3>
                             <p>Through enterprise and savings</p>
                         </div>
                         <div className="approach-item">
-                            <div className="approach-icon">🤝</div>
+                            <div className="approach-icon"><FaHandshake /></div>
                             <h3>Strengthen</h3>
                             <p>Through collaboration and learnings</p>
                         </div>
                         <div className="approach-item">
-                            <div className="approach-icon">🌟</div>
+                            <div className="approach-icon"><FaStar /></div>
                             <h3>Lead</h3>
                             <p>Through community action</p>
                         </div>
@@ -68,7 +68,7 @@ function AboutUs() {
                         {/* Evelyn Mwondha */}
                         <div className="team-member">
                             <div className="member-photo">
-                                <img src="/images/evelyn-mwondha.jpg" alt="Evelyn Mwondha" />
+                                <img src="../assets/Catherine Nakayiza.JPG" alt="Evelyn Mwondha" />
                             </div>
                             <div className="member-info">
                                 <h3>Evelyn N. Mwondha</h3>
@@ -88,7 +88,7 @@ function AboutUs() {
                         {/* Phoebe Aringo */}
                         <div className="team-member">
                             <div className="member-photo">
-                                <img src="/images/phoebe-aringo.jpg" alt="Phoebe Hedwig Aringo" />
+                                <img src="../assets/Phoebe pic.jpg" alt="Phoebe Hedwig Aringo" />
                             </div>
                             <div className="member-info">
                                 <h3>Phoebe Hedwig Aringo</h3>

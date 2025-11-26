@@ -1,4 +1,5 @@
 import React from "react";
+import { FaPiggyBank, FaHome, FaGraduationCap, FaHandshake, FaUsers } from 'react-icons/fa';
 import "./ImpactStyles.css";
 
 const Impact = () => {
@@ -20,25 +21,25 @@ const Impact = () => {
                     <h2 className="section-title">Our Growing Impact</h2>
                     <div className="highlights-grid">
                         <div className="highlight-card">
-                            <div className="highlight-icon">👥</div>
+                            <div className="highlight-icon"><FaUsers /></div>
                             <h3>Women Empowered</h3>
                             <p className="coming-soon">Impact data coming soon</p>
                             <p className="description">Self Help Groups formed and strengthened</p>
                         </div>
                         <div className="highlight-card">
-                            <div className="highlight-icon">💰</div>
+                            <div className="highlight-icon"><FaPiggyBank /></div>
                             <h3>Savings Mobilized</h3>
                             <p className="coming-soon">Impact data coming soon</p>
                             <p className="description">Community savings and investments generated</p>
                         </div>
                         <div className="highlight-card">
-                            <div className="highlight-icon">🏘️</div>
+                            <div className="highlight-icon"><FaHome /></div>
                             <h3>Communities Reached</h3>
                             <p className="coming-soon">Impact data coming soon</p>
                             <p className="description">Villages and communities transformed</p>
                         </div>
                         <div className="highlight-card">
-                            <div className="highlight-icon">🎓</div>
+                            <div className="highlight-icon"><FaGraduationCap /></div>
                             <h3>Leaders Trained</h3>
                             <p className="coming-soon">Impact data coming soon</p>
                             <p className="description">Women equipped with leadership skills</p>
@@ -58,7 +59,7 @@ const Impact = () => {
                     <div className="stories-grid">
                         <div className="story-card">
                             <div className="story-image">
-                                <img src="/images/story-1.jpg" alt="Women's savings group" />
+                                <img src="../assets/Training session .JPG" alt="Women's savings group" />
                             </div>
                             <div className="story-content">
                                 <h3>Building Dreams Through Savings</h3>
@@ -75,7 +76,7 @@ const Impact = () => {
 
                         <div className="story-card">
                             <div className="story-image">
-                                <img src="/images/story-2.jpg" alt="Leadership training" />
+                                <img src="../assets/Phoebe and Norah2.JPG" alt="Leadership training" />
                             </div>
                             <div className="story-content">
                                 <h3>Finding Her Voice</h3>
@@ -92,7 +93,7 @@ const Impact = () => {
 
                         <div className="story-card">
                             <div className="story-image">
-                                <img src="/images/story-3.jpg" alt="Safety training session" />
+                                <img src="../assets/Catherine NakayizaIMG_9275.JPG" alt="Safety training session" />
                             </div>
                             <div className="story-content">
                                 <h3>Knowledge is Power</h3>
@@ -109,7 +110,7 @@ const Impact = () => {
 
                         <div className="story-card">
                             <div className="story-image">
-                                <img src="/images/story-4.jpg" alt="Community meeting" />
+                                <img src="../assets/IMG_E2576.JPG" alt="Community meeting" />
                             </div>
                             <div className="story-content">
                                 <h3>Community Transformation</h3>
@@ -142,7 +143,7 @@ const Impact = () => {
                     <div className="partners-grid">
                         <div className="partner-card">
                             <div className="partner-logo">
-                                <img src="/images/street-business-school-logo.png" alt="Street Business School" />
+                                <div className="logo-text">SBS</div>
                             </div>
                             <div className="partner-info">
                                 <h3>Street Business School</h3>
@@ -155,7 +156,7 @@ const Impact = () => {
 
                         <div className="partner-card">
                             <div className="partner-logo">
-                                <img src="/images/omprakash-logo.png" alt="Omprakash" />
+                                <div className="logo-text">Omprakash</div>
                             </div>
                             <div className="partner-info">
                                 <h3>Omprakash</h3>
@@ -168,7 +169,7 @@ const Impact = () => {
 
                         <div className="partner-card future-partner">
                             <div className="partner-logo">
-                                <div className="placeholder-logo">🤝</div>
+                                <div className="placeholder-logo"><FaHandshake /></div>
                             </div>
                             <div className="partner-info">
                                 <h3>Future Partnerships</h3>

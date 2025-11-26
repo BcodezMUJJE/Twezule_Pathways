@@ -10,7 +10,7 @@ const Footer = () => {
                         {/* Brand Section */}
                         <div className="footer-brand">
                             <div className="footer-logo">
-                                <img src="/images/twezule-logo.png" alt="Twezule Pathways" />
+                                <div className="logo-text">Twezule Pathways</div>
                             </div>
                             <h2 className="footer-title">Twezule Pathways</h2>
                             <p className="footer-tagline">

@@ -28,20 +28,22 @@ function Hero(props) {
 
       {/* Core Program Highlights */}
       <section className="core-programs">
-        <h2>Our Core Programs</h2>
-        <div className="program-cards">
-          <div className="program-card">
-            <h3>Entrepreneurship Training</h3>
-            <p>Building savings culture and entrepreneurship skills among women.</p>
-          </div>
-          <div className="program-card">
-            <h3>Safety & Power Training</h3>
-            <p>Equipping women to prevent and respond to gender-based violence.</p>
-          </div>
-          <div className="program-card">
-            <h3>Community Empowerment</h3>
-            <p>Strengthening and formation of Self Help Groups</p>
-            <p>Fostering leadership, inclusion, and transformation at the grassroots.</p>
+        <div className="content-wrapper">
+          <h2>Our Core Programs</h2>
+          <div className="program-cards">
+            <div className="program-card">
+              <h3>Entrepreneurship Training</h3>
+              <p>Building savings culture and entrepreneurship skills among women.</p>
+            </div>
+            <div className="program-card">
+              <h3>Safety & Power Training</h3>
+              <p>Equipping women to prevent and respond to gender-based violence.</p>
+            </div>
+            <div className="program-card">
+              <h3>Community Empowerment</h3>
+              <p>Strengthening and formation of Self Help Groups</p>
+              <p>Fostering leadership, inclusion, and transformation at the grassroots.</p>
+            </div>
           </div>
         </div>
       </section>

@@ -61,9 +61,13 @@ class Navbar extends Component {
               </li>
             );
           })}
-          <button className="nav-cta-button">
+          <a 
+            href="/get-involved"
+            className="nav-cta-button"
+            onClick={this.handleLinkClick}
+          >
             <span>Get Involved</span>
-          </button>
+          </a>
         </ul>
       </nav>
     );

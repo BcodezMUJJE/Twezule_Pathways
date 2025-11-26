@@ -1,7 +1,7 @@
-import WomenSaving from "../assets/praying.jpg";
-import WomenTraining from "../assets/pray.jpg";
-import Leadership from "../assets/hands.jpg"
-import Community from "../assets/worship.jpg"
+import WomenSaving from "../assets/pphio1.JPG";
+import WomenTraining from "../assets/Training session .JPG";
+import Leadership from "../assets/Phoebe and Norah2.JPG";
+import Community from "../assets/Catherine Nakayiza.JPG";
 import DestinationData from "./DestinationData";
 import "./DestinationStyles.css";
 
