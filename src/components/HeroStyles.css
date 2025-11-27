@@ -13,7 +13,7 @@
 
 .enhanced-hero {
   min-height: 85vh;
-  background: linear-gradient(135deg, rgba(91, 34, 69, 0.1), rgba(212, 175, 55, 0.1));
+  background: linear-gradient(135deg, rgba(168, 192, 144, 0.15), rgba(212, 175, 55, 0.08));
 }
 
 .hero-overlay {
@@ -23,9 +23,9 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, 
-    rgba(91, 34, 69, 0.7) 0%, 
-    rgba(91, 34, 69, 0.5) 50%, 
-    rgba(212, 175, 55, 0.3) 100%);
+    rgba(74, 103, 65, 0.8) 0%, 
+    rgba(107, 138, 86, 0.6) 50%, 
+    rgba(168, 192, 144, 0.4) 100%);
   z-index: 1;
 }
 
@@ -54,7 +54,7 @@
 
 .hero-badge {
   display: inline-block;
-  background: rgba(150, 139, 139, 0.15);
+  background: rgba(168, 192, 144, 0.2);
   backdrop-filter: blur(10px);
   color: white;
   padding: 0.5rem 1.2rem;
@@ -62,7 +62,7 @@
   font-size: clamp(0.8rem, 1.8vw, 0.9rem);
   font-weight: 500;
   margin-bottom: clamp(1rem, 3vw, 1.5rem);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.3);
   animation: badgeFloat 3s ease-in-out infinite;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #D4AF37, #E8C547, #F7E98E);
+  background: linear-gradient(135deg, #A8C090, #D4AF37, #E8C547);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -139,8 +139,8 @@
 .primary-cta {
   display: inline-block;
   text-decoration: none;
-  background: linear-gradient(135deg, #D4AF37, #E8C547);
-  color: #5B2245;
+  background: linear-gradient(135deg, #D4AF37, #F2D962);
+  color: #4A6741;
   padding: 1.2rem 2.8rem;
   border-radius: 50px;
   font-size: clamp(1rem, 2.2vw, 1.2rem);
@@ -855,8 +855,8 @@
 }
 
 .primary-action {
-  background: linear-gradient(135deg, #DAA520 0%, #FFD700 100%);
-  color: #000;
+  background: linear-gradient(135deg, #D4AF37 0%, #F2D962 100%);
+  color: #4A6741;
   padding: 16px 40px;
   border-radius: 50px;
   text-decoration: none;
@@ -864,7 +864,7 @@
   font-weight: bold;
   transition: all 0.3s ease;
   border: none;
-  box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
   display: inline-block;
 }
 
@@ -902,12 +902,12 @@
   font-size: 1.1rem;
   font-weight: bold;
   transition: all 0.3s ease;
-  border: 2px solid #DAA520;
+  border: 2px solid #D4AF37;
   display: inline-block;
 }
 
 .tertiary-action:hover {
-  background: rgba(218, 165, 32, 0.1);
+  background: rgba(212, 175, 55, 0.15);
   border-color: #FFD700;
   transform: translateY(-2px);
 }

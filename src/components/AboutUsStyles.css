@@ -2,29 +2,29 @@
 .about-container{
     margin: 0;
     text-align: start;
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #F0F4ED 0%, #FFFFFF 50%, #F7F9F5 100%);
 }
 
 .enhanced-about {
-    background: linear-gradient(135deg, #f8f9fa 0%, rgba(218, 165, 32, 0.03) 50%, #ffffff 100%);
+    background: linear-gradient(135deg, #F0F4ED 0%, rgba(168, 192, 144, 0.1) 50%, #F7F9F5 100%);
 }
 
 .about-container h1{
     padding-bottom: 1rem;
-    color: #1a1a1a;
+    color: #4A6741;
     font-family: 'Playfair Display', serif;
 }
 
 .about-container p{
     padding-bottom: 2rem;
     line-height: 1.8;
-    color: #2d2d2d;
+    color: #5C6B58;
 }
 
 /* Enhanced Story Section - Gold, White & Black */
 .story-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: linear-gradient(135deg, #4A6741 0%, #6B8A56 100%);
     position: relative;
     overflow: hidden;
 }
@@ -36,14 +36,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 30%, rgba(218, 165, 32, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
     pointer-events: none;
 }
 
 .story-badge {
     display: inline-block;
-    background: rgba(218, 165, 32, 0.2);
-    color: #FFD700;
+    background: rgba(212, 175, 55, 0.2);
+    color: #A8C090;
     padding: 8px 20px;
     border-radius: 25px;
     font-size: 0.9rem;
@@ -60,7 +60,7 @@
 }
 
 .main-title .gradient-text {
-    background: linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #DAA520 100%);
+    background: linear-gradient(135deg, #D4AF37 0%, #F2D962 50%, #E8C547 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -83,12 +83,12 @@
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 30px;
-    color: #1a1a1a;
-    background: white;
+    color: #3A4A36;
+    background: #FDFCFB;
     padding: 30px;
     border-radius: 15px;
-    border-left: 4px solid #DAA520;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #D4AF37;
+    box-shadow: 0 4px 15px rgba(74, 103, 65, 0.1);
 }
 
 .story-highlights {

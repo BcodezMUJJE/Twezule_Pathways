@@ -2,21 +2,25 @@
 
 /* Base styles and variables */
 :root {
-  /* Gold, Black & White Color Palette */
-  --gold-primary: #DAA520;
-  --gold-light: #FFD700;
-  --gold-dark: #B8860B;
-  --black-primary: #1a1a1a;
-  --black-light: #2d2d2d;
-  --gray-medium: #666;
-  --gray-light: #e0e0e0;
-  --white: #ffffff;
-  --background-light: #f8f9fa;
+  /* Sage, Green, Gold, White System */
+  --sage-primary: #A8C090;
+  --sage-light: #C4D3B0;
+  --sage-medium: #8FAB73;
+  --sage-dark: #6B8A56;
+  --green-deep: #4A6741;
+  --gold-primary: #D4AF37;
+  --gold-light: #E8C547;
+  --gold-accent: #F2D962;
+  --white-pure: #FFFFFF;
+  --white-soft: #FDFCFB;
+  --background-sage: #F0F4ED;
+  --text-dark: #3A4A36;
+  --text-medium: #5C6B58;
   
   /* Shadows */
-  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.1);
-  --shadow-medium: 0 8px 25px rgba(218, 165, 32, 0.2);
-  --shadow-hover: 0 15px 40px rgba(218, 165, 32, 0.3);
+  --shadow-light: 0 4px 15px rgba(74, 103, 65, 0.1);
+  --shadow-medium: 0 8px 25px rgba(212, 175, 55, 0.15);
+  --shadow-hover: 0 15px 40px rgba(212, 175, 55, 0.2);
   
   /* Other */
   --border-radius: 20px;
@@ -39,10 +43,10 @@
 .impact-container {
   font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
-  color: var(--black-primary);
+  color: var(--text-dark);
   width: 100%;
   overflow-x: hidden;
-  background: var(--white);
+  background: var(--background-sage);
 }
 
 .content-wrapper {
@@ -52,10 +56,10 @@
   width: 100%;
 }
 
-/* Header Section - Black & Gold */
+/* Header Section - Deep Purple & Gold */
 .impact-header {
-  background: linear-gradient(135deg, var(--black-primary) 0%, var(--black-light) 100%);
-  color: white;
+  background: linear-gradient(135deg, var(--green-deep) 0%, var(--sage-medium) 100%);
+  color: var(--white-pure);
   padding: var(--section-padding) 0;
   text-align: center;
   position: relative;
@@ -72,8 +76,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(218, 165, 32, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 70% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 70% 80%, rgba(242, 217, 98, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -91,7 +95,7 @@
 .impact-subtitle {
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 400;
-  color: var(--gray-light);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 700px;
   margin: 0 auto;
   position: relative;
@@ -104,7 +108,7 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: bold;
-  color: var(--black-primary);
+  color: var(--green-deep);
   text-align: center;
   margin-bottom: clamp(20px, 3vw, 30px);
   position: relative;
@@ -123,10 +127,10 @@
   border-radius: 2px;
 }
 
-/* Visual Highlights Section - White & Gold */
+/* Visual Highlights Section - Sage Light & Gold */
 .visual-highlights {
   padding: var(--section-padding) 0;
-  background: var(--white);
+  background: var(--sage-light);
 }
 
 .highlights-grid {
@@ -192,7 +196,7 @@
 .highlight-card h3 {
   font-size: clamp(1.3rem, 2.5vw, 1.5rem);
   font-weight: bold;
-  color: var(--black-primary);
+  color: var(--deep-purple);
   margin-bottom: clamp(12px, 2vw, 15px);
 }
 
@@ -206,7 +210,7 @@
 }
 
 .highlight-card .description {
-  color: var(--gray-medium);
+  color: var(--warm-brown);
   font-size: clamp(0.95rem, 1.8vw, 1rem);
   line-height: 1.6;
 }
@@ -214,14 +218,14 @@
 /* Stories Section - Horizontal Card Layout */
 .stories-section {
   padding: var(--section-padding) 0;
-  background: var(--white);
+  background: var(--background-light);
   position: relative;
 }
 
 .stories-intro {
   text-align: center;
   font-size: clamp(1.1rem, 2.2vw, 1.25rem);
-  color: var(--gray-medium);
+  color: var(--warm-brown);
   max-width: 800px;
   margin: 0 auto clamp(50px, 6vw, 70px);
   line-height: 1.7;
@@ -238,7 +242,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(30px, 5vw, 50px);
-  background: var(--black-primary);
+  background: var(--white);
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow-light);
@@ -246,6 +250,7 @@
   padding: clamp(30px, 5vw, 50px);
   align-items: center;
   margin-bottom: 2rem;
+  border: 2px solid var(--sage-dark);
 }
 
 .story-card:hover {
@@ -278,7 +283,7 @@
 }
 
 .story-text-content p {
-  color: var(--white);
+  color: var(--deep-purple);
   line-height: 1.7;
   margin-bottom: clamp(20px, 3vw, 25px);
   font-size: clamp(1rem, 1.9vw, 1.1rem);
@@ -294,7 +299,7 @@
   position: relative;
   padding-left: 30px;
   margin-bottom: clamp(10px, 2vw, 15px);
-  color: var(--gray-dark);
+  color: var(--warm-brown);
   font-size: clamp(0.95rem, 1.8vw, 1.05rem);
   line-height: 1.6;
 }
@@ -316,7 +321,7 @@
 .badge-location {
   display: inline-block;
   padding: clamp(8px, 1.5vw, 10px) clamp(16px, 2.5vw, 20px);
-  background: var(--gold-primary);
+  background: var(--sage-dark);
   color: var(--white);
   border-radius: 25px;
   font-size: clamp(0.85rem, 1.6vw, 0.95rem);
@@ -380,7 +385,7 @@
 }
 
 .partner-card {
-  background: var(--black-primary);
+  background: var(--white);
   padding: var(--card-padding);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
@@ -388,7 +393,7 @@
   display: flex;
   align-items: center;
   gap: clamp(15px, 3vw, 25px);
-  border: 2px solid rgba(218, 165, 32, 0.2);
+  border: 2px solid var(--sage-dark);
   width: 100%;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -439,26 +444,26 @@
 .partner-info h3 {
   font-size: clamp(1.25rem, 2.3vw, 1.4rem);
   font-weight: bold;
-  color: var(--gold-primary);
+  color: var(--warm-brown);
   margin-bottom: clamp(10px, 1.5vw, 12px);
   line-height: 1.4;
 }
 
 .partner-info p {
-  color: var(--white);
+  color: var(--deep-purple);
   line-height: 1.7;
   font-size: clamp(0.95rem, 1.7vw, 1rem);
   margin-bottom: clamp(10px, 1.5vw, 12px);
 }
 
 .future-partner {
-  border: 2px solid rgba(218, 165, 32, 0.2);
-  background: var(--black-primary);
+  border: 2px solid var(--warm-brown);
+  background: var(--sage-light);
 }
 
 .future-partner:hover {
-  border-color: var(--gold-primary);
-  background: var(--black-primary);
+  border-color: var(--deep-teal);
+  background: var(--sage-medium);
 }
 
 /* Comprehensive Responsive Design */
@@ -587,7 +592,7 @@
 .highlight-card:focus,
 .story-card:focus,
 .partner-card:focus {
-  outline: 3px solid var(--gold-primary);
+  outline: 3px solid var(--warm-brown);
   outline-offset: 3px;
 }
 
@@ -621,8 +626,8 @@
 /* Print styles */
 @media print {
   .impact-header {
-    background: var(--black-primary) !important;
-    color: white !important;
+    background: var(--sage-medium) !important;
+    color: var(--deep-purple) !important;
     page-break-inside: avoid;
   }
   

@@ -3,32 +3,35 @@
 
 /* Twezule Pathways Design System */
 :root {
-  /* Primary Colors */
-  --plum: #5B2245;
-  --gold: #D4AF37;
-  --sage: #B7C8A3;
-  
-  /* Color Variations */
-  --plum-light: #7A3A63;
-  --plum-dark: #3D1730;
+  /* Primary Colors - Sage, Green, Gold, White System */
+  --sage-primary: #A8C090;
+  --sage-light: #C4D3B0;
+  --sage-medium: #8FAB73;
+  --sage-dark: #6B8A56;
+  --green-deep: #4A6741;
+  --gold-primary: #D4AF37;
   --gold-light: #E8C547;
-  --gold-dark: #B8941F;
-  --sage-light: #C9D4B5;
-  --sage-dark: #9FB085;
+  --gold-accent: #F2D962;
+  --white-pure: #FFFFFF;
+  --white-soft: #FDFCFB;
   
   /* Supporting Colors */
-  --text-dark: #2c2c2c;
-  --text-medium: #5a5a5a;
-  --text-light: #757575;
-  --background-light: #fafafa;
-  --background-white: #ffffff;
-  --background-cream: #fcfbf9;
-  --border-light: #e8e8e8;
+  --text-dark: #3A4A36;
+  --text-medium: #5C6B58;
+  --text-light: #7A8776;
+  --text-gold: #B8941F;
+  --background-light: #F7F9F5;
+  --background-sage: #F0F4ED;
+  --background-white: #FFFFFF;
+  --background-cream: #FEFDFB;
+  --border-light: #E3E9DF;
+  --border-sage: #C4D3B0;
   
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(91, 34, 69, 0.08);
-  --shadow-md: 0 4px 20px rgba(91, 34, 69, 0.12);
-  --shadow-lg: 0 8px 32px rgba(91, 34, 69, 0.16);
+  --shadow-sm: 0 2px 8px rgba(74, 103, 65, 0.08);
+  --shadow-md: 0 4px 20px rgba(74, 103, 65, 0.12);
+  --shadow-lg: 0 8px 32px rgba(74, 103, 65, 0.16);
+  --shadow-gold: 0 4px 16px rgba(212, 175, 55, 0.15);
   
   /* Typography */
   --font-heading: 'Playfair Display', serif;
@@ -105,8 +108,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Button Styles */
 .btn-primary {
-  background-color: var(--gold);
-  color: var(--plum);
+  background-color: var(--gold-primary);
+  color: var(--green-deep);
   border: none;
   padding: 12px 24px;
   border-radius: var(--border-radius);
@@ -121,15 +124,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-  background-color: var(--gold-dark);
+  background-color: var(--gold-light);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--plum);
-  border: 2px solid var(--plum);
+  color: var(--green-deep);
+  border: 2px solid var(--sage-primary);
   padding: 12px 24px;
   border-radius: var(--border-radius);
   font-family: var(--font-body);
@@ -143,8 +146,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-secondary:hover {
-  background-color: var(--plum);
-  color: var(--background-white);
+  background-color: var(--sage-primary);
+  color: var(--white-pure);
   transform: translateY(-2px);
 }
 
@@ -157,6 +160,6 @@ img {
 
 /* Focus Styles */
 *:focus {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--gold-primary);
   outline-offset: 2px;
 }

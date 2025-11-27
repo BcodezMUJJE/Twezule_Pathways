@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./NavbarStyles.css";
 import { MenuItems } from "./MenuItems";
+import TwezuleLogo from "../assets/TwezuleLogo.png";
 
 class Navbar extends Component {
   state = { 
@@ -34,9 +35,13 @@ class Navbar extends Component {
   render() {
     return (
       <nav className={`NavbarItems ${this.state.scrolled ? 'scrolled' : ''}`}>
-        <div className="navbar-logo-container">
-         <span className="navbar-logo-text">Twezule Pathways</span>
-        </div>
+        <a href="/" className="navbar-logo-container" aria-label="Twezule Pathways Home">
+          <img 
+            src={TwezuleLogo} 
+            alt="Twezule Pathways" 
+            className="navbar-logo"
+          />
+        </a>
 
         <div 
           className={`menu-icons ${this.state.clicked ? 'active' : ''}`} 

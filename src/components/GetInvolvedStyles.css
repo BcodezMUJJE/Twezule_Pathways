@@ -2,22 +2,25 @@
 
 /* Base styles and variables */
 :root {
-  /* Gold & Black Palette */
-  --gold-primary: #DAA520;
-  --gold-light: #FFD700;
-  --gold-dark: #B8860B;
-  --black-primary: #1a1a1a;
-  --black-light: #2d2d2d;
-  --gray-dark: #4a4a4a;
-  --gray-medium: #666666;
-  --gray-light: #e0e0e0;
-  --white: #ffffff;
-  --background-light: #f9f9f9;
+  /* Sage, Green, Gold, White System */
+  --sage-primary: #A8C090;
+  --sage-light: #C4D3B0;
+  --sage-medium: #8FAB73;
+  --sage-dark: #6B8A56;
+  --green-deep: #4A6741;
+  --gold-primary: #D4AF37;
+  --gold-light: #E8C547;
+  --gold-accent: #F2D962;
+  --white-pure: #FFFFFF;
+  --white-soft: #FDFCFB;
+  --background-sage: #F0F4ED;
+  --text-dark: #3A4A36;
+  --text-medium: #5C6B58;
   
   /* Shadows & Borders */
   --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.05);
   --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.08);
-  --shadow-hover: 0 15px 40px rgba(218, 165, 32, 0.15);
+  --shadow-hover: 0 15px 40px rgba(212, 175, 55, 0.15);
   --border-radius: 12px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
@@ -34,7 +37,7 @@
 .get-involved-container {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  color: var(--black-primary);
+  color: var(--text-dark);
   width: 100%;
   overflow-x: hidden;
   padding-top: 0;
@@ -55,8 +58,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header Section */
 .get-involved-header {
-  background: linear-gradient(135deg, var(--black-primary) 0%, var(--black-light) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--green-deep) 0%, var(--sage-medium) 100%);
+  color: var(--white-pure);
   padding: clamp(120px, 15vw, 180px) 0 clamp(80px, 10vw, 120px);
   text-align: center;
   position: relative;
@@ -70,14 +73,14 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(218, 165, 32, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .get-involved-title {
   font-size: clamp(3rem, 6vw, 4.5rem);
   margin-bottom: clamp(20px, 3vw, 30px);
-  background: linear-gradient(to right, var(--white) 20%, var(--gold-light) 50%, var(--white) 80%);
+  background: linear-gradient(to right, var(--white-pure) 20%, var(--gold-accent) 50%, var(--white-pure) 80%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -95,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   max-width: 800px;
   margin: 0 auto;
-  color: var(--gray-light);
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 300;
   letter-spacing: 0.5px;
 }
@@ -103,13 +106,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Ways to Help Section */
 .ways-to-help {
   padding: var(--section-padding) 0;
-  background: var(--white);
+  background: var(--background-sage);
 }
 
 .section-title {
   text-align: center;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  color: var(--black-primary);
+  color: var(--green-deep);
   margin-bottom: clamp(15px, 2vw, 20px);
   position: relative;
   display: inline-block;
@@ -121,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(to right, var(--gold-primary), var(--gold-light));
+  background: linear-gradient(to right, var(--gold-primary), var(--sage-primary));
   margin: 20px auto 0;
   border-radius: 2px;
 }
@@ -129,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-subtitle {
   text-align: center;
   font-size: clamp(1.1rem, 2vw, 1.25rem);
-  color: var(--gray-medium);
+  color: var(--text-medium);
   max-width: 700px;
   margin: 0 auto clamp(50px, 6vw, 70px);
 }
@@ -142,12 +145,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .involvement-card {
-  background: var(--white);
+  background: var(--white-pure);
   padding: var(--card-padding);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
   transition: var(--transition);
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(168, 192, 144, 0.2);
   position: relative;
   overflow: hidden;
   display: flex;
@@ -171,7 +174,7 @@ h1, h2, h3, h4, h5, h6 {
 .involvement-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-hover);
-  border-color: rgba(218, 165, 32, 0.3);
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 .involvement-card:hover::before {
@@ -181,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 .card-icon {
   width: 70px;
   height: 70px;
-  background: var(--black-primary);
+  background: var(--green-deep);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -192,11 +195,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .react-icon {
   font-size: 30px;
-  color: var(--gold-primary);
+  color: var(--gold-light);
 }
 
 .involvement-card:hover .card-icon {
-  background: var(--gold-primary);
+  background: var(--warm-brown);
   transform: rotateY(180deg);
 }
 
@@ -252,15 +255,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-btn {
-  background: var(--black-primary);
-  color: var(--gold-primary);
-  border-color: var(--black-primary);
+  background: var(--gold-primary);
+  color: var(--green-deep);
+  border-color: var(--gold-primary);
 }
 
 .primary-btn:hover {
-  background: var(--gold-primary);
-  color: var(--black-primary);
-  border-color: var(--gold-primary);
+  background: var(--gold-light);
+  color: var(--green-deep);
+  border-color: var(--gold-light);
 }
 
 /* Donation Section */
@@ -269,14 +272,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .donation-card {
-  background: var(--black-primary);
-  color: var(--white);
+  background: var(--green-deep);
+  color: var(--white-pure);
   padding: clamp(40px, 6vw, 60px);
   border-radius: var(--border-radius);
   text-align: center;
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--gold-dark);
+  border: 1px solid var(--gold-primary);
 }
 
 .donation-card::after {
