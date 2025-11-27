@@ -56,78 +56,75 @@ const Impact = () => {
                         Real stories of transformation, resilience, and hope from the women we serve
                     </p>
                     
-                    <div className="stories-grid">
+                    <div className="stories-container">
                         <div className="story-card">
-                            <div className="story-image">
-                                <img src="../assets/Training session .JPG" alt="Women's savings group" />
-                            </div>
-                            <div className="story-content">
+                            <div className="story-text-content">
                                 <h3>Building Dreams Through Savings</h3>
                                 <p>
-                                    "Through our Self Help Group, we learned to save together and support each other. 
-                                    Now we're not just surviving – we're building businesses and educating our children."
+                                    Experience the transformation as women come together through Self Help Groups, 
+                                    learning to save collectively and support one another in building sustainable businesses 
+                                    and securing their children's education.
                                 </p>
-                                <div className="story-meta">
-                                    <span className="story-location">Kampala Region</span>
-                                    <span className="story-type">SHG Success</span>
+                                <ul className="story-highlights">
+                                    <li>Financial independence through collective savings</li>
+                                    <li>Community support networks</li>
+                                    <li>Business development opportunities</li>
+                                </ul>
+                                <div className="story-badge">
+                                    <span className="badge-location">Kampala Region</span>
                                 </div>
+                            </div>
+                            <div className="story-image-wrapper">
+                                <img src={require('../assets/Leader.jpeg')} alt="Women in Self Help Group" />
                             </div>
                         </div>
 
-                        <div className="story-card">
-                            <div className="story-image">
-                                <img src="../assets/Phoebe and Norah2.JPG" alt="Leadership training" />
-                            </div>
-                            <div className="story-content">
+                        <div className="story-card reverse">
+                            <div className="story-text-content">
                                 <h3>Finding Her Voice</h3>
                                 <p>
-                                    "The leadership training gave me confidence to speak up in my community. 
-                                    I'm now advocating for women's rights and leading positive change in my village."
+                                    Witness how leadership training empowers women to speak up in their communities, 
+                                    advocate for women's rights, and become catalysts for positive change in their villages 
+                                    and beyond.
                                 </p>
-                                <div className="story-meta">
-                                    <span className="story-location">Rural Uganda</span>
-                                    <span className="story-type">Leadership Impact</span>
+                                <ul className="story-highlights">
+                                    <li>Confidence building workshops</li>
+                                    <li>Women's rights advocacy</li>
+                                    <li>Community leadership roles</li>
+                                </ul>
+                                <div className="story-badge">
+                                    <span className="badge-location">Rural Uganda</span>
                                 </div>
+                            </div>
+                            <div className="story-image-wrapper">
+                                <img src={require('../assets/Leader.jpeg')} alt="Leadership training session" />
                             </div>
                         </div>
 
                         <div className="story-card">
-                            <div className="story-image">
-                                <img src="../assets/Catherine NakayizaIMG_9275.JPG" alt="Safety training session" />
-                            </div>
-                            <div className="story-content">
+                            <div className="story-text-content">
                                 <h3>Knowledge is Power</h3>
                                 <p>
-                                    "Learning about my rights and safety gave me the tools to protect myself and help other women. 
-                                    We're creating a network of support in our community."
+                                    Discover how education about rights and safety equips women with essential tools 
+                                    for self-protection and creates a strong network of support throughout the community.
                                 </p>
-                                <div className="story-meta">
-                                    <span className="story-location">Central Uganda</span>
-                                    <span className="story-type">Safety Training</span>
+                                <ul className="story-highlights">
+                                    <li>Rights awareness education</li>
+                                    <li>Safety training programs</li>
+                                    <li>Community support networks</li>
+                                </ul>
+                                <div className="story-badge">
+                                    <span className="badge-location">Central Uganda</span>
                                 </div>
                             </div>
-                        </div>
-
-                        <div className="story-card">
-                            <div className="story-image">
-                                <img src="../assets/IMG_E2576.JPG" alt="Community meeting" />
-                            </div>
-                            <div className="story-content">
-                                <h3>Community Transformation</h3>
-                                <p>
-                                    "When women are empowered, entire families and communities benefit. 
-                                    Our village has seen real change since the program started."
-                                </p>
-                                <div className="story-meta">
-                                    <span className="story-location">Eastern Uganda</span>
-                                    <span className="story-type">Community Impact</span>
-                                </div>
+                            <div className="story-image-wrapper">
+                                <img src={require('../assets/Leader.jpeg')} alt="Safety training workshop" />
                             </div>
                         </div>
                     </div>
 
                     <div className="stories-cta">
-                        <p>More impact stories coming soon. Follow our journey!</p>
+                        <p>More impact stories coming soon. Follow our journey of transformation!</p>
                     </div>
                 </div>
             </section>

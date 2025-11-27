@@ -5,11 +5,6 @@ import AboutUs from "../components/AboutUs";
 function About() {
   return (
     <>
-      <Hero
-        cName="hero"
-        imgSrc={CableCar}
-        title="About Us"
-      />
       <AboutUs/>
     </>
   );

@@ -127,13 +127,13 @@ function Hero(props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>Get Involved</span>
+                <span>🌟 Get Involved</span>
               </a>
               <a href="/programs" className="cta-button secondary-action">
-                <span>Explore Programs</span>
+                <span>📚 Explore Programs</span>
               </a>
               <a href="/contact" className="cta-button tertiary-action">
-                <span>Contact Us</span>
+                <span>💬 Contact Us</span>
               </a>
             </div>
           </div>

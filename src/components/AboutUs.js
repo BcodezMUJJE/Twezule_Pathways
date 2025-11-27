@@ -1,6 +1,10 @@
 import React from "react";
 import { FaBriefcase, FaHandshake, FaStar } from 'react-icons/fa';
 import "./AboutUsStyles.css"
+import CatherineImg from "../assets/Catherine Nakayiza.JPG";
+import PhoebeImg from "../assets/Phoebe pic.jpg";
+import GodfredImg from "../assets/Godfrey Ofumbi.jpg";
+import LeaderImg from "../assets/Leader.jpeg";
 
 function AboutUs() {
     return(
@@ -131,7 +135,7 @@ function AboutUs() {
                         {/* Evelyn Mwondha */}
                         <div className="team-member enhanced-member">
                             <div className="member-photo enhanced-photo">
-                                <img src="../assets/Catherine Nakayiza.JPG" alt="Evelyn Mwondha" />
+                                <img src={LeaderImg} alt="Evelyn Mwondha" />
                                 <div className="photo-overlay">
                                     <div className="overlay-content">
                                         <span className="role-badge">Executive Director</span>
@@ -154,13 +158,18 @@ function AboutUs() {
                         </div>
 
                         {/* Phoebe Aringo */}
-                        <div className="team-member">
-                            <div className="member-photo">
-                                <img src="../assets/Phoebe pic.jpg" alt="Phoebe Hedwig Aringo" />
+                        <div className="team-member enhanced-member">
+                            <div className="member-photo enhanced-photo">
+                                <img src={PhoebeImg} alt="Phoebe Hedwig Aringo" />
+                                <div className="photo-overlay">
+                                    <div className="overlay-content">
+                                        <span className="role-badge">Impact Strategist</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="member-info">
-                                <h3>Phoebe Hedwig Aringo</h3>
-                                <h4>Co-Founder and Impact Strategist Director</h4>
+                            <div className="member-info enhanced-info">
+                                <h3 className="member-name">Phoebe Hedwig Aringo</h3>
+                                <h4 className="member-role">Co-Founder and Impact Strategist Director</h4>
                                 <p>
                                     Phoebe Hedwig Aringo is a dedicated leader with over 20 years of experience in development work, championing women's empowerment, education, and community transformation. She has served with influential organizations across Uganda, including the Infectious Diseases Institute, African Girls Can, BeadforLife, Street Business School, and now Twezule Pathways, where she continues to advance her passion for locally led development.
                                 </p>
@@ -174,13 +183,18 @@ function AboutUs() {
                         </div>
 
                         {/* Catherine Nakayiza */}
-                        <div className="team-member">
-                            <div className="member-photo">
-                                <img src="/images/catherine-nakayiza.jpg" alt="Catherine Nakayiza" />
+                        <div className="team-member enhanced-member">
+                            <div className="member-photo enhanced-photo">
+                                <img src={CatherineImg} alt="Catherine Nakayiza" />
+                                <div className="photo-overlay">
+                                    <div className="overlay-content">
+                                        <span className="role-badge">Board Chairperson</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="member-info">
-                                <h3>Catherine Nakayiza</h3>
-                                <h4>Chairperson of the Board of Directors</h4>
+                            <div className="member-info enhanced-info">
+                                <h3 className="member-name">Catherine Nakayiza</h3>
+                                <h4 className="member-role">Chairperson of the Board of Directors</h4>
                                 <p>
                                     Catherine Nakayiza serves as the Chairperson of the Twezule Pathways Board of Directors in Uganda. In this role, she generously volunteers her time and expertise to work alongside fellow board members in providing strategic leadership, governance, and support to advance the organization's mission. She holds a strong academic foundation in social sciences, human resource management, and administration at the postgraduate level.
                                 </p>
@@ -194,13 +208,18 @@ function AboutUs() {
                         </div>
 
                         {/* Godfrey Ofumbi */}
-                        <div className="team-member">
-                            <div className="member-photo">
-                                <img src="/images/godfrey-ofumbi.jpg" alt="Godfrey Ofumbi" />
+                        <div className="team-member enhanced-member">
+                            <div className="member-photo enhanced-photo">
+                                <img src={GodfredImg} alt="Godfrey Ofumbi" />
+                                <div className="photo-overlay">
+                                    <div className="overlay-content">
+                                        <span className="role-badge">Board Treasurer</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="member-info">
-                                <h3>Godfrey Ofumbi</h3>
-                                <h4>Treasurer, Local Board of Directors</h4>
+                            <div className="member-info enhanced-info">
+                                <h3 className="member-name">Godfrey Ofumbi</h3>
+                                <h4 className="member-role">Treasurer, Local Board of Directors</h4>
                                 <p>
                                     Godfrey is a highly experienced professional in the built environment sector, bringing over 25 years of expertise in civil engineering, construction project management, facilities management, procurement, and contracts management. His career spans work with the United Nations, the International Committee of the Red Cross (ICRC), USAID-affiliated programs, numerous non-governmental and community-based organizations, as well as the private sector.
                                 </p>
