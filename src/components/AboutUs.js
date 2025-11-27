@@ -27,15 +27,15 @@ function AboutUs() {
                             </p>
                             <div className="story-highlights">
                                 <div className="highlight-item">
-                                    <span className="highlight-icon">🌟</span>
+                                    <span className="highlight-icon"></span>
                                     <span className="highlight-text">Women-Led Organization</span>
                                 </div>
                                 <div className="highlight-item">
-                                    <span className="highlight-icon">🌍</span>
+                                    <span className="highlight-icon"></span>
                                     <span className="highlight-text">African-Rooted Solutions</span>
                                 </div>
                                 <div className="highlight-item">
-                                    <span className="highlight-icon">💪</span>
+                                    <span className="highlight-icon"></span>
                                     <span className="highlight-text">Community-Driven Impact</span>
                                 </div>
                             </div>

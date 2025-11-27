@@ -1,0 +1,44 @@
+{
+  "short_name": "Twezule Pathways",
+  "name": "Twezule Pathways - Empowering Communities Through Partnership",
+  "description": "Join us in creating sustainable change through community partnerships, education, and development initiatives across Africa.",
+  "icons": [
+    {
+      "src": "TwezuleLogo.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "TwezuleLogo.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "TwezuleLogo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#A8C090",
+  "background_color": "#FFFFFF",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["lifestyle", "social", "education", "business"],
+  "screenshots": [
+    {
+      "src": "screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot-narrow.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

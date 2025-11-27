@@ -75,7 +75,7 @@ const Impact = () => {
                                 </div>
                             </div>
                             <div className="story-image-wrapper">
-                                <img src={require('../assets/Leader.jpeg')} alt="Women in Self Help Group" />
+                                <img src={require('../assets/T1.JPG')} alt="Women in Self Help Group" />
                             </div>
                         </div>
 
@@ -97,7 +97,7 @@ const Impact = () => {
                                 </div>
                             </div>
                             <div className="story-image-wrapper">
-                                <img src={require('../assets/Leader.jpeg')} alt="Leadership training session" />
+                                <img src={require('../assets/T2.JPG')} alt="Leadership training session" />
                             </div>
                         </div>
 
@@ -118,7 +118,7 @@ const Impact = () => {
                                 </div>
                             </div>
                             <div className="story-image-wrapper">
-                                <img src={require('../assets/Leader.jpeg')} alt="Safety training workshop" />
+                                <img src={require('../assets/T3.JPG')} alt="Safety training workshop" />
                             </div>
                         </div>
                     </div>
