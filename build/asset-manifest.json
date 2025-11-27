@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.709512e6.css",
-    "main.js": "/static/js/main.6313a1ae.js",
+    "main.css": "/static/css/main.fe09b75d.css",
+    "main.js": "/static/js/main.8efd33a5.js",
     "static/media/Catherine Nakayiza.JPG": "/static/media/Catherine Nakayiza.500158c791f751caf56f.JPG",
     "static/media/pphio1.JPG": "/static/media/pphio1.8258354c36d021d1c2ec.JPG",
     "static/media/Phoebe and Norah2.JPG": "/static/media/Phoebe and Norah2.2d300e749231d57099ef.JPG",
     "static/media/Training session .JPG": "/static/media/Training session .80403cc374054e5d1f4b.JPG",
+    "static/media/Phoebe pic.jpg": "/static/media/Phoebe pic.eadd34ec36685bf36a69.jpg",
+    "static/media/Leader.jpeg": "/static/media/Leader.4150722d00cd0da8b4b8.jpeg",
+    "static/media/Godfrey Ofumbi.jpg": "/static/media/Godfrey Ofumbi.54fa1537e9f0ad33fbf6.jpg",
     "index.html": "/index.html",
-    "main.709512e6.css.map": "/static/css/main.709512e6.css.map",
-    "main.6313a1ae.js.map": "/static/js/main.6313a1ae.js.map"
+    "main.fe09b75d.css.map": "/static/css/main.fe09b75d.css.map",
+    "main.8efd33a5.js.map": "/static/js/main.8efd33a5.js.map"
   },
   "entrypoints": [
-    "static/css/main.709512e6.css",
-    "static/js/main.6313a1ae.js"
+    "static/css/main.fe09b75d.css",
+    "static/js/main.8efd33a5.js"
   ]
 }

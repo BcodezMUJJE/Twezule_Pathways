@@ -129,12 +129,12 @@ const Impact = () => {
                 </div>
             </section>
 
-            {/* Partners & Collaborations */}
+            {/* Strategic Partnerships & Collaborations */}
             <section className="partners-section">
                 <div className="content-wrapper">
-                    <h2 className="section-title">Partners & Collaborations</h2>
+                    <h2 className="section-title">Strategic Partnerships & Collaborations</h2>
                     <p className="partners-intro">
-                        We collaborate with like-minded organizations and local networks to amplify women's voices
+                        Building meaningful alliances with leading organizations to scale impact and create sustainable change for women across Uganda and beyond.
                     </p>
                     
                     <div className="partners-grid">
@@ -145,8 +145,8 @@ const Impact = () => {
                             <div className="partner-info">
                                 <h3>Street Business School</h3>
                                 <p>
-                                    Partnering in entrepreneurship training and women's economic empowerment initiatives 
-                                    across Uganda, building on years of collaborative experience.
+                                    A transformative partnership focused on entrepreneurship training and women's economic empowerment. 
+                                    Together, we deliver comprehensive business skills development programs that have empowered thousands of women across Uganda to build sustainable enterprises and achieve financial independence.
                                 </p>
                             </div>
                         </div>
@@ -156,10 +156,10 @@ const Impact = () => {
                                 <div className="logo-text">Omprakash</div>
                             </div>
                             <div className="partner-info">
-                                <h3>Omprakash</h3>
+                                <h3>Omprakash Foundation</h3>
                                 <p>
-                                    Supporting our mission through their global platform, connecting us with volunteers 
-                                    and donors who believe in grassroots women's empowerment.
+                                    Our global impact partner connecting us with passionate volunteers, dedicated donors, and like-minded organizations worldwide. 
+                                    Through their platform, we amplify our mission and expand our reach, ensuring grassroots women's empowerment initiatives receive the support and visibility they deserve.
                                 </p>
                             </div>
                         </div>
@@ -169,10 +169,10 @@ const Impact = () => {
                                 <div className="placeholder-logo"><FaHandshake /></div>
                             </div>
                             <div className="partner-info">
-                                <h3>Future Partnerships</h3>
+                                <h3>Partnership Opportunities</h3>
                                 <p>
-                                    We're always looking for organizations that share our vision. 
-                                    Partner with us to create lasting change in women's lives.
+                                    We actively seek strategic partnerships with organizations that share our commitment to women's empowerment and community development. 
+                                    Join us in creating scalable, sustainable solutions that transform lives and build stronger, more equitable communities across East Africa and beyond.
                                 </p>
                             </div>
                         </div>

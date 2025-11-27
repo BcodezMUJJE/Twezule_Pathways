@@ -1,7 +1,6 @@
 import WomenSaving from "../assets/pphio1.JPG";
 import WomenTraining from "../assets/Training session .JPG";
 import Leadership from "../assets/Phoebe and Norah2.JPG";
-import Community from "../assets/Catherine Nakayiza.JPG";
 import "./DestinationStyles.css";
 
 const Destination = () => {

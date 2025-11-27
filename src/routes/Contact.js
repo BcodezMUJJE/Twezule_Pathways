@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Hero from "../components/Hero";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -39,13 +38,6 @@ function Contact() {
 
   return (
     <>
-      <Hero
-        cName="hero"
-        imgSrc="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29udGFjdHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
-        title="Get in Touch"
-        text="Contact Twezule Pathways for partnership, volunteering, or inquiries about our programs."
-      />
-      
       {/* Contact Content */}
       <section className="contact-section" style={{ padding: 'var(--section-padding) 0', backgroundColor: 'var(--background-light)' }}>
         <div className="content-wrapper">

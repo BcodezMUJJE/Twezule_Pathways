@@ -238,13 +238,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(30px, 5vw, 50px);
-  background: var(--background-light);
+  background: var(--black-primary);
   border-radius: var(--border-radius);
   overflow: hidden;
   box-shadow: var(--shadow-light);
   transition: var(--transition);
   padding: clamp(30px, 5vw, 50px);
   align-items: center;
+  margin-bottom: 2rem;
 }
 
 .story-card:hover {
@@ -271,13 +272,13 @@
 .story-text-content h3 {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: bold;
-  color: var(--black-primary);
+  color: var(--gold-primary);
   margin-bottom: clamp(15px, 2.5vw, 20px);
   line-height: 1.3;
 }
 
 .story-text-content p {
-  color: var(--gray-medium);
+  color: var(--white);
   line-height: 1.7;
   margin-bottom: clamp(20px, 3vw, 25px);
   font-size: clamp(1rem, 1.9vw, 1.1rem);
@@ -379,7 +380,7 @@
 }
 
 .partner-card {
-  background: var(--white);
+  background: var(--black-primary);
   padding: var(--card-padding);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-light);
@@ -389,6 +390,8 @@
   gap: clamp(15px, 3vw, 25px);
   border: 2px solid rgba(218, 165, 32, 0.2);
   width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .partner-card:hover {
@@ -436,25 +439,26 @@
 .partner-info h3 {
   font-size: clamp(1.25rem, 2.3vw, 1.4rem);
   font-weight: bold;
-  color: var(--black-primary);
+  color: var(--gold-primary);
   margin-bottom: clamp(10px, 1.5vw, 12px);
   line-height: 1.4;
 }
 
 .partner-info p {
-  color: var(--gray-medium);
+  color: var(--white);
   line-height: 1.7;
   font-size: clamp(0.95rem, 1.7vw, 1rem);
+  margin-bottom: clamp(10px, 1.5vw, 12px);
 }
 
 .future-partner {
-  border: 2px dashed rgba(218, 165, 32, 0.4);
-  background: rgba(218, 165, 32, 0.05);
+  border: 2px solid rgba(218, 165, 32, 0.2);
+  background: var(--black-primary);
 }
 
 .future-partner:hover {
   border-color: var(--gold-primary);
-  background: rgba(218, 165, 32, 0.1);
+  background: var(--black-primary);
 }
 
 /* Comprehensive Responsive Design */
