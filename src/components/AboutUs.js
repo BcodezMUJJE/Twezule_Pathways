@@ -4,30 +4,76 @@ import "./AboutUsStyles.css"
 
 function AboutUs() {
     return(
-        <div className="about-container">
-            {/* Our Story Section */}
-            <section className="story-section">
+        <div className="about-container enhanced-about">
+            {/* Enhanced Our Story Section */}
+            <section className="story-section enhanced-story">
                 <div className="content-wrapper">
-                    <h1 className="main-title">Our Story</h1>
-                    <p className="story-text">
-                        Twezule Pathways was born from a deep desire to see women thrive and lead change in their communities. 
-                        Founded by Phoebe Hedwig Aringo and Evelyn Mwondha, who have dedicated over 25 years to empowering 
-                        women through programs that ignite self-worth and economic power.
-                    </p>
+                    <div className="story-header">
+                        <div className="story-badge">✨ Our Journey Since 2023</div>
+                        <h1 className="main-title">
+                            Our <span className="gradient-text">Story</span>
+                        </h1>
+                    </div>
+                    <div className="story-content">
+                        <div className="story-text-wrapper">
+                            <p className="story-text enhanced-text">
+                                Twezule Pathways was born from a deep desire to see women thrive and lead change in their communities. 
+                                Founded by Phoebe Hedwig Aringo and Evelyn Mwondha, who have dedicated over 25 years to empowering 
+                                women through programs that ignite self-worth and economic power.
+                            </p>
+                            <div className="story-highlights">
+                                <div className="highlight-item">
+                                    <span className="highlight-icon">🌟</span>
+                                    <span className="highlight-text">Women-Led Organization</span>
+                                </div>
+                                <div className="highlight-item">
+                                    <span className="highlight-icon">🌍</span>
+                                    <span className="highlight-text">African-Rooted Solutions</span>
+                                </div>
+                                <div className="highlight-item">
+                                    <span className="highlight-icon">💪</span>
+                                    <span className="highlight-text">Community-Driven Impact</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="story-visual">
+                            <div className="visual-element">
+                                <div className="circle-design gold-circle"></div>
+                                <div className="circle-design sage-circle"></div>
+                                <div className="circle-design plum-circle"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            {/* Vision & Mission Section */}
-            <section className="vision-mission-section">
+            {/* Enhanced Vision & Mission Section */}
+            <section className="vision-mission-section enhanced-vm">
                 <div className="content-wrapper">
-                    <div className="vm-grid">
-                        <div className="vision-card">
-                            <h2>Our Vision</h2>
-                            <p>A world where every African woman is empowered to overcome poverty and transform her community.</p>
+                    <div className="section-intro">
+                        <h2 className="section-title">Our <span className="gradient-text">Purpose</span></h2>
+                        <p className="section-subtitle">Driving transformation through clear vision and focused mission</p>
+                    </div>
+                    <div className="vm-grid enhanced-grid">
+                        <div className="vision-card enhanced-card">
+                            <div className="card-header">
+                                <div className="card-icon vision-icon">🔭</div>
+                                <h3>Our Vision</h3>
+                            </div>
+                            <div className="card-content">
+                                <p>A world where every African woman is empowered to overcome poverty and transform her community.</p>
+                            </div>
+                            <div className="card-accent vision-accent"></div>
                         </div>
-                        <div className="mission-card">
-                            <h2>Our Mission</h2>
-                            <p>To fortify the innate power of the African woman by empowering women-led community initiatives through enhancing collaboration, building capacity and innovating sustainable solutions that drive economic growth and social change.</p>
+                        <div className="mission-card enhanced-card">
+                            <div className="card-header">
+                                <div className="card-icon mission-icon">🎯</div>
+                                <h3>Our Mission</h3>
+                            </div>
+                            <div className="card-content">
+                                <p>To fortify the innate power of the African woman by empowering women-led community initiatives through enhancing collaboration, building capacity and innovating sustainable solutions that drive economic growth and social change.</p>
+                            </div>
+                            <div className="card-accent mission-accent"></div>
                         </div>
                     </div>
                 </div>
@@ -57,23 +103,44 @@ function AboutUs() {
                 </div>
             </section>
 
-            {/* Team Section */}
-            <section className="team-section">
+            {/* Enhanced Team Section */}
+            <section className="team-section enhanced-team">
                 <div className="content-wrapper">
-                    <h2 className="section-title">Our Team</h2>
-                    <p className="team-intro">
-                        Our team brings decades of experience in women's empowerment, social enterprise, and community transformation.
-                    </p>
-                    
-                    <div className="team-grid">
-                        {/* Evelyn Mwondha */}
-                        <div className="team-member">
-                            <div className="member-photo">
-                                <img src="../assets/Catherine Nakayiza.JPG" alt="Evelyn Mwondha" />
+                    <div className="team-header">
+                        <h2 className="section-title">Meet Our <span className="gradient-text">Leaders</span></h2>
+                        <p className="team-intro enhanced-intro">
+                            Our team brings decades of experience in women's empowerment, social enterprise, and community transformation.
+                        </p>
+                        <div className="team-stats">
+                            <div className="team-stat">
+                                <span className="stat-number">25+</span>
+                                <span className="stat-label">Years Experience</span>
                             </div>
-                            <div className="member-info">
-                                <h3>Evelyn N. Mwondha</h3>
-                                <h4>Co-founder and Executive Director</h4>
+                            <div className="team-stat">
+                                <span className="stat-number">2</span>
+                                <span className="stat-label">Co-Founders</span>
+                            </div>
+                            <div className="team-stat">
+                                <span className="stat-number">100%</span>
+                                <span className="stat-label">Women-Led</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="team-grid enhanced-team-grid">
+                        {/* Evelyn Mwondha */}
+                        <div className="team-member enhanced-member">
+                            <div className="member-photo enhanced-photo">
+                                <img src="../assets/Catherine Nakayiza.JPG" alt="Evelyn Mwondha" />
+                                <div className="photo-overlay">
+                                    <div className="overlay-content">
+                                        <span className="role-badge">Executive Director</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="member-info enhanced-info">
+                                <h3 className="member-name">Evelyn N. Mwondha</h3>
+                                <h4 className="member-role">Co-founder and Executive Director</h4>
                                 <p>
                                     Evelyn N Mwondha is a Co-Founder and the Executive Director of Twezule Pathways, bringing over 25 years of leadership experience in microfinance, entrepreneurship, and social development. She previously served as Co-Country Director of Street Business School in Uganda, where she oversaw program strategy, fundraising, and community outreach, women's entrepreneurship training.
                                 </p>

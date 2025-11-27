@@ -7,10 +7,25 @@ import "./DestinationStyles.css";
 
 const Destination = () => {
     return (
-        <div className="destination">
-            <div className="programs-header">
-                <h1>Our Programs</h1>
-                <p>Empowering women and communities through comprehensive training and support programs</p>
+        <div className="destination enhanced-destination">
+            <div className="programs-header enhanced-programs-header">
+                <div className="header-badge">🌟 Transformative Programs</div>
+                <h1>Our <span className="gradient-text">Programs</span></h1>
+                <p className="enhanced-description">Empowering women and communities through comprehensive training and support programs</p>
+                <div className="programs-stats">
+                    <div className="program-stat">
+                        <span className="stat-number">3</span>
+                        <span className="stat-label">Active Programs</span>
+                    </div>
+                    <div className="program-stat">
+                        <span className="stat-number">500+</span>
+                        <span className="stat-label">Women Impacted</span>
+                    </div>
+                    <div className="program-stat">
+                        <span className="stat-number">100%</span>
+                        <span className="stat-label">Community-Led</span>
+                    </div>
+                </div>
             </div>
 
             <DestinationData 
@@ -37,20 +52,30 @@ const Destination = () => {
                 img2={Leadership}
             />
 
-            {/* Future Programs Section */}
-            <div className="future-programs">
-                <h2>Future Programs</h2>
-                <p className="coming-soon">Coming Soon</p>
-                <div className="future-programs-grid">
-                    <div className="future-program-card">
+            {/* Enhanced Future Programs Section */}
+            <div className="future-programs enhanced-future-programs">
+                <div className="future-programs-header">
+                    <h2>Future <span className="gradient-text">Programs</span></h2>
+                    <p className="coming-soon enhanced-coming-soon">🚀 Expanding Our Impact</p>
+                </div>
+                <div className="future-programs-grid enhanced-future-grid">
+                    <div className="future-program-card enhanced-future-card">
+                        <div className="card-icon-wrapper">
+                            <div className="future-icon">🌱</div>
+                        </div>
                         <h3>Adolescent Girls Mentorship</h3>
                         <p>Empowering the next generation of women leaders through mentorship and guidance programs.</p>
-                        <span className="status-badge">In Development</span>
+                        <span className="status-badge development-badge">In Development</span>
+                        <div className="card-glow"></div>
                     </div>
-                    <div className="future-program-card">
+                    <div className="future-program-card enhanced-future-card">
+                        <div className="card-icon-wrapper">
+                            <div className="future-icon">💼</div>
+                        </div>
                         <h3>Women-Led Microenterprise Support</h3>
                         <p>Supporting women entrepreneurs through social enterprise development and business skills training.</p>
-                        <span className="status-badge">In Development</span>
+                        <span className="status-badge development-badge">In Development</span>
+                        <div className="card-glow"></div>
                     </div>
                 </div>
             </div>

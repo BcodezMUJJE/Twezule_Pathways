@@ -83,6 +83,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 480px) {
+  .main-content {
+    margin-top: 65px; /* Account for smaller navbar on small screens */
+  }
+}
+
+@media (max-width: 319px) {
+  .main-content {
+    margin-top: 60px; /* Ultra-small screen navbar height */
+  }
+}
+
 /* Content Wrapper Utility */
 .content-wrapper {
   max-width: 1400px;
