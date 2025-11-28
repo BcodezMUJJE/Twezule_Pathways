@@ -537,7 +537,7 @@
 
 .section-subtitle {
   font-size: clamp(1.1rem, 2.2vw, 1.3rem);
-  color: #5a5a5a;
+  color: #4A6741;
   font-weight: 400;
   max-width: 600px;
   margin: 0 auto;
@@ -765,7 +765,7 @@
 
 .author-title {
   font-size: clamp(0.9rem, 2vw, 1.1rem);
-  color: #5a5a5a;
+  color: #4A6741;
   font-weight: 500;
 }
 
@@ -793,7 +793,7 @@
 }
 
 .enhanced-cta {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  background: linear-gradient(135deg, #2D4A28 0%, #3D5A3A 100%);
   padding: 80px 20px;
   position: relative;
 }
@@ -840,7 +840,7 @@
 
 .cta-description {
   font-size: 1.2rem;
-  color: #e0e0e0;
+  color: rgba(255, 255, 255, 0.95);
   max-width: 800px;
   margin: 0 auto 40px;
   line-height: 1.6;

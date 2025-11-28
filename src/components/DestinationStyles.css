@@ -51,7 +51,7 @@
 
 .enhanced-description {
     font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-    color: #5C6B58;
+    color: #3D5A3A;
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.8;
@@ -109,7 +109,7 @@
 .program-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.8rem, 3vw, 2.5rem);
-    color: #1a1a1a;
+    color: #2D4A28;
     font-weight: bold;
     margin-bottom: 20px;
     line-height: 1.3;
@@ -117,7 +117,7 @@
 
 .program-description {
     font-size: clamp(1rem, 2vw, 1.15rem);
-    color: #666;
+    color: #4A5D45;
     line-height: 1.8;
     margin-bottom: 30px;
 }
@@ -130,7 +130,7 @@
 
 .program-features li {
     font-size: 1.05rem;
-    color: #2d2d2d;
+    color: #3D5A3A;
     padding: 12px 0;
     padding-left: 30px;
     position: relative;

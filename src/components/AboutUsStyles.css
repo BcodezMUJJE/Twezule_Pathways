@@ -18,7 +18,7 @@
 .about-container p{
     padding-bottom: 2rem;
     line-height: 1.8;
-    color: #5C6B58;
+    color: #3D5A3A;
 }
 
 /* Enhanced Story Section - Gold, White & Black */
@@ -83,7 +83,7 @@
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 30px;
-    color: #3A4A36;
+    color: #2D4A28;
     background: #FDFCFB;
     padding: 30px;
     border-radius: 15px;
@@ -137,13 +137,13 @@
 .section-title {
     font-family: 'Playfair Display', serif;
     font-size: clamp(2.2rem, 5vw, 3rem);
-    color: #1a1a1a;
+    color: #2D4A28;
     margin-bottom: 20px;
 }
 
 .section-subtitle {
     font-size: 1.2rem;
-    color: #666;
+    color: #4A5D45;
 }
 
 .vision-mission-section .section-subtitle {
@@ -197,21 +197,21 @@
 .card-header h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
-    color: #1a1a1a;
+    color: #2D4A28;
     margin: 0;
 }
 
 .card-content p {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #2d2d2d;
+    color: #3D5A3A;
     margin: 0;
 }
 
 /* Approach Section - Gold, White & Black */
 .approach-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    background: linear-gradient(135deg, #2D4A28 0%, #3D5A3A 100%);
     position: relative;
 }
 
@@ -450,14 +450,14 @@
     padding: 0 20px;
 }
 
-/* Tablet Styles */
-@media screen and (max-width: 850px){
-    .about-container{
+/* Large Tablet Styles (850px and below) */
+@media (max-width: 850px) {
+    .about-container {
         margin: 0;
     }
     
     .approach-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
     }
     
@@ -476,7 +476,7 @@
     }
     
     .vm-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
     
     .team-stats {
@@ -484,8 +484,47 @@
     }
 }
 
+/* Standard Tablet Styles (768px and below) */
+@media (max-width: 768px) {
+    .story-section,
+    .vision-mission-section,
+    .approach-section,
+    .team-section {
+        padding: 70px 20px;
+    }
+    
+    .main-title,
+    .section-title {
+        font-size: clamp(2.2rem, 5.5vw, 2.8rem);
+    }
+    
+    .approach-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    
+    .vm-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .enhanced-card {
+        padding: 35px 25px;
+    }
+    
+    .team-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 35px;
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+}
+
 /* Small Mobile (480px and below) */
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
     .about-container {
         margin: 0;
     }
@@ -494,7 +533,7 @@
     .vision-mission-section,
     .approach-section,
     .team-section {
-        padding: 60px 15px;
+        padding: 50px 15px;
     }
     
     .main-title,
@@ -569,9 +608,9 @@
 }
 
 /* Ultra Small Mobile (240px - 319px) */
-@media screen and (max-width: 319px) {
+@media (max-width: 319px) {
     .about-container {
-        margin: 1rem 0.5rem;
+        margin: 0.75rem 0.5rem;
     }
     
     .about-container h1 {
@@ -584,8 +623,11 @@
         padding-bottom: 1.2rem;
     }
     
-    .approach-section {
-        padding: 1.5rem 0;
+    .story-section,
+    .vision-mission-section,
+    .approach-section,
+    .team-section {
+        padding: 40px 10px;
     }
     
     .approach-item {
@@ -603,6 +645,18 @@
     
     .approach-item p {
         font-size: clamp(0.8rem, 3.5vw, 0.95rem);
+    }
+    
+    .enhanced-card {
+        padding: 25px 15px;
+    }
+    
+    .team-stats {
+        gap: 20px;
+    }
+    
+    .stat-number {
+        font-size: 1.8rem;
     }
 }
 
