@@ -1,6 +1,5 @@
 import "./HeroStyles.css";
 import Leader from "../assets/Leader.jpeg";
-import TwezuleVideo from "../assets/Final_Twezule.mp4";
 
 function Hero(props) {
   return (
@@ -45,15 +44,14 @@ function Hero(props) {
             </p>
           </div>
           <div className="video-wrapper">
-            <video
-              controls
-              preload="metadata"
-              poster={Leader}
-              playsInline
-            >
-              <source src={TwezuleVideo} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+            <iframe
+              src="https://www.youtube.com/embed/tIF7mp3J8xQ?si=fZ5kuipnbcYw4dY6"
+              title="Twezule Pathways - Our Story"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            ></iframe>
             <div className="video-overlay-decoration"></div>
           </div>
           <div className="video-caption">
