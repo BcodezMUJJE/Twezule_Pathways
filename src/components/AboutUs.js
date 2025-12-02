@@ -13,7 +13,7 @@ function AboutUs() {
             <section className="story-section enhanced-story">
                 <div className="content-wrapper">
                     <div className="story-header">
-                        <div className="story-badge">✨ Our Journey Since 2023</div>
+                        <div className="story-badge">✨ Our Journey Since 2025</div>
                         <h1 className="main-title">
                             Our <span className="gradient-text">Story</span>
                         </h1>

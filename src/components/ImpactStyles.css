@@ -468,6 +468,87 @@
 
 /* Comprehensive Responsive Design */
 
+/* Ultra Small Devices (240px - 319px) */
+@media (max-width: 319px) {
+  .content-wrapper {
+    padding: 0 6px;
+  }
+  
+  .impact-header {
+    min-height: 45vh;
+    padding: 30px 0;
+  }
+  
+  .impact-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .impact-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+  }
+  
+  .visual-highlights,
+  .partners-section,
+  .success-stories {
+    padding: 30px 0;
+  }
+  
+  .highlight-card {
+    padding: 20px 12px;
+  }
+  
+  .highlight-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+  
+  .highlight-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .highlight-card p {
+    font-size: 0.85rem;
+  }
+  
+  .partner-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 15px;
+  }
+  
+  .partner-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .partner-name {
+    font-size: 1rem;
+  }
+  
+  .partner-description {
+    font-size: 0.8rem;
+  }
+  
+  .story-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
 /* Extra Small Devices (phones, 320px and up) */
 @media (max-width: 374px) {
   .content-wrapper {

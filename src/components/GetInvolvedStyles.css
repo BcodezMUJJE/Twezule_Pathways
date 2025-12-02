@@ -1191,6 +1191,115 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Comprehensive Responsive Design */
 
+/* Ultra Small Devices (240px - 319px) */
+@media (max-width: 319px) {
+  .content-wrapper {
+    padding: 0 6px;
+  }
+  
+  .get-involved-header {
+    padding: 80px 0 50px;
+  }
+  
+  .get-involved-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .get-involved-intro {
+    font-size: 0.95rem;
+  }
+  
+  .ways-to-help,
+  .donate-section,
+  .contact-section {
+    padding: 30px 0;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-title::after {
+    width: 60px;
+    margin: 15px auto 0;
+  }
+  
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+  
+  .involvement-card {
+    padding: 20px 15px;
+  }
+  
+  .card-icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 18px;
+  }
+  
+  .react-icon {
+    font-size: 24px;
+  }
+  
+  .involvement-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .involvement-card p {
+    font-size: 0.85rem;
+  }
+  
+  .involvement-card ul li {
+    font-size: 0.8rem;
+  }
+  
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  
+  .donate-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .donate-content p {
+    font-size: 0.85rem;
+  }
+  
+  .donate-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+  
+  .contact-form-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 5px;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .contact-item {
+    padding: 15px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .submit-button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+
 /* Extra Small Devices (320px - 374px) */
 @media (max-width: 374px) {
   .contact-form-container {

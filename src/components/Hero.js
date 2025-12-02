@@ -1,5 +1,6 @@
 import "./HeroStyles.css";
 import Leader from "../assets/Leader.jpeg";
+import TwezuleVideo from "../assets/Final_Twezule.mp4";
 
 function Hero(props) {
   return (
@@ -9,7 +10,7 @@ function Hero(props) {
         <img src={props.imgSrc} alt="Twezule Pathways" />
         <div className="hero-overlay"></div>
         <div className="hero-text enhanced-hero-text">
-          <div className="hero-badge">✨ Empowering Communities Since 2023</div>
+          <div className="hero-badge">✨ Empowering Communities Since 2025</div>
           <h1 className="hero-main-title">
             <span className="title-line-1">Together We</span>
             <span className="title-line-2 gradient-text">Rise</span>
@@ -30,6 +31,36 @@ function Hero(props) {
           <div className="float-element float-3"></div>
         </div>
       </div>
+
+      {/* Video Section */}
+      <section className="video-section">
+        <div className="video-container">
+          <div className="video-header">
+            <span className="video-badge">🎬 Watch Our Story</span>
+            <h2 className="video-title">
+              See the <span className="gradient-text">Impact</span> We're Making
+            </h2>
+            <p className="video-subtitle">
+              Experience the transformation happening in communities across Uganda
+            </p>
+          </div>
+          <div className="video-wrapper">
+            <video
+              controls
+              preload="metadata"
+              poster={Leader}
+              playsInline
+            >
+              <source src={TwezuleVideo} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="video-overlay-decoration"></div>
+          </div>
+          <div className="video-caption">
+            <p>Join us in creating lasting change for women and communities</p>
+          </div>
+        </div>
+      </section>
 
       {/* Enhanced Intro Section */}
       <section className="intro-section enhanced-intro">

@@ -490,6 +490,79 @@ a.contact-value:hover {
   }
 }
 
+/* Ultra Small Phones (240px - 319px) */
+@media (max-width: 319px) {
+  .footer-main {
+    padding: 24px 0 16px;
+  }
+  
+  .footer-bottom {
+    padding: 20px 0 12px;
+  }
+  
+  .content-wrapper {
+    padding: 0 8px;
+  }
+  
+  .footer-title {
+    font-size: 1.4rem;
+  }
+  
+  .footer-tagline {
+    font-size: 0.95rem;
+  }
+  
+  .footer-description {
+    font-size: 0.85rem;
+  }
+  
+  .footer-section h4 {
+    font-size: 1rem;
+  }
+  
+  .footer-nav a {
+    font-size: 0.8rem;
+  }
+  
+  .contact-label {
+    font-size: 0.75rem;
+  }
+  
+  .contact-value {
+    font-size: 0.8rem;
+  }
+  
+  .involvement-link {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+    min-width: 140px;
+  }
+  
+  .social-link {
+    min-width: 140px;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+  
+  .social-link svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .mission-quote {
+    font-size: 0.95rem;
+  }
+  
+  .mission-attribution {
+    font-size: 0.8rem;
+  }
+  
+  .copyright p,
+  .legal-links a {
+    font-size: 0.75rem;
+  }
+}
+
 /* Landscape Orientation for Mobile */
 @media (max-height: 500px) and (orientation: landscape) {
   .footer-main {
