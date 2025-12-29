@@ -237,8 +237,8 @@ const GetInvolved = () => {
                                     <div className="contact-icon">📞</div>
                                     <div>
                                         <p className="contact-label">Phone</p>
-                                        <a href="tel:+246772444876" className="contact-value">
-                                            +246 772 444 876
+                                        <a href="tel:+256772444876" className="contact-value">
+                                            +256 772 444 876
                                         </a>
                                     </div>
                                 </div>

@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Home from "./routes/Home";
 import Contact from "./routes/Contact";
 import About from "./routes/About";
+import PrivacyPolicy from "./routes/PrivacyPolicy";
+import TermsOfService from "./routes/TermsOfService";
 import Destination from "./components/Destinations";
 import Impact from "./components/Impact";
 import GetInvolved from "./components/GetInvolved";
@@ -23,6 +25,8 @@ export default function App() {
             <Route path="/impact" element={<Impact />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-involved" element={<GetInvolved />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
         </main>
         <Footer />

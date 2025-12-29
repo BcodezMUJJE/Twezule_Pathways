@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./NavbarStyles.css";
 import { MenuItems } from "./MenuItems";
 import TwezuleLogo from "../assets/TwezuleLogo.png";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   state = { 
@@ -35,44 +36,48 @@ class Navbar extends Component {
   render() {
     return (
       <nav className={`NavbarItems ${this.state.scrolled ? 'scrolled' : ''}`}>
-        <a href="/" className="navbar-logo-container" aria-label="Twezule Pathways Home">
+        <Link to="/" className="navbar-logo-container" aria-label="Twezule Pathways Home">
           <img 
             src={TwezuleLogo} 
             alt="Twezule Pathways" 
             className="navbar-logo"
           />
-        </a>
+        </Link>
 
-        <div 
-          className={`menu-icons ${this.state.clicked ? 'active' : ''}`} 
+        <button
+          type="button"
+          className={`menu-icons ${this.state.clicked ? 'active' : ''}`}
           onClick={this.handleClick}
+          aria-label="Toggle navigation menu"
+          aria-expanded={this.state.clicked}
+          aria-controls="primary-navigation"
         >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
 
-        <ul className={this.state.clicked ? "navbar-menu active" : "navbar-menu"}>
+        <ul id="primary-navigation" className={this.state.clicked ? "navbar-menu active" : "navbar-menu"}>
           {MenuItems.map((item, index) => {
             return (
               <li key={index}>
-                <a 
+                <Link 
                   className={item.cName} 
-                  href={item.url}
+                  to={item.url}
                   onClick={this.handleLinkClick}
                 >
                   <span>{item.title}</span>
-                </a>
+                </Link>
               </li>
             );
           })}
-          <a 
-            href="/get-involved"
+          <Link 
+            to="/get-involved"
             className="nav-cta-button"
             onClick={this.handleLinkClick}
           >
             <span>Get Involved</span>
-          </a>
+          </Link>
         </ul>
       </nav>
     );

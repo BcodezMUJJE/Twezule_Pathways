@@ -14,6 +14,23 @@
   --gold-accent: #F2D962;
   --white-pure: #FFFFFF;
   --white-soft: #FDFCFB;
+
+  /* Plum accents (already used across component styles) */
+  --plum: #5B2245;
+  --plum-light: #7A3A63;
+  --plum-dark: #3D1730;
+
+  /* Alias tokens (used inconsistently across component CSS) */
+  --gold: var(--gold-primary);
+  --gold-dark: var(--text-gold);
+  --sage: #B7C8A3;
+  --white: var(--white-pure);
+  --black-primary: var(--text-dark);
+  --deep-purple: var(--plum);
+  --warm-brown: var(--text-medium);
+  --gray-dark: var(--text-dark);
+  --gray-medium: var(--text-medium);
+  --gray-light: var(--text-light);
   
   /* Supporting Colors */
   --text-dark: #2D4A28;

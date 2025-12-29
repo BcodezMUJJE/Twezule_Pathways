@@ -1,4 +1,5 @@
 import "./FooterStyles.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -26,11 +27,11 @@ const Footer = () => {
                         <div className="footer-section">
                             <h4>Quick Links</h4>
                             <nav className="footer-nav">
-                                <a href="/">Home</a>
-                                <a href="/about">About</a>
-                                <a href="/programs">Programs</a>
-                                <a href="/impact">Impact</a>
-                                <a href="/get-involved">Get Involved</a>
+                                <Link to="/">Home</Link>
+                                <Link to="/about">About</Link>
+                                <Link to="/programs">Programs</Link>
+                                <Link to="/impact">Impact</Link>
+                                <Link to="/get-involved">Get Involved</Link>
                             </nav>
                         </div>
 
@@ -62,8 +63,8 @@ const Footer = () => {
                                     <div className="contact-icon">📞</div>
                                     <div>
                                         <p className="contact-label">Phone</p>
-                                        <a href="tel:+246772444876" className="contact-value">
-                                            +246 772 444 876
+                                        <a href="tel:+256772444876" className="contact-value">
+                                            +256 772 444 876
                                         </a>
                                     </div>
                                 </div>
@@ -188,8 +189,8 @@ const Footer = () => {
                         <div className="copyright-content">
                             <p>&copy; 2024 Twezule Pathways. All rights reserved.</p>
                             <div className="legal-links">
-                                <a href="/privacy-policy">Privacy Policy</a>
-                                <a href="/terms-of-service">Terms of Service</a>
+                                <Link to="/privacy-policy">Privacy Policy</Link>
+                                <Link to="/terms-of-service">Terms of Service</Link>
                             </div>
                         </div>
                     </div>

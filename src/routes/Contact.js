@@ -41,7 +41,7 @@ function Contact() {
       {/* Contact Content */}
       <section className="contact-section" style={{ padding: 'var(--section-padding) 0', backgroundColor: 'var(--background-light)' }}>
         <div className="content-wrapper">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'start' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))', gap: '3rem', alignItems: 'start' }}>
             
             {/* Contact Information */}
             <div className="contact-info">
@@ -57,7 +57,7 @@ function Contact() {
                   <div style={{ width: '50px', height: '50px', backgroundColor: 'var(--sage)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📧</div>
                   <div>
                     <h4 style={{ color: 'var(--plum)', marginBottom: '0.5rem' }}>Email Us</h4>
-                    <p style={{ color: 'var(--text-medium)' }}>info@twezulepathways.org</p>
+                    <p style={{ color: 'var(--text-medium)' }}>evelynmwondha@twezulepathways.org</p>
                   </div>
                 </div>
                 
@@ -65,7 +65,7 @@ function Contact() {
                   <div style={{ width: '50px', height: '50px', backgroundColor: 'var(--gold)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📱</div>
                   <div>
                     <h4 style={{ color: 'var(--plum)', marginBottom: '0.5rem' }}>Call Us</h4>
-                    <p style={{ color: 'var(--text-medium)' }}>+256 XXX XXX XXX</p>
+                    <p style={{ color: 'var(--text-medium)' }}>+256 772 444 876</p>
                   </div>
                 </div>
                 

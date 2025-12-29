@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.02c3ec41.css",
-    "main.js": "/static/js/main.dfff1af2.js",
+    "main.css": "/static/css/main.7d34e6ee.css",
+    "main.js": "/static/js/main.281bff0f.js",
     "static/media/T5.JPG": "/static/media/T5.dbb2a06e09165fd4aa52.JPG",
     "static/media/T2.JPG": "/static/media/T2.890062e48102b311db69.JPG",
     "static/media/T3.JPG": "/static/media/T3.7012186fe0f6312b3328.JPG",
@@ -15,11 +15,11 @@
     "static/media/Leader.jpeg": "/static/media/Leader.4150722d00cd0da8b4b8.jpeg",
     "static/media/Godfrey Ofumbi.jpg": "/static/media/Godfrey Ofumbi.54fa1537e9f0ad33fbf6.jpg",
     "index.html": "/index.html",
-    "main.02c3ec41.css.map": "/static/css/main.02c3ec41.css.map",
-    "main.dfff1af2.js.map": "/static/js/main.dfff1af2.js.map"
+    "main.7d34e6ee.css.map": "/static/css/main.7d34e6ee.css.map",
+    "main.281bff0f.js.map": "/static/js/main.281bff0f.js.map"
   },
   "entrypoints": [
-    "static/css/main.02c3ec41.css",
-    "static/js/main.dfff1af2.js"
+    "static/css/main.7d34e6ee.css",
+    "static/js/main.281bff0f.js"
   ]
 }
