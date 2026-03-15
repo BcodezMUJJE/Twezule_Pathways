@@ -1,6 +1,7 @@
-import WomenSaving from "../assets/T5.JPG";
-import WomenTraining from "../assets/Training session .JPG";
-import Leadership from "../assets/Phoebe and Norah2.JPG";
+import WomenSaving from "../assets/Tw3.JPG";
+import WomenTraining from "../assets/Tw2.JPG";
+import Leadership from "../assets/Tw1.JPG";
+import { FaBriefcase, FaRocket, FaSeedling, FaStar } from "react-icons/fa";
 import "./DestinationStyles.css";
 
 const Destination = () => {
@@ -8,7 +9,7 @@ const Destination = () => {
         <div className="destination enhanced-destination">
             {/* Programs Header */}
             <div className="programs-header enhanced-programs-header">
-                <div className="header-badge">🌟 Our Programs</div>
+                <div className="header-badge"><FaStar /> Our Programs</div>
                 <h1>Empowering <span className="gradient-text">Women & Communities</span></h1>
                 <p className="enhanced-description">Comprehensive training and support programs designed to transform lives</p>
             </div>
@@ -77,12 +78,12 @@ const Destination = () => {
             <div className="future-programs enhanced-future-programs">
                 <div className="future-programs-header">
                     <h2>Future <span className="gradient-text">Programs</span></h2>
-                    <p className="coming-soon enhanced-coming-soon">🚀 Expanding Our Impact</p>
+                    <p className="coming-soon enhanced-coming-soon"><FaRocket /> Expanding Our Impact</p>
                 </div>
                 <div className="future-programs-grid enhanced-future-grid">
                     <div className="future-program-card enhanced-future-card">
                         <div className="card-icon-wrapper">
-                            <div className="future-icon">🌱</div>
+                            <div className="future-icon"><FaSeedling /></div>
                         </div>
                         <h3>Adolescent Girls Mentorship</h3>
                         <p>Empowering the next generation of women leaders through mentorship and guidance programs.</p>
@@ -91,7 +92,7 @@ const Destination = () => {
                     </div>
                     <div className="future-program-card enhanced-future-card">
                         <div className="card-icon-wrapper">
-                            <div className="future-icon">💼</div>
+                            <div className="future-icon"><FaBriefcase /></div>
                         </div>
                         <h3>Women-Led Microenterprise Support</h3>
                         <p>Supporting women entrepreneurs through social enterprise development and business skills training.</p>

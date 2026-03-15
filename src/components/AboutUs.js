@@ -1,5 +1,6 @@
 import React from "react";
 import { FaBriefcase, FaHandshake, FaStar } from 'react-icons/fa';
+import { FaBullseye, FaBinoculars } from "react-icons/fa";
 import "./AboutUsStyles.css"
 import CatherineImg from "../assets/Catherine Nakayiza.JPG";
 import PhoebeImg from "../assets/Phoebe pic.jpg";
@@ -13,7 +14,7 @@ function AboutUs() {
             <section className="story-section enhanced-story">
                 <div className="content-wrapper">
                     <div className="story-header">
-                        <div className="story-badge">✨ Our Journey Since 2025</div>
+                        <div className="story-badge"><FaStar /> Our Journey Since 2025</div>
                         <h1 className="main-title">
                             Our <span className="gradient-text">Story</span>
                         </h1>
@@ -61,7 +62,7 @@ function AboutUs() {
                     <div className="vm-grid enhanced-grid">
                         <div className="vision-card enhanced-card">
                             <div className="card-header">
-                                <div className="card-icon vision-icon">🔭</div>
+                                <div className="card-icon vision-icon"><FaBinoculars /></div>
                                 <h3>Our Vision</h3>
                             </div>
                             <div className="card-content">
@@ -71,7 +72,7 @@ function AboutUs() {
                         </div>
                         <div className="mission-card enhanced-card">
                             <div className="card-header">
-                                <div className="card-icon mission-icon">🎯</div>
+                                <div className="card-icon mission-icon"><FaBullseye /></div>
                                 <h3>Our Mission</h3>
                             </div>
                             <div className="card-content">

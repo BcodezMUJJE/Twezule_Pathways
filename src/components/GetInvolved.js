@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaHandshake, FaUsers, FaStar } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import "./GetInvolvedStyles.css";
 
 const GetInvolved = () => {
@@ -225,7 +226,7 @@ const GetInvolved = () => {
                             <h3>Get in Touch</h3>
                             <div className="contact-details">
                                 <div className="contact-item">
-                                    <div className="contact-icon">📧</div>
+                                    <div className="contact-icon"><FaEnvelope /></div>
                                     <div>
                                         <p className="contact-label">Email</p>
                                         <a href="mailto:evelynmwondha@twezulepathways.org" className="contact-value">
@@ -234,7 +235,7 @@ const GetInvolved = () => {
                                     </div>
                                 </div>
                                 <div className="contact-item">
-                                    <div className="contact-icon">📞</div>
+                                    <div className="contact-icon"><FaPhoneAlt /></div>
                                     <div>
                                         <p className="contact-label">Phone</p>
                                         <a href="tel:+256772444876" className="contact-value">
@@ -243,7 +244,7 @@ const GetInvolved = () => {
                                     </div>
                                 </div>
                                 <div className="contact-item">
-                                    <div className="contact-icon">📍</div>
+                                    <div className="contact-icon"><FaMapMarkerAlt /></div>
                                     <div>
                                         <p className="contact-label">Location</p>
                                         <p className="contact-value">Kampala, Uganda</p>

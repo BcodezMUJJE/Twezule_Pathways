@@ -1,5 +1,17 @@
 import "./HeroStyles.css";
 import Leader from "../assets/Leader.jpeg";
+import PhoebeImg from "../assets/Phoebe pic.jpg";
+import {
+  FaBriefcase,
+  FaBook,
+  FaComments,
+  FaEnvelope,
+  FaHandshake,
+  FaPhoneAlt,
+  FaShieldAlt,
+  FaStar,
+  FaVideo
+} from "react-icons/fa";
 
 function Hero(props) {
   return (
@@ -9,7 +21,7 @@ function Hero(props) {
         <img src={props.imgSrc} alt="Twezule Pathways" />
         <div className="hero-overlay"></div>
         <div className="hero-text enhanced-hero-text">
-          <div className="hero-badge">✨ Empowering Communities Since 2025</div>
+          <div className="hero-badge"><FaStar /> Empowering Communities Since 2025</div>
           <h1 className="hero-main-title">
             <span className="title-line-1">Together We</span>
             <span className="title-line-2 gradient-text">Rise</span>
@@ -35,7 +47,7 @@ function Hero(props) {
       <section className="video-section">
         <div className="video-container">
           <div className="video-header">
-            <span className="video-badge">🎬 Watch Our Story</span>
+            <span className="video-badge"><FaVideo /> Watch Our Story</span>
             <h2 className="video-title">
               See the <span className="gradient-text">Impact</span> We're Making
             </h2>
@@ -95,19 +107,19 @@ function Hero(props) {
           </div>
           <div className="program-cards enhanced-cards">
             <div className="program-card entrepreneurship-card">
-              <div className="card-icon">💼</div>
+              <div className="card-icon"><FaBriefcase /></div>
               <h3>Entrepreneurship Training</h3>
               <p>Building savings culture and entrepreneurship skills among women.</p>
               <div className="card-accent"></div>
             </div>
             <div className="program-card safety-card">
-              <div className="card-icon">🛡️</div>
+              <div className="card-icon"><FaShieldAlt /></div>
               <h3>Safety & Power Training</h3>
               <p>Equipping women to prevent and respond to gender-based violence.</p>
               <div className="card-accent"></div>
             </div>
             <div className="program-card community-card">
-              <div className="card-icon">🤝</div>
+              <div className="card-icon"><FaHandshake /></div>
               <h3>Community Empowerment</h3>
               <p>Strengthening and formation of Self Help Groups</p>
               <p>Fostering leadership, inclusion, and transformation at the grassroots.</p>
@@ -121,16 +133,27 @@ function Hero(props) {
       <section className="quote-section enhanced-quote">
         <div className="quote-container">
           <div className="quote-content">
-            <div className="quote-image">
-              <img src={Leader} alt="Evelyn Mwondha" />
-            </div>
             <blockquote className="quote-text" style={{color: 'white'}}>
               "When a woman is empowered, a community rises."
             </blockquote>
-            <div className="quote-author">
-              <div className="author-info">
-                <span className="author-name">– Evelyn Mwondha</span>
-                <span className="author-title">Co-Founder and Executive Director</span>
+            <div className="founder-grid">
+              <div className="founder-card">
+                <div className="quote-image">
+                  <img src={Leader} alt="Evelyn Mwondha" />
+                </div>
+                <div className="author-info">
+                  <span className="author-name">Evelyn Mwondha</span>
+                  <span className="author-title">Co-Founder and Executive Director</span>
+                </div>
+              </div>
+              <div className="founder-card">
+                <div className="quote-image">
+                  <img src={PhoebeImg} alt="Phoebe Hedwig Aringo" />
+                </div>
+                <div className="author-info">
+                  <span className="author-name">Phoebe Hedwig Aringo</span>
+                  <span className="author-title">Co-Founder and Impact Strategist Director</span>
+                </div>
               </div>
             </div>
           </div>
@@ -156,13 +179,13 @@ function Hero(props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span>🌟 Get Involved</span>
+                <span><FaStar /> Get Involved</span>
               </a>
               <a href="/programs" className="cta-button secondary-action">
-                <span>📚 Explore Programs</span>
+                <span><FaBook /> Explore Programs</span>
               </a>
               <a href="/contact" className="cta-button tertiary-action">
-                <span>💬 Contact Us</span>
+                <span><FaComments /> Contact Us</span>
               </a>
             </div>
           </div>
@@ -170,14 +193,14 @@ function Hero(props) {
             <h3>Ready to Connect?</h3>
             <div className="contact-methods">
               <div className="contact-method">
-                <span className="contact-icon">📞</span>
+                <span className="contact-icon"><FaPhoneAlt /></span>
                 <div className="contact-details">
                   <span className="contact-label">Call Us</span>
                   <span className="contact-value">+256772444876</span>
                 </div>
               </div>
               <div className="contact-method">
-                <span className="contact-icon">✉️</span>
+                <span className="contact-icon"><FaEnvelope /></span>
                 <div className="contact-details">
                   <span className="contact-label">Email Us</span>
                   <span className="contact-value">evelynmwondha@twezulepathways.org</span>

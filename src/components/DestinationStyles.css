@@ -19,6 +19,15 @@
 
 .enhanced-programs-header {
     position: relative;
+    background-image:
+        linear-gradient(135deg, rgba(45, 74, 40, 0.78) 0%, rgba(107, 138, 86, 0.68) 100%),
+        url("../assets/Tw6.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 4vw, 2rem);
+    overflow: hidden;
 }
 
 .header-badge {
@@ -40,6 +49,11 @@
     color: #4A6741;
     margin-bottom: 20px;
     line-height: 1.2;
+}
+
+.enhanced-programs-header h1,
+.enhanced-programs-header .enhanced-description {
+    color: #FFFFFF;
 }
 
 .gradient-text {
@@ -896,7 +910,12 @@
 .enhanced-programs-header {
     position: relative;
     z-index: 1;
-    background: rgba(255, 255, 255, 0.9);
+    background-image:
+        linear-gradient(135deg, rgba(45, 74, 40, 0.55) 0%, rgba(107, 138, 86, 0.5) 100%),
+        url("../assets/Tw6.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     backdrop-filter: blur(10px);
     padding: 3rem 2rem;
     border-radius: 20px;
@@ -925,7 +944,7 @@
 
 .enhanced-description {
     font-size: clamp(1.2rem, 2.5vw, 1.4rem);
-    color: #666;
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 2.5rem;
     line-height: 1.7;
 }

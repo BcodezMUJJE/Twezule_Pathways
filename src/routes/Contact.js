@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FaEnvelope, FaMapMarkerAlt, FaMobileAlt } from "react-icons/fa";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -54,7 +55,7 @@ function Contact() {
               
               <div className="contact-methods" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div className="contact-item" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: '50px', height: '50px', backgroundColor: 'var(--sage)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📧</div>
+                  <div style={{ width: '50px', height: '50px', backgroundColor: 'var(--sage)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}><FaEnvelope /></div>
                   <div>
                     <h4 style={{ color: 'var(--plum)', marginBottom: '0.5rem' }}>Email Us</h4>
                     <p style={{ color: 'var(--text-medium)' }}>evelynmwondha@twezulepathways.org</p>
@@ -62,7 +63,7 @@ function Contact() {
                 </div>
                 
                 <div className="contact-item" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: '50px', height: '50px', backgroundColor: 'var(--gold)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>📱</div>
+                  <div style={{ width: '50px', height: '50px', backgroundColor: 'var(--gold)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}><FaMobileAlt /></div>
                   <div>
                     <h4 style={{ color: 'var(--plum)', marginBottom: '0.5rem' }}>Call Us</h4>
                     <p style={{ color: 'var(--text-medium)' }}>+256 772 444 876</p>
@@ -70,7 +71,7 @@ function Contact() {
                 </div>
                 
                 <div className="contact-item" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: '50px', height: '50px', backgroundColor: 'var(--plum-light)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', color: 'white' }}>📍</div>
+                  <div style={{ width: '50px', height: '50px', backgroundColor: 'var(--plum-light)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', color: 'white' }}><FaMapMarkerAlt /></div>
                   <div>
                     <h4 style={{ color: 'var(--plum)', marginBottom: '0.5rem' }}>Visit Us</h4>
                     <p style={{ color: 'var(--text-medium)' }}>Kampala, Uganda</p>

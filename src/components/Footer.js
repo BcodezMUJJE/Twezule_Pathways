@@ -1,5 +1,6 @@
 import "./FooterStyles.css";
 import { Link } from "react-router-dom";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -51,7 +52,7 @@ const Footer = () => {
                             <h4>Contact Us</h4>
                             <div className="contact-info">
                                 <div className="contact-item">
-                                    <div className="contact-icon">📧</div>
+                                    <div className="contact-icon"><FaEnvelope /></div>
                                     <div>
                                         <p className="contact-label">Email</p>
                                         <a href="mailto:evelynmwondha@twezulepathways.org" className="contact-value">
@@ -60,7 +61,7 @@ const Footer = () => {
                                     </div>
                                 </div>
                                 <div className="contact-item">
-                                    <div className="contact-icon">📞</div>
+                                    <div className="contact-icon"><FaPhoneAlt /></div>
                                     <div>
                                         <p className="contact-label">Phone</p>
                                         <a href="tel:+256772444876" className="contact-value">
@@ -69,7 +70,7 @@ const Footer = () => {
                                     </div>
                                 </div>
                                 <div className="contact-item">
-                                    <div className="contact-icon">📍</div>
+                                    <div className="contact-icon"><FaMapMarkerAlt /></div>
                                     <div>
                                         <p className="contact-label">Location</p>
                                         <p className="contact-value">Kampala, Uganda</p>

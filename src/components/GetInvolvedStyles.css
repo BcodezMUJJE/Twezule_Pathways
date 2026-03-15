@@ -58,12 +58,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Header Section */
 .get-involved-header {
-  background: linear-gradient(135deg, var(--green-deep) 0%, var(--sage-medium) 100%);
+  background-image:
+    linear-gradient(135deg, rgba(45, 74, 40, 0.78) 0%, rgba(74, 103, 65, 0.72) 100%),
+    url("../assets/Tw7.JPG");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--white-pure);
   padding: clamp(120px, 15vw, 180px) 0 clamp(80px, 10vw, 120px);
   text-align: center;
   position: relative;
   overflow: hidden;
+}
+
+.get-involved-header .content-wrapper {
+  position: relative;
+  z-index: 2;
 }
 
 .get-involved-header::before {
@@ -73,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -605,6 +615,23 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   animation: gradientShift 8s ease-in-out infinite;
 }
+
+  /* Final header override: keep Tw7 image visible even with duplicate theme blocks above */
+  .get-involved-container .get-involved-header {
+    background:
+      linear-gradient(135deg, rgba(45, 74, 40, 0.78) 0%, rgba(74, 103, 65, 0.72) 100%),
+      url("../assets/Tw7.JPG") center/cover no-repeat !important;
+    animation: none !important;
+  }
+
+  .get-involved-container .get-involved-header::before {
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.12) 0%, transparent 70%) !important;
+  }
+
+  .get-involved-container .get-involved-header .content-wrapper {
+    position: relative;
+    z-index: 2;
+  }
 
 .get-involved-header::before {
   content: '';

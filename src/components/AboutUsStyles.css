@@ -24,7 +24,12 @@
 /* Enhanced Story Section - Gold, White & Black */
 .story-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #4A6741 0%, #6B8A56 100%);
+    background-image:
+        linear-gradient(135deg, rgba(45, 74, 40, 0.8) 0%, rgba(107, 138, 86, 0.72) 100%),
+        url("../assets/Tw3.JPG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
 }
