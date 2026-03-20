@@ -97,34 +97,58 @@ function Hero(props) {
       </section>
 
       {/* Enhanced Core Program Highlights */}
-      <section className="core-programs enhanced-programs">
-        <div className="content-wrapper">
+      <section className="core-programs">
+        <div className="container">
+          
+          {/* Header */}
           <div className="section-header">
             <h2 className="section-title">
               Our <span className="gradient-text">Core Programs</span>
             </h2>
-            <p className="section-subtitle">Comprehensive training and support that transforms lives</p>
+            <p className="section-subtitle">
+              Comprehensive training and support that transforms lives
+            </p>
           </div>
-          <div className="program-cards enhanced-cards">
-            <div className="program-card entrepreneurship-card">
-              <div className="card-icon"><FaBriefcase /></div>
+
+          {/* Cards */}
+          <div className="program-grid">
+            
+            <div className="program-card">
+              <div className="icon-wrapper">
+                <FaBriefcase />
+              </div>
               <h3>Entrepreneurship Training</h3>
-              <p>Building savings culture and entrepreneurship skills among women.</p>
-              <div className="card-accent"></div>
+              <p>
+                Building a strong savings culture and empowering women with practical
+                entrepreneurship skills for sustainable growth.
+              </p>
+              <div className="accent-line"></div>
             </div>
-            <div className="program-card safety-card">
-              <div className="card-icon"><FaShieldAlt /></div>
+
+            <div className="program-card">
+              <div className="icon-wrapper">
+                <FaShieldAlt />
+              </div>
               <h3>Safety & Power Training</h3>
-              <p>Equipping women to prevent and respond to gender-based violence.</p>
-              <div className="card-accent"></div>
+              <p>
+                Equipping women with knowledge and tools to prevent and respond
+                effectively to gender-based violence.
+              </p>
+              <div className="accent-line"></div>
             </div>
-            <div className="program-card community-card">
-              <div className="card-icon"><FaHandshake /></div>
+
+            <div className="program-card">
+              <div className="icon-wrapper">
+                <FaHandshake />
+              </div>
               <h3>Community Empowerment</h3>
-              <p>Strengthening and formation of Self Help Groups</p>
-              <p>Fostering leadership, inclusion, and transformation at the grassroots.</p>
-              <div className="card-accent"></div>
+              <p>
+                Strengthening self-help groups while fostering leadership,
+                inclusion, and grassroots transformation.
+              </p>
+              <div className="accent-line"></div>
             </div>
+
           </div>
         </div>
       </section>

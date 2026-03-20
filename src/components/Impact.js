@@ -1,5 +1,5 @@
 import React from "react";
-import { FaPiggyBank, FaHome, FaGraduationCap, FaHandshake, FaUsers } from 'react-icons/fa';
+import { FaPiggyBank, FaHome, FaGraduationCap, FaHandshake, FaUsers, FaHeart } from 'react-icons/fa';
 import "./ImpactStyles.css";
 
 const Impact = () => {
@@ -7,8 +7,18 @@ const Impact = () => {
         <div className="impact-container">
             {/* Header Section */}
             <section className="impact-header">
+                {/* Floating decorative shapes */}
+                <div className="floating-shape shape-1"></div>
+                <div className="floating-shape shape-2"></div>
+                <div className="floating-shape shape-3"></div>
+                
                 <div className="content-wrapper">
-                    <h1 className="impact-title">Our Impact: Stories of Women Rising</h1>
+                    <span className="impact-hero-badge">
+                        <FaHeart /> Creating Lasting Change
+                    </span>
+                    <h1 className="impact-title">
+                        Our Impact: Stories of Women <span className="highlight">Rising</span>
+                    </h1>
                     <p className="impact-subtitle">
                         Witnessing transformation, one woman and one community at a time
                     </p>

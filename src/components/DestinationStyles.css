@@ -155,7 +155,7 @@
     content: '•';
     position: absolute;
     left: 0;
-    color: #DAA520;
+    color: #D4AF37;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -185,7 +185,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.3) 0%, rgba(218, 165, 32, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.3) 0%, rgba(212, 175, 55, 0.2) 100%);
     opacity: 0;
     transition: all 0.3s ease;
 }

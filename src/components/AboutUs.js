@@ -28,15 +28,15 @@ function AboutUs() {
                             </p>
                             <div className="story-highlights">
                                 <div className="highlight-item">
-                                    <span className="highlight-icon"></span>
+                                    <span className="highlight-icon"><FaStar /></span>
                                     <span className="highlight-text">Women-Led Organization</span>
                                 </div>
                                 <div className="highlight-item">
-                                    <span className="highlight-icon"></span>
+                                    <span className="highlight-icon"><FaHandshake /></span>
                                     <span className="highlight-text">African-Rooted Solutions</span>
                                 </div>
                                 <div className="highlight-item">
-                                    <span className="highlight-icon"></span>
+                                    <span className="highlight-icon"><FaBullseye /></span>
                                     <span className="highlight-text">Community-Driven Impact</span>
                                 </div>
                             </div>
@@ -147,13 +147,10 @@ function AboutUs() {
                                 <h3 className="member-name">Evelyn N. Mwondha</h3>
                                 <h4 className="member-role">Co-founder and Executive Director</h4>
                                 <p>
-                                    Evelyn N Mwondha is a Co-Founder and the Executive Director of Twezule Pathways, bringing over 25 years of leadership experience in microfinance, entrepreneurship, and social development. She previously served as Co-Country Director of Street Business School in Uganda, where she oversaw program strategy, fundraising, and community outreach, women's entrepreneurship training.
+                                    Evelyn N Mwondha is a Co-Founder and Executive Director of Twezule Pathways, with over 25 years of leadership in microfinance and social development. Former Co-Country Director of Street Business School, she has an extensive background with FINCA Uganda and the Uganda Institute of Bankers. 
                                 </p>
                                 <p>
-                                    Evelyn has also worked with FINCA Uganda, and Uganda Institute of Bankers, leading initiatives in financial inclusion, women's economic empowerment, and capacity building. With a strong background in banking, project management, and community-driven solutions, Evelyn is dedicated to helping marginalized communities to work their way out of the vicious cycle of poverty and is passionate about women economic empowerment.
-                                </p>
-                                <p>
-                                    She holds a BSc in Agricultural Economics from Makerere University, a Diploma in SME Management from Galilee College (Israel), and is an African Women Entrepreneurship Cooperative (AWEC) Fellow.
+                                    An AWEC Fellow with a BSc in Agricultural Economics, Evelyn is passionate about financial inclusion and empowering women to break the cycle of poverty through sustainable, community-driven solutions.
                                 </p>
                             </div>
                         </div>
@@ -172,13 +169,10 @@ function AboutUs() {
                                 <h3 className="member-name">Phoebe Hedwig Aringo</h3>
                                 <h4 className="member-role">Co-Founder and Impact Strategist Director</h4>
                                 <p>
-                                    Phoebe Hedwig Aringo is a dedicated leader with over 20 years of experience in development work, championing women's empowerment, education, and community transformation. She has served with influential organizations across Uganda, including the Infectious Diseases Institute, African Girls Can, BeadforLife, Street Business School, and now Twezule Pathways, where she continues to advance her passion for locally led development.
+                                    Phoebe Hedwig Aringo is a dedicated leader with 20+ years of experience in development work, serving with organizations like the Infectious Diseases Institute, BeadforLife, and Street Business School. 
                                 </p>
                                 <p>
-                                    Phoebe holds a Bachelor of Arts in Social Sciences from Makerere University and has completed multiple professional trainings in Project Management. She is also a seasoned entrepreneurship trainer with extensive experience supporting grassroots women to build sustainable livelihoods and lead community-driven initiatives.
-                                </p>
-                                <p>
-                                    Throughout her career, Phoebe has empowered countless individuals to rise above poverty through self-sufficiency, entrepreneurship, and collective action. Her leadership is guided by a deep belief that when communities are entrusted with the tools and opportunities to lead, transformation becomes lasting and inclusive. Phoebe lives in Kampala with her family.
+                                    A seasoned entrepreneurship trainer, Phoebe specializes in supporting grassroots women to build sustainable livelihoods. She holds a BA in Social Sciences and is driven by the belief that community-led initiatives are the key to lasting transformation. 
                                 </p>
                             </div>
                         </div>
@@ -197,13 +191,10 @@ function AboutUs() {
                                 <h3 className="member-name">Catherine Nakayiza</h3>
                                 <h4 className="member-role">Chairperson of the Board of Directors</h4>
                                 <p>
-                                    Catherine Nakayiza serves as the Chairperson of the Twezule Pathways Board of Directors in Uganda. In this role, she generously volunteers her time and expertise to work alongside fellow board members in providing strategic leadership, governance, and support to advance the organization's mission. She holds a strong academic foundation in social sciences, human resource management, and administration at the postgraduate level.
+                                    Catherine Nakayiza serves as the Chairperson of the Twezule Pathways Board of Directors. She volunteers her expertise in social sciences and human resource management to provide strategic leadership and governance.
                                 </p>
                                 <p>
-                                    Catherine brings over 20 years of diverse leadership experience from both international private-sector and non-profit organizations. She previously served as the Director of Operations and Human Resources at Street Business School Uganda and currently partners with Wycliffe Associates as an International Field Trainer.
-                                </p>
-                                <p>
-                                    Catherine is deeply passionate about children's education and socio-economic transformation, especially for marginalized communities. She is guided by a strong personal ethos of integrity, respect for humanity, and accountability to the Lord above all.
+                                    With over 20 years of leadership experience across the private and non-profit sectors, Catherine is deeply passionate about children's education and socio-economic transformation for marginalized communities.
                                 </p>
                             </div>
                         </div>
@@ -222,13 +213,10 @@ function AboutUs() {
                                 <h3 className="member-name">Godfrey Ofumbi</h3>
                                 <h4 className="member-role">Treasurer, Local Board of Directors</h4>
                                 <p>
-                                    Godfrey is a highly experienced professional in the built environment sector, bringing over 25 years of expertise in civil engineering, construction project management, facilities management, procurement, and contracts management. His career spans work with the United Nations, the International Committee of the Red Cross (ICRC), USAID-affiliated programs, numerous non-governmental and community-based organizations, as well as the private sector.
+                                    Godfrey is a highly experienced professional in civil engineering and construction project management with over 25 years of expertise. His career spans work with the United Nations, ICRC, and USAID-affiliated programs.
                                 </p>
                                 <p>
-                                    He offers more than 10 years of leadership experience at both local and international levels, along with over 15 years of community-based work—particularly in rural water and sanitation programs. His most recent role was serving as the Water and Habitat Project Manager in Khartoum, Sudan, where he led complex, high-impact humanitarian infrastructure initiatives.
-                                </p>
-                                <p>
-                                    Godfrey holds a Bachelor's Degree in Construction Management from Makerere University, a Diploma in Building and Civil Engineering from Kyambogo Polytechnic, and a Diploma in Procurement and Supply from the UK's Chartered Institute of Procurement and Supply. He has also attained several professional certifications, including the internationally recognized PRINCE2 project management certification.
+                                    Specializing in rural water and sanitation programs, Godfrey holds degrees in Construction Management and Procurement. He is committed to driving high-impact humanitarian infrastructure and sustainable community-based solutions.
                                 </p>
                             </div>
                         </div>
