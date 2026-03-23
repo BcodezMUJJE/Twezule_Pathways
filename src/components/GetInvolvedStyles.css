@@ -871,12 +871,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, var(--vibrant-orange), var(--vibrant-coral));
+  background: var(--green-deep, #4A6741);
   color: white;
-  border-color: transparent;
+  border-color: var(--green-deep, #4A6741);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 15px rgba(74, 103, 65, 0.25);
+  letter-spacing: 0.5px;
 }
 
 .primary-btn::before {
@@ -886,15 +887,16 @@ h1, h2, h3, h4, h5, h6 {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s ease;
 }
 
 .primary-btn:hover {
-  background: linear-gradient(135deg, var(--vibrant-purple), var(--vibrant-teal));
-  color: white;
+  background: var(--gold-primary, #D4AF37);
+  color: var(--green-deep, #2D4A28);
+  border-color: var(--gold-primary, #D4AF37);
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(106, 76, 147, 0.4);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
 }
 
 .primary-btn:hover::before {
@@ -912,29 +914,84 @@ h1, h2, h3, h4, h5, h6 {
   cursor: not-allowed;
 }
 
+/* Donate Button */
+.donate-btn {
+  background: linear-gradient(135deg, var(--gold-primary), #e8b923);
+  color: var(--green-deep, #2D4A28);
+  border: 2px solid var(--gold-primary);
+  font-weight: 700;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  padding: clamp(14px, 2.5vw, 18px) clamp(32px, 5vw, 48px);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+}
+
+.donate-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.donate-btn:hover {
+  background: linear-gradient(135deg, #e8b923, var(--gold-primary));
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+  color: var(--green-deep, #2D4A28);
+}
+
+.donate-btn:hover::before {
+  left: 100%;
+}
+
 /* Future Donation Section */
 .future-donation-section {
   margin-top: clamp(32px, 5vw, 48px);
 }
 
 .donation-card {
-  background: linear-gradient(135deg, rgba(91, 34, 69, 0.05), rgba(212, 175, 55, 0.05));
-  padding: var(--card-padding);
+  background: linear-gradient(135deg, var(--green-deep, #4A6741) 0%, #2D4A28 100%);
+  padding: clamp(40px, 6vw, 60px);
   border-radius: var(--border-radius);
   text-align: center;
-  border: 2px dashed var(--sage);
+  border: 2px solid var(--gold-primary, #D4AF37);
+  position: relative;
+  overflow: hidden;
+}
+
+.donation-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .donation-card h3 {
-  font-size: clamp(1.3rem, 2.3vw, 1.5rem);
-  color: var(--plum);
-  margin-bottom: clamp(12px, 2vw, 16px);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: var(--gold-primary, #D4AF37);
+  margin-bottom: clamp(16px, 2.5vw, 24px);
 }
 
 .donation-card p {
-  color: var(--text-medium);
-  margin-bottom: clamp(20px, 3vw, 24px);
-  font-size: clamp(0.95rem, 1.8vw, 1rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: clamp(24px, 4vw, 32px);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
 }
 
 /* Contact Form Section */

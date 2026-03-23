@@ -137,17 +137,22 @@ const GetInvolved = () => {
                         </div>
                     </div>
 
-                    {/* Future Donation Section */}
+                    {/* Donation Section */}
                     <div className="future-donation-section">
                         <div className="donation-card">
                             <h3>Support Our Mission Financially</h3>
                             <p>
-                                Direct financial support coming soon through our partnership with Omprakash. 
-                                Your contributions will directly fund women's empowerment programs.
+                                Your generous contributions through our partner Omprakash directly fund 
+                                women's empowerment programs in Uganda. Every donation makes a difference.
                             </p>
-                            <button className="involvement-btn secondary-btn" disabled>
-                                Donate (Coming Soon)
-                            </button>
+                            <a
+                                href="https://www.omprakash.org/global/twezule-pathways"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="involvement-btn donate-btn"
+                            >
+                                Donate via Omprakash
+                            </a>
                         </div>
                     </div>
                 </div>
