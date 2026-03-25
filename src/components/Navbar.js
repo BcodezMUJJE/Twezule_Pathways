@@ -78,6 +78,15 @@ class Navbar extends Component {
           >
             <span>Get Involved</span>
           </Link>
+          <a 
+            href="https://www.omprakash.org/global/twezule-pathways"
+            className="nav-donate-button"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={this.handleLinkClick}
+          >
+            <span>Donate</span>
+          </a>
         </ul>
       </nav>
     );

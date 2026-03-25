@@ -11,6 +11,7 @@ import TermsOfService from "./routes/TermsOfService";
 import Destination from "./components/Destinations";
 import Impact from "./components/Impact";
 import GetInvolved from "./components/GetInvolved";
+import Donate from "./components/Donate";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/impact" element={<Impact />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-involved" element={<GetInvolved />} />
+            <Route path="/donate" element={<Donate />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>

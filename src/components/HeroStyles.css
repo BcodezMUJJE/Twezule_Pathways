@@ -1123,6 +1123,7 @@
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 5%;
   box-shadow: 0 8px 25px rgba(91, 34, 69, 0.3);
   border: 4px solid #D4AF37;
   transition: all 0.3s ease;
@@ -1327,8 +1328,8 @@
 }
 
 .enhanced-contact {
-  background: rgba(212, 175, 55, 0.1);
-  border: 2px solid #D4AF37;
+  background: linear-gradient(135deg, #FFD700 0%, #FF6F61 50%, #FF1493 100%);
+  border: 2px solid #FFD700;
   border-radius: 20px;
   padding: 40px;
   max-width: 700px;
@@ -1337,11 +1338,12 @@
 
 .enhanced-contact h3 {
   font-family: 'Playfair Display', serif;
-  color: #D4AF37;
+  color: #fff;
   font-size: 1.8rem;
   margin-bottom: 30px;
   text-align: center;
   font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .contact-methods {
@@ -1355,21 +1357,22 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.25);
   padding: 20px 30px;
   border-radius: 15px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   transition: all 0.3s ease;
 }
 
 .contact-method:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.4);
   transform: translateY(-3px);
-  border-color: rgba(212, 175, 55, 0.5);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .contact-icon {
   font-size: 2rem;
+  color: #fff;
 }
 
 .contact-details {
@@ -1379,15 +1382,16 @@
 
 .contact-label {
   display: block;
-  color: #D4AF37;
+  color: #fff;
   font-size: 0.9rem;
   margin-bottom: 5px;
   font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .contact-value {
   display: block;
-  color: white;
+  color: #1a1a2e;
   font-size: 1.1rem;
   font-weight: bold;
   word-break: break-all;

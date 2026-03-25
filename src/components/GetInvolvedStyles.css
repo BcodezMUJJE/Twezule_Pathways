@@ -41,6 +41,7 @@
   width: 100%;
   overflow-x: hidden;
   padding-top: 0;
+  background: #ffffff;
 }
 
 .content-wrapper {
@@ -116,17 +117,19 @@ h1, h2, h3, h4, h5, h6 {
 /* Ways to Help Section */
 .ways-to-help {
   padding: var(--section-padding) 0;
-  background: var(--background-sage);
+  background: #ffffff;
+  position: relative;
 }
 
 .section-title {
   text-align: center;
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  color: var(--green-deep);
+  color: #6B2D5B;
   margin-bottom: clamp(15px, 2vw, 20px);
   position: relative;
   display: inline-block;
   width: 100%;
+  text-shadow: none;
 }
 
 .section-title::after {
@@ -134,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 80px;
   height: 4px;
-  background: linear-gradient(to right, var(--gold-primary), var(--sage-primary));
+  background: linear-gradient(to right, #D4AF37, #E8C547);
   margin: 20px auto 0;
   border-radius: 2px;
 }
@@ -142,9 +145,10 @@ h1, h2, h3, h4, h5, h6 {
 .section-subtitle {
   text-align: center;
   font-size: clamp(1.1rem, 2vw, 1.25rem);
-  color: var(--text-medium);
+  color: #7B3A6B;
   max-width: 700px;
   margin: 0 auto clamp(50px, 6vw, 70px);
+  font-weight: 500;
 }
 
 .involvement-grid {
@@ -155,17 +159,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .involvement-card {
-  background: var(--white-pure);
   padding: var(--card-padding);
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-light);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(107, 45, 91, 0.08);
   transition: var(--transition);
-  border: 1px solid rgba(168, 192, 144, 0.2);
+  border: 2px solid #f0e6ed;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: #ffffff;
 }
 
 .involvement-card::before {
@@ -174,59 +178,81 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: var(--gold-primary);
-  transform: scaleX(0);
+  height: 5px;
+  background: linear-gradient(to right, #6B2D5B, #D4AF37);
+  transform: scaleX(1);
   transform-origin: left;
   transition: transform 0.4s ease;
 }
 
 .involvement-card:hover {
   transform: translateY(-10px);
-  box-shadow: var(--shadow-hover);
-  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 16px 40px rgba(107, 45, 91, 0.18);
+  border-color: #D4AF37;
 }
 
 .involvement-card:hover::before {
+  background: linear-gradient(to right, #D4AF37, #6B2D5B);
   transform: scaleX(1);
+}
+
+/* All Cards - White with Plum & Gold accents */
+.partner-card,
+.volunteer-card,
+.champion-card {
+  background: #ffffff;
+  color: #3a1a33;
+  border: 2px solid #f0e6ed;
+}
+
+.partner-card:hover,
+.volunteer-card:hover,
+.champion-card:hover {
+  border-color: #D4AF37;
 }
 
 .card-icon {
   width: 70px;
   height: 70px;
-  background: var(--green-deep);
+  background: rgba(107, 45, 91, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
   transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(107, 45, 91, 0.08);
+  backdrop-filter: blur(5px);
+}
+
+.partner-card .card-icon,
+.volunteer-card .card-icon,
+.champion-card .card-icon {
+  background: rgba(107, 45, 91, 0.1);
 }
 
 .react-icon {
   font-size: 30px;
-  color: var(--gold-light);
+  color: #6B2D5B;
 }
 
 .involvement-card:hover .card-icon {
-  background: var(--warm-brown);
-  transform: rotateY(180deg);
-}
-
-.involvement-card:hover .react-icon {
-  color: var(--black-primary);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(107, 45, 91, 0.15);
 }
 
 .involvement-card h3 {
   font-size: 1.8rem;
   margin-bottom: 15px;
-  color: var(--black-primary);
+  color: inherit;
 }
 
 .involvement-card p {
-  color: var(--gray-medium);
+  color: inherit;
+  opacity: 0.9;
   margin-bottom: 25px;
   font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .involvement-list {
@@ -239,15 +265,17 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding-left: 25px;
   margin-bottom: 12px;
-  color: var(--gray-dark);
+  color: inherit;
+  opacity: 0.9;
   font-size: 0.95rem;
+  font-weight: 500;
 }
 
 .involvement-list li::before {
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--gold-primary);
+  color: #D4AF37;
   font-weight: bold;
 }
 
@@ -265,15 +293,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .primary-btn {
-  background: var(--gold-primary);
-  color: var(--green-deep);
-  border-color: var(--gold-primary);
+  background: #6B2D5B;
+  color: #ffffff;
+  border-color: #6B2D5B;
+  font-weight: 700;
 }
 
 .primary-btn:hover {
-  background: var(--gold-light);
-  color: var(--green-deep);
-  border-color: var(--gold-light);
+  background: #D4AF37;
+  color: #3a1a33;
+  border-color: #D4AF37;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
 }
 
 /* Donation Section */
@@ -282,14 +313,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .donation-card {
-  background: var(--green-deep);
+  background: linear-gradient(135deg, #6B2D5B, #8E4585);
   color: var(--white-pure);
   padding: clamp(40px, 6vw, 60px);
   border-radius: var(--border-radius);
   text-align: center;
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--gold-primary);
+  border: 2px solid #D4AF37;
 }
 
 .donation-card::after {
@@ -299,21 +330,21 @@ h1, h2, h3, h4, h5, h6 {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
 .donation-card h3 {
   font-size: clamp(2rem, 4vw, 2.5rem);
   margin-bottom: 20px;
-  color: var(--gold-primary);
+  color: #D4AF37;
 }
 
 .donation-card p {
   max-width: 700px;
   margin: 0 auto 30px;
   font-size: 1.1rem;
-  color: var(--gray-light);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .secondary-btn {
@@ -332,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Contact Form Section */
 .contact-form-section {
   padding: var(--section-padding) 0;
-  background: var(--background-light);
+  background: #ffffff;
 }
 
 .form-header {
@@ -916,9 +947,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Donate Button */
 .donate-btn {
-  background: linear-gradient(135deg, var(--gold-primary), #e8b923);
-  color: var(--green-deep, #2D4A28);
-  border: 2px solid var(--gold-primary);
+  background: linear-gradient(135deg, #D4AF37, #E8C547);
+  color: #3a1a33;
+  border: 2px solid #D4AF37;
   font-weight: 700;
   font-size: clamp(1rem, 2vw, 1.15rem);
   padding: clamp(14px, 2.5vw, 18px) clamp(32px, 5vw, 48px);
@@ -942,10 +973,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .donate-btn:hover {
-  background: linear-gradient(135deg, #e8b923, var(--gold-primary));
+  background: #ffffff;
+  color: #6B2D5B;
+  border-color: #ffffff;
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
-  color: var(--green-deep, #2D4A28);
 }
 
 .donate-btn:hover::before {
@@ -958,11 +990,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .donation-card {
-  background: linear-gradient(135deg, var(--green-deep, #4A6741) 0%, #2D4A28 100%);
+  background: linear-gradient(135deg, #6B2D5B 0%, #8E4585 100%);
   padding: clamp(40px, 6vw, 60px);
   border-radius: var(--border-radius);
   text-align: center;
-  border: 2px solid var(--gold-primary, #D4AF37);
+  border: 2px solid #D4AF37;
   position: relative;
   overflow: hidden;
 }
@@ -974,13 +1006,13 @@ h1, h2, h3, h4, h5, h6 {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
   pointer-events: none;
 }
 
 .donation-card h3 {
   font-size: clamp(1.8rem, 3.5vw, 2.5rem);
-  color: var(--gold-primary, #D4AF37);
+  color: #D4AF37;
   margin-bottom: clamp(16px, 2.5vw, 24px);
 }
 
