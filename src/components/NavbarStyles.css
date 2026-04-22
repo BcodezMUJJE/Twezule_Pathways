@@ -477,7 +477,7 @@
   }
 }
 
-/* ===== ULTRA SMALL MOBILE (240px - 319px) ===== */
+/* ===== ULTRA SMALL MOBILE (≤319px) ===== */
 @media (max-width: 319px) {
   .NavbarItems {
     padding: 0 0.5rem;
@@ -491,6 +491,7 @@
   
   .navbar-logo-container {
     gap: 0;
+    padding: 0.25rem 0.5rem;
   }
 
   .navbar-logo-text {
@@ -500,26 +501,63 @@
   .navbar-menu {
     top: 60px;
     padding: 1rem 0.5rem;
+    max-height: calc(100vh - 60px);
   }
 
   .navbar-menu li {
-    margin: 0.8rem 0;
+    margin: 0.4rem 0;
   }
 
-  .navbar-menu li a {
-    font-size: 1rem;
-    padding: 0.6rem 0.8rem;
+  .nav-links {
+    font-size: 0.95rem;
+    padding: 0.9rem 0.75rem;
+  }
+
+  .nav-cta-button, .nav-donate-button {
+    padding: 0.875rem;
+    font-size: 0.95rem;
+    width: 100%;
   }
 
   .menu-icons {
-    width: 36px;
-    height: 36px;
-    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+  }
+}
+
+/* ===== MINIMUM WIDTH (240px) ===== */
+@media (max-width: 260px) {
+  .NavbarItems {
+    padding: 0 0.25rem;
+    height: 56px;
   }
 
-  .nav-link.nav-cta {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-menu {
+    top: 56px;
+    padding: 0.75rem 0.25rem;
+    max-height: calc(100vh - 56px);
+  }
+
+  .nav-links {
+    font-size: 0.875rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .nav-cta-button, .nav-donate-button {
+    padding: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .menu-icons {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
   }
 }
 
@@ -539,17 +577,4 @@
   outline: 3px solid #D4AF37;
   outline-offset: 3px;
   box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.2);
-}
-
-/* ===== SCROLL EFFECT ===== */
-@media (min-width: 768px) {
-  body {
-    padding-top: 80px;
-  }
-}
-
-@media (max-width: 767px) {
-  body {
-    padding-top: 70px;
-  }
 }

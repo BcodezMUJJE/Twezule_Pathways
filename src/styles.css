@@ -68,12 +68,20 @@
   box-sizing: border-box;
 }
 
+/* Prevent horizontal scroll at all sizes */
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
 /* Base Styles */
 body {
   font-family: var(--font-body);
   line-height: 1.6;
   color: var(--text-dark);
   background-color: var(--background-white);
+  overflow-x: hidden;
+  min-width: 240px;
 }
 
 /* Headings */
@@ -94,12 +102,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Main content wrapper to account for fixed navbar */
 .main-content {
   flex: 1;
-  margin-top: 80px; /* Height of navbar */
+  margin-top: 90px; /* Height of navbar */
+  min-width: 0;     /* Prevent grid/flex blowout */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .main-content {
-    margin-top: 70px; /* Smaller navbar on mobile */
+    margin-top: 80px; /* Mobile navbar height */
   }
 }
 
@@ -121,9 +130,26 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   padding: 0 var(--container-padding);
   width: 100%;
+  box-sizing: border-box;
 }
 
-/* Button Styles */
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Focus Styles */
+*:focus {
+  outline: 2px solid var(--gold-primary);
+  outline-offset: 2px;
+}
+
+/* Utility: prevent any element from overflowing */
+section, div, article, aside, main {
+  max-width: 100%;
+}
 .btn-primary {
   background-color: var(--gold-primary);
   color: var(--green-deep);

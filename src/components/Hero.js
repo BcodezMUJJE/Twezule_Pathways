@@ -79,17 +79,17 @@ function Hero(props) {
             <h2 className="intro-heading">
               <span className="highlight-text">Ugandan Women Leading Change</span>
             </h2>
-            <p className="intro-description" style={{color: 'white'}}>
+            <p className="intro-description">
               Twezule Pathways is a Ugandan women led organization empowering grassroots women and communities to rise from vulnerability to self-reliance through entrepreneurship, group savings, and leadership development.
             </p>
             <div className="intro-stats">
               <div className="stat-item">
                 <span className="stat-number">1+</span>
-                <span className="stat-label" style={{color: 'white'}}>Years Combined Experience</span>
+                <span className="stat-label">Years Combined Experience</span>
               </div>
               <div className="stat-item">
                 <span className="stat-number">100%</span>
-                <span className="stat-label" style={{color: 'white'}}>Women Led</span>
+                <span className="stat-label">Women Led</span>
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 .destination {
     margin: 0;
-    padding: 80px 0;
+    padding: clamp(40px, 6vw, 80px) 0;
     background: linear-gradient(135deg, #F0F4ED 0%, #F7F9F5 100%);
 }
 
@@ -75,7 +75,7 @@
 .programs-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 clamp(8px, 3vw, 20px);
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -1202,5 +1202,171 @@
     
     .enhanced-future-card {
         padding: 1.5rem 1rem;
+    }
+}
+
+/* ── 360px: Small legacy phones ─────────────────────────────────── */
+@media (max-width: 360px) {
+    .destination {
+        padding: 32px 0;
+    }
+
+    .programs-header {
+        margin-bottom: 28px;
+        padding: 0 6px;
+    }
+
+    .enhanced-programs-header {
+        padding: clamp(1.75rem, 8vw, 2.5rem) clamp(0.5rem, 3vw, 1rem);
+        border-radius: 12px;
+    }
+
+    .destination h1 {
+        font-size: clamp(1.5rem, 8vw, 1.9rem);
+    }
+
+    .header-badge {
+        font-size: 0.72rem;
+        padding: 6px 14px;
+    }
+
+    .enhanced-description {
+        font-size: 0.875rem;
+        line-height: 1.6;
+    }
+
+    .programs-container {
+        gap: 18px;
+        padding: 0 6px;
+    }
+
+    .program-content {
+        padding: 22px 14px;
+    }
+
+    .program-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .program-description {
+        font-size: 0.85rem;
+        margin-bottom: 14px;
+        line-height: 1.6;
+    }
+
+    .program-features li {
+        font-size: 0.82rem;
+        padding: 6px 0;
+        padding-left: 22px;
+    }
+
+    .program-features li::before {
+        font-size: 1rem;
+    }
+
+    .program-image {
+        min-height: 200px;
+    }
+
+    .program-card {
+        border-radius: 12px;
+    }
+
+    .future-programs {
+        margin-top: 24px;
+        padding: 24px 10px;
+        border-radius: 10px;
+    }
+
+    .future-programs h2 {
+        font-size: clamp(1.3rem, 7vw, 1.6rem);
+    }
+
+    .future-program-card {
+        padding: 18px 12px;
+    }
+
+    .future-program-card h3 {
+        font-size: 1rem;
+    }
+
+    .future-program-card p {
+        font-size: 0.82rem;
+    }
+}
+
+/* ── 260px: Minimum supported width (240px–260px) ───────────────── */
+@media (max-width: 260px) {
+    .destination {
+        padding: 20px 0;
+    }
+
+    .programs-header {
+        margin-bottom: 18px;
+        padding: 0 4px;
+    }
+
+    .enhanced-programs-header {
+        padding: 1.25rem 0.375rem;
+        border-radius: 8px;
+    }
+
+    .destination h1 {
+        font-size: 1.3rem;
+    }
+
+    .header-badge {
+        font-size: 0.65rem;
+        padding: 4px 10px;
+    }
+
+    .enhanced-description {
+        font-size: 0.78rem;
+    }
+
+    .programs-container {
+        gap: 14px;
+        padding: 0 4px;
+    }
+
+    .program-content {
+        padding: 16px 10px;
+    }
+
+    .program-title {
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+    }
+
+    .program-description {
+        font-size: 0.78rem;
+        margin-bottom: 10px;
+    }
+
+    .program-features li {
+        font-size: 0.75rem;
+        padding: 4px 0;
+        padding-left: 16px;
+    }
+
+    .program-image {
+        min-height: 160px;
+    }
+
+    .future-programs {
+        padding: 18px 6px;
+    }
+
+    .future-program-card {
+        padding: 14px 8px;
+    }
+
+    .future-program-card h3 {
+        font-size: 0.9rem;
+    }
+
+    .future-program-card p {
+        font-size: 0.75rem;
     }
 }

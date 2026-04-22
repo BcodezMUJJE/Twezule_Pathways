@@ -298,14 +298,19 @@
 
 .team-intro {
     font-size: 1.2rem;
-    color: #666;
+    color: #ffffff;
     max-width: 800px;
     margin: 20px auto 40px;
     line-height: 1.8;
 }
 
 .enhanced-intro {
-    color: #2d2d2d;
+    color: #ffffff;
+}
+
+.enhanced-team .team-intro,
+.enhanced-team .team-intro.enhanced-intro {
+    color: #ffffff !important;
 }
 
 .team-stats {
@@ -928,7 +933,7 @@
 
 /* Enhanced Team Section */
 .enhanced-team {
-    background: linear-gradient(135deg, rgba(91, 34, 69, 0.05) 0%, rgba(255, 255, 255, 0.95) 50%, rgba(212, 175, 55, 0.1) 100%);
+    background: linear-gradient(135deg, #4A6741, #6B8A56);
     padding: clamp(4rem, 6vw, 6rem) 0;
     position: relative;
 }
@@ -939,10 +944,23 @@
     animation: fadeInUp 1s ease-out;
 }
 
+.enhanced-team .section-title {
+    color: #ffffff;
+}
+
+.enhanced-team .gradient-text {
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+}
+
 .enhanced-intro {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 2rem;
+    color: #ffffff;
 }
 
 .team-stats {
@@ -956,24 +974,25 @@
 .team-stat {
     text-align: center;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     min-width: 120px;
 }
 
-.stat-number {
+.team-stat .stat-number {
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #D4AF37;
+    color: #ffffff;
     font-family: 'Playfair Display', serif;
 }
 
-.stat-label {
+.team-stat .stat-label {
     display: block;
     font-size: 0.9rem;
-    color: #5B2245;
+    color: #ffffff;
     font-weight: 600;
     margin-top: 0.5rem;
 }
