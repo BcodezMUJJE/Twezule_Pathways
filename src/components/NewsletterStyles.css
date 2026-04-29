@@ -1,22 +1,22 @@
 /* ===================================================
    NEWSLETTER PAGE — Twezule Pathways
-   Color system: Sage/Green/Gold/White
 =================================================== */
 
-/* ---- Page Layout ---- */
 .newsletter-page {
   min-height: 100vh;
   background: #F8FAF6;
-  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ---- Header ---- */
 .newsletter-header {
   background: linear-gradient(135deg, #2D4A28 0%, #4A6741 50%, #6B8A56 100%);
-  padding: 7rem 2rem 4rem;
+  padding: 6.5rem 2rem 3rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .newsletter-header::before {
@@ -44,254 +44,68 @@
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   font-family: 'Inter', sans-serif;
 }
 
 .newsletter-page-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   line-height: 1.15;
 }
 
 .newsletter-page-subtitle {
   font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 480px;
-  margin: 0 auto;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.6;
 }
 
-/* ---- Edition Banner ---- */
-.newsletter-edition-banner {
-  background: #ffffff;
-  border-bottom: 3px solid #D4AF37;
-  padding: 1.5rem 2rem;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-}
-
-.edition-badge {
-  display: inline-block;
-  background: linear-gradient(135deg, #D4AF37, #E8C547);
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 0.25rem 0.85rem;
-  border-radius: 20px;
-  margin-bottom: 0.6rem;
-}
-
-.edition-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 700;
-  color: #2D4A28;
-  margin-bottom: 0.25rem;
-}
-
-.edition-title em {
-  color: #D4AF37;
+.newsletter-page-subtitle em {
+  color: #E8C547;
   font-style: italic;
 }
 
-.edition-date {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  color: #6B8A56;
-  font-weight: 500;
-}
-
-/* ---- Container ---- */
-.newsletter-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-.newsletter-body {
-  padding-top: 3rem;
-}
-
-/* ---- Generic Section ---- */
-.nl-section {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 2.5rem 2.75rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 24px rgba(74, 103, 65, 0.08);
-  border: 1px solid #E8EFE4;
-  transition: box-shadow 0.3s ease;
-}
-
-.nl-section:hover {
-  box-shadow: 0 8px 36px rgba(74, 103, 65, 0.13);
-}
-
-.nl-section-header {
+/* ---- PDF Viewer ---- */
+.nl-pdf-page-wrapper {
+  width: 90%;
+  margin: 2.5rem auto 3rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 1.25rem;
+  flex: 1;
 }
 
-.nl-section-icon {
-  font-size: 1.5rem;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.nl-section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
-  font-weight: 700;
-  color: #2D4A28;
-  margin: 0 0 1.25rem;
-  line-height: 1.25;
-}
-
-.nl-section-header .nl-section-title {
-  margin-bottom: 0;
-}
-
-.nl-paragraph {
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
-  color: #3D4F3A;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
-.nl-paragraph:last-of-type {
-  margin-bottom: 0;
-}
-
-/* ---- Heartfelt Message ---- */
-.nl-message-card {
-  border-left: 5px solid #D4AF37;
-  background: linear-gradient(135deg, #FFFDF5 0%, #ffffff 100%);
-}
-
-.nl-message-card .nl-section-icon {
-  display: block;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-
-.nl-salutation {
-  font-weight: 700;
-  color: #2D4A28;
-  font-size: 1.05rem;
-}
-
-/* ---- Seeds of Hope ---- */
-.nl-seeds-section {
-  border-top: 5px solid #4A6741;
-}
-
-/* ---- Partner Spotlight ---- */
-.nl-partner-spotlight {
-  background: linear-gradient(135deg, #2D4A28 0%, #4A6741 100%);
-  color: #ffffff;
-  border: none;
-}
-
-.nl-partner-inner {
-  text-align: center;
-}
-
-.nl-partner-badge {
-  display: inline-block;
-  background: rgba(212, 175, 55, 0.2);
-  color: #E8C547;
-  border: 1px solid rgba(212, 175, 55, 0.5);
-  border-radius: 20px;
-  padding: 0.3rem 1rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.nl-partner-spotlight .nl-section-title {
-  color: #ffffff;
-}
-
-.nl-partner-spotlight .nl-paragraph {
-  color: rgba(255, 255, 255, 0.88);
-  max-width: 620px;
-  margin: 0 auto 1.5rem;
-}
-
-.nl-partner-name {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 30px;
-  padding: 0.6rem 1.4rem;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #E8C547;
-  margin-top: 0.5rem;
-}
-
-.nl-partner-tag {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.7);
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-}
-
-/* ---- PDF Embed ---- */
-.nl-pdf-section {
-  border-top: 5px solid #6B8A56;
-}
-
-.nl-pdf-intro {
-  margin-bottom: 1.25rem;
-}
-
-.nl-pdf-wrapper {
+.nl-pdf-full-frame {
   width: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 2px solid #E8EFE4;
-  box-shadow: 0 4px 24px rgba(74, 103, 65, 0.1);
-  background: #f5f5f5;
+  height: 90vh;
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 8px 40px rgba(74, 103, 65, 0.18);
+  display: block;
+  background: #fff;
 }
 
-.nl-pdf-frame {
-  width: 100%;
-  height: 780px;
-  border: none;
-  display: block;
+/* ---- Download Button ---- */
+.nl-pdf-actions {
+  display: flex;
+  justify-content: center;
 }
 
 .nl-pdf-download-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1.25rem;
   background: linear-gradient(135deg, #4A6741, #6B8A56);
   color: #ffffff;
   font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
-  padding: 0.65rem 1.6rem;
+  padding: 0.7rem 1.8rem;
   border-radius: 30px;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -304,179 +118,29 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(74, 103, 65, 0.35);
 }
-.nl-looking-ahead {
-  border-top: 5px solid #A8C090;
-}
 
-.nl-cta-box {
-  background: linear-gradient(135deg, #F0F4ED, #E8EFE4);
-  border-radius: 14px;
-  padding: 1.75rem 2rem;
-  margin-top: 1.5rem;
-  border: 1px solid #C4D3B0;
-}
-
-.nl-cta-intro {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #2D4A28;
-  margin-bottom: 1rem;
-}
-
-.nl-cta-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.nl-cta-list li {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  color: #3D4F3A;
-  padding-left: 1.5rem;
-  position: relative;
-  line-height: 1.6;
-}
-
-.nl-cta-list li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: #D4AF37;
-  font-weight: 700;
-}
-
-/* ---- Member Spotlight ---- */
-.nl-member-spotlight {
-  border-top: 5px solid #D4AF37;
-  background: linear-gradient(135deg, #FFFDF5 0%, #FFF8E6 100%);
-}
-
-.nl-member-eyebrow {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #6B8A56;
-  margin-bottom: 0.5rem;
-}
-
-.nl-member-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-}
-
-.nl-member-quote {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  font-style: italic;
-  color: #4A6741;
-  border-left: 4px solid #D4AF37;
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0 0;
-  background: rgba(212, 175, 55, 0.07);
-  border-radius: 0 10px 10px 0;
-  line-height: 1.6;
-}
-
-.nl-tagline {
-  margin-top: 1.75rem;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #D4AF37;
-  letter-spacing: 0.5px;
-}
-
-/* ---- Live Banner ---- */
-.nl-live-banner {
-  background: linear-gradient(135deg, #D4AF37 0%, #E8C547 100%);
-  border: none;
-  text-align: center;
-}
-
-.nl-live-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.nl-live-dot {
-  width: 12px;
-  height: 12px;
-  background: #ffffff;
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 0 0 4px rgba(255,255,255,0.3);
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(255,255,255,0.3); }
-  50% { box-shadow: 0 0 0 8px rgba(255,255,255,0.1); }
-}
-
-.nl-live-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.25rem;
-}
-
-.nl-live-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.92);
-  line-height: 1.5;
-}
-
-.nl-live-link {
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.nl-live-link:hover {
-  opacity: 0.85;
-}
-
-/* ===== RESPONSIVE ===== */
+/* ---- Responsive ---- */
 @media (max-width: 768px) {
-  .nl-section {
-    padding: 1.75rem 1.5rem;
+  .nl-pdf-page-wrapper {
+    width: 95%;
   }
 
-  .nl-pdf-frame {
-    height: 520px;
-  }
-
-  .nl-live-inner {
-    flex-direction: column;
-    text-align: center;
+  .nl-pdf-full-frame {
+    height: 75vh;
   }
 
   .newsletter-header {
-    padding: 6rem 1.25rem 3rem;
+    padding: 5.5rem 1.25rem 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .nl-section {
-    padding: 1.25rem 1.1rem;
-    border-radius: 12px;
+  .nl-pdf-page-wrapper {
+    width: 98%;
   }
 
-  .nl-pdf-frame {
-    height: 420px;
+  .nl-pdf-full-frame {
+    height: 65vh;
+    border-radius: 8px;
   }
 }
