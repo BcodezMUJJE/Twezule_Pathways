@@ -12,6 +12,7 @@ import Destination from "./components/Destinations";
 import Impact from "./components/Impact";
 import GetInvolved from "./components/GetInvolved";
 import Donate from "./components/Donate";
+import Newsletter from "./components/Newsletter";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/get-involved" element={<GetInvolved />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/newsletter" element={<Newsletter />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>

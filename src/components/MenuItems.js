@@ -23,6 +23,11 @@ export const MenuItems = [
       title: "Contact",
       url: "/contact",
       cName: "nav-links"
+    },
+    {
+      title: "Newsletter",
+      url: "/newsletter",
+      cName: "nav-links"
     }
   ];
   
