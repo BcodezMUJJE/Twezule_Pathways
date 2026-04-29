@@ -392,7 +392,7 @@
 
 .video-caption p {
   font-size: clamp(0.95rem, 2vw, 1.1rem);
-  color: #4A6741;
+  color: #000000;
   font-style: italic;
   font-weight: 500;
 }

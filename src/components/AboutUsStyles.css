@@ -304,6 +304,7 @@
     line-height: 1.8;
 }
 
+
 .enhanced-intro {
     color: #ffffff;
 }
@@ -684,7 +685,7 @@
 
 /* Enhanced About Styling */
 .enhanced-about {
-    background: linear-gradient(135deg, #ffffff 0%, var(--sage-color) 20%, var(--background-color) 50%, #f9f9f9 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #B7C8A3 20%, #F0F4ED 50%, #f9f9f9 100%);
     position: relative;
     overflow-x: hidden;
     margin: 0;

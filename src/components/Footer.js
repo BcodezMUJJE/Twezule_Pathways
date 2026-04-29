@@ -11,9 +11,6 @@ const Footer = () => {
                     <div className="footer-content">
                         {/* Brand Section */}
                         <div className="footer-brand">
-                            <div className="footer-logo">
-                                <div className="logo-text">Twezule Pathways</div>
-                            </div>
                             <h2 className="footer-title">Twezule Pathways</h2>
                             <p className="footer-tagline">
                                 Empowering women, transforming communities
@@ -188,7 +185,7 @@ const Footer = () => {
 
                     <div className="copyright">
                         <div className="copyright-content">
-                            <p>&copy; 2024 Twezule Pathways. All rights reserved.</p>
+                            <p>&copy; 2026 Twezule Pathways. All rights reserved.</p>
                             <div className="legal-links">
                                 <Link to="/privacy-policy">Privacy Policy</Link>
                                 <Link to="/terms-of-service">Terms of Service</Link>

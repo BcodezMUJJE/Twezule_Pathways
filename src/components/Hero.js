@@ -28,7 +28,7 @@ function Hero(props) {
           </h1>
           <p className="hero-subtitle">Lighting pathways from vulnerability to self-reliance across Uganda</p>
           <div className="hero-cta-group">
-            <a href="/about" className="show primary-cta">
+            <a href="/about" className="primary-cta">
               <span>Discover Our Story</span>
             </a>
             <a href="/get-involved" className="secondary-cta">
