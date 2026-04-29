@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./NewsletterStyles.css";
+import newsletterPDF from "../assets/Twezule Pathways Quartely News Lettert (4) (1).pdf";
 
 const newsletters = [
   {
@@ -24,12 +25,7 @@ const newsletters = [
           "Our pilot group Afaayo, has completed the entrepreneurship phase using the Street Business School proven curriculum with over 25 women set to graduate in April 2026.",
           "One of the most encouraging outcomes was that 90% of the class voluntarily signed up to form a formal Self Help Group (SHG). This is a sign of the need for partnership and commitment. During leadership elections, members thoughtfully and honestly reflected on the kind of leadership they want, recognizing its importance in building strong, transparent groups."
         ],
-        stats: [
-          { value: "400+", label: "Women to reach in 2026" },
-          { value: "500+", label: "Children supported" },
-          { value: "25+", label: "Women graduating April 2026" },
-          { value: "90%", label: "Signed up for formal SHG" }
-        ]
+        stats: []
       },
       partnerSpotlight: {
         title: "Partner Spotlight",
@@ -109,21 +105,9 @@ export default function Newsletter() {
             <div className="nl-section-icon">🌱</div>
             <h2 className="nl-section-title">{content.seedsOfHope.title}</h2>
           </div>
-          <div className="nl-seeds-grid">
-            <div className="nl-seeds-text">
-              {content.seedsOfHope.body.map((para, i) => (
-                <p key={i} className="nl-paragraph">{para}</p>
-              ))}
-            </div>
-            <div className="nl-stats-panel">
-              {content.seedsOfHope.stats.map((stat, i) => (
-                <div key={i} className="nl-stat-item">
-                  <span className="nl-stat-value">{stat.value}</span>
-                  <span className="nl-stat-label">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          {content.seedsOfHope.body.map((para, i) => (
+            <p key={i} className="nl-paragraph">{para}</p>
+          ))}
         </section>
 
         {/* Partner Spotlight */}
@@ -175,6 +159,29 @@ export default function Newsletter() {
             </div>
           </div>
           <div className="nl-tagline">{content.memberSpotlight.tagline}</div>
+        </section>
+
+        {/* PDF Document Embed */}
+        <section className="nl-section nl-pdf-section">
+          <h2 className="nl-section-title">📄 Read the Full Newsletter</h2>
+          <p className="nl-paragraph nl-pdf-intro">
+            View and download our official Q1 2026 newsletter below.
+          </p>
+          <div className="nl-pdf-wrapper">
+            <iframe
+              src={newsletterPDF}
+              title="Twezule Pathways Q1 2026 Newsletter"
+              className="nl-pdf-frame"
+              aria-label="Twezule Pathways Q1 2026 Newsletter PDF"
+            />
+          </div>
+          <a
+            href={newsletterPDF}
+            download="Twezule_Pathways_Q1_2026_Newsletter.pdf"
+            className="nl-pdf-download-btn"
+          >
+            ⬇ Download Newsletter PDF
+          </a>
         </section>
 
         {/* Website Live Banner */}
