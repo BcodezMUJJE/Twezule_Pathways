@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.49a26f28.css",
-    "main.js": "/static/js/main.3197170d.js",
-    "static/media/Tw7.JPG": "/static/media/Tw7.0dc5b924bc5082591e91.JPG",
-    "static/media/Tw3.JPG": "/static/media/Tw3.858c3e7c636fdc2ebe0b.JPG",
-    "static/media/Tw2.JPG": "/static/media/Tw2.5ae84f6d326c528a5f19.JPG",
-    "static/media/Tw1.JPG": "/static/media/Tw1.9eaa64d1707f485762f6.JPG",
-    "static/media/Tw6.JPG": "/static/media/Tw6.4b2ea8011841e31ced85.JPG",
-    "static/media/Tw4.JPG": "/static/media/Tw4.b14121bbed2117121635.JPG",
-    "static/media/Catherine Nakayiza.JPG": "/static/media/Catherine Nakayiza.500158c791f751caf56f.JPG",
-    "static/media/pphio1.JPG": "/static/media/pphio1.8258354c36d021d1c2ec.JPG",
-    "static/media/TwezuleLogo.png": "/static/media/TwezuleLogo.61136c66a0b98994f31e.png",
+    "main.css": "/static/css/main.c0f4ad74.css",
+    "main.js": "/static/js/main.d4e1ff9e.js",
     "static/media/Twezule Pathways Quartely News Lettert (4) (1).pdf": "/static/media/Twezule Pathways Quartely News Lettert (4) (1).6b5a896e17971fee22f3.pdf",
-    "static/media/Phoebe pic.jpg": "/static/media/Phoebe pic.eadd34ec36685bf36a69.jpg",
-    "static/media/Leader.jpeg": "/static/media/Leader.4150722d00cd0da8b4b8.jpeg",
-    "static/media/Godfrey Ofumbi.jpg": "/static/media/Godfrey Ofumbi.54fa1537e9f0ad33fbf6.jpg",
+    "static/media/TwezuleLogo.png": "/static/media/TwezuleLogo.79f8166c5f215945193d.png",
+    "static/media/pphio1.JPG": "/static/media/pphio1.f2aa3c8dc929d48fef96.JPG",
+    "static/media/Catherine Nakayiza.JPG": "/static/media/Catherine Nakayiza.07aa75fdec71bee7e9d1.JPG",
+    "static/media/Tw7.JPG": "/static/media/Tw7.e6539888980bc2119e80.JPG",
+    "static/media/Tw1.JPG": "/static/media/Tw1.ffd28bb968b27c955e5b.JPG",
+    "static/media/Tw2.JPG": "/static/media/Tw2.ecec00aaee16a7a94599.JPG",
+    "static/media/Tw4.JPG": "/static/media/Tw4.8afc5a0d787604ff82d5.JPG",
+    "static/media/Tw6.JPG": "/static/media/Tw6.5dfad96b660277049bb2.JPG",
+    "static/media/Tw3.JPG": "/static/media/Tw3.a34e30b8168f45f3e1e1.JPG",
+    "static/media/Leader.jpeg": "/static/media/Leader.432860d0018ec3215487.jpeg",
+    "static/media/Phoebe pic.jpg": "/static/media/Phoebe pic.6c54b60e95197ae349e7.jpg",
+    "static/media/Godfrey Ofumbi.jpg": "/static/media/Godfrey Ofumbi.8386411e8be6159bed95.jpg",
     "index.html": "/index.html",
-    "main.49a26f28.css.map": "/static/css/main.49a26f28.css.map",
-    "main.3197170d.js.map": "/static/js/main.3197170d.js.map"
+    "main.c0f4ad74.css.map": "/static/css/main.c0f4ad74.css.map",
+    "main.d4e1ff9e.js.map": "/static/js/main.d4e1ff9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.49a26f28.css",
-    "static/js/main.3197170d.js"
+    "static/css/main.c0f4ad74.css",
+    "static/js/main.d4e1ff9e.js"
   ]
 }
