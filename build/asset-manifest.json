@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.3b3dcdf0.css",
-    "main.js": "/static/js/main.d4e1ff9e.js",
+    "main.js": "/static/js/main.9eff3f2d.js",
+    "static/media/TwezuleLogo.png": "/static/media/TwezuleLogo.61136c66a0b98994f31e.png",
     "static/media/Twezule Pathways Quartely News Lettert (4) (1).pdf": "/static/media/Twezule Pathways Quartely News Lettert (4) (1).6b5a896e17971fee22f3.pdf",
-    "static/media/TwezuleLogo.png": "/static/media/TwezuleLogo.79f8166c5f215945193d.png",
     "static/media/pphio1.JPG": "/static/media/pphio1.f2aa3c8dc929d48fef96.JPG",
     "static/media/Catherine Nakayiza.JPG": "/static/media/Catherine Nakayiza.07aa75fdec71bee7e9d1.JPG",
     "static/media/Tw7.JPG": "/static/media/Tw7.e6539888980bc2119e80.JPG",
@@ -17,10 +17,10 @@
     "static/media/Godfrey Ofumbi.jpg": "/static/media/Godfrey Ofumbi.8386411e8be6159bed95.jpg",
     "index.html": "/index.html",
     "main.3b3dcdf0.css.map": "/static/css/main.3b3dcdf0.css.map",
-    "main.d4e1ff9e.js.map": "/static/js/main.d4e1ff9e.js.map"
+    "main.9eff3f2d.js.map": "/static/js/main.9eff3f2d.js.map"
   },
   "entrypoints": [
     "static/css/main.3b3dcdf0.css",
-    "static/js/main.d4e1ff9e.js"
+    "static/js/main.9eff3f2d.js"
   ]
 }
