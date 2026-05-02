@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.c0f4ad74.css",
+    "main.css": "/static/css/main.3b3dcdf0.css",
     "main.js": "/static/js/main.d4e1ff9e.js",
     "static/media/Twezule Pathways Quartely News Lettert (4) (1).pdf": "/static/media/Twezule Pathways Quartely News Lettert (4) (1).6b5a896e17971fee22f3.pdf",
     "static/media/TwezuleLogo.png": "/static/media/TwezuleLogo.79f8166c5f215945193d.png",
@@ -16,11 +16,11 @@
     "static/media/Phoebe pic.jpg": "/static/media/Phoebe pic.6c54b60e95197ae349e7.jpg",
     "static/media/Godfrey Ofumbi.jpg": "/static/media/Godfrey Ofumbi.8386411e8be6159bed95.jpg",
     "index.html": "/index.html",
-    "main.c0f4ad74.css.map": "/static/css/main.c0f4ad74.css.map",
+    "main.3b3dcdf0.css.map": "/static/css/main.3b3dcdf0.css.map",
     "main.d4e1ff9e.js.map": "/static/js/main.d4e1ff9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.c0f4ad74.css",
+    "static/css/main.3b3dcdf0.css",
     "static/js/main.d4e1ff9e.js"
   ]
 }

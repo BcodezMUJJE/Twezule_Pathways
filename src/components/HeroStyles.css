@@ -810,7 +810,7 @@
   line-height: 1;
 }
 
-.stat-label {
+.intro-stats .stat-label {
   display: block;
   font-size: clamp(0.9rem, 1.8vw, 1rem);
   color: #ffffff;
@@ -2093,7 +2093,7 @@
     gap: 1rem;
   }
   .stat-number { font-size: clamp(1.6rem, 7vw, 2rem); }
-  .stat-label { font-size: 0.8rem; }
+  .intro-stats .stat-label { font-size: 0.8rem; }
 
   /* Core programs */
   .core-programs { padding: 44px 12px; }
@@ -2183,7 +2183,7 @@
   .intro-heading { font-size: 1.3rem; }
   .intro-description { font-size: 0.8rem; }
   .stat-number { font-size: 1.4rem; }
-  .stat-label { font-size: 0.72rem; }
+  .intro-stats .stat-label { font-size: 0.72rem; }
 
   /* Quote */
   .quote-section { padding: 2rem 0.5rem; }
