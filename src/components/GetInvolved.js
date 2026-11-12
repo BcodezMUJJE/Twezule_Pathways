@@ -1,7 +1,50 @@
 import React, { useState } from "react";
-import { FaHandshake, FaUsers, FaStar } from 'react-icons/fa';
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaHandshake, FaUsers, FaStar, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaCheck } from "react-icons/fa";
 import "./GetInvolvedStyles.css";
+
+const DONATE_URL = "https://www.omprakash.org/global/twezule-pathways";
+
+const SOCIAL_LINKS = [
+    { name: "LinkedIn", href: "https://www.linkedin.com/company/twezule-pathways" },
+    { name: "Facebook", href: "https://www.facebook.com/twezulepathways" },
+    { name: "Instagram", href: "https://www.instagram.com/twezulepathways" },
+];
+
+const WAYS = [
+    {
+        id: "partner",
+        icon: FaHandshake,
+        title: "Partner with Us",
+        text: "NGOs, local governments, and institutions can collaborate on programs or research. Together, we can amplify our impact and reach more communities.",
+        points: ["Program collaboration opportunities", "Research partnerships", "Resource sharing initiatives", "Joint advocacy campaigns"],
+        action: "Explore Partnership",
+    },
+    {
+        id: "volunteer",
+        icon: FaUsers,
+        title: "Volunteer or Intern",
+        text: "Support our field trainings, communications, or research. Share your skills and passion while gaining meaningful experience in grassroots development.",
+        points: ["Field training facilitation", "Communications and storytelling", "Research and documentation", "Program support and coordination"],
+        action: "Join Our Team",
+    },
+    {
+        id: "champion",
+        icon: FaStar,
+        title: "Champion Twezule",
+        text: "Share our story, connect us with networks or funders. Be our voice in your community and help us expand our reach to empower more women.",
+        points: ["Share our story and mission", "Connect us with potential funders", "Introduce us to your networks", "Advocate for women's empowerment"],
+        action: "Become a Champion",
+    },
+];
+
+/* Scroll to the form and move keyboard focus to its heading */
+function goToContactForm() {
+    const section = document.getElementById("contact-form");
+    const heading = document.getElementById("contact-form-title");
+    if (!section) return;
+    section.scrollIntoView();
+    if (heading) heading.focus({ preventScroll: true });
+}
 
 const GetInvolved = () => {
     const [formData, setFormData] = useState({
@@ -24,13 +67,13 @@ const GetInvolved = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        
+
         // Simulate form submission
         setTimeout(() => {
             setIsSubmitting(false);
             setSubmitStatus('success');
             setFormData({ name: '', email: '', message: '' });
-            
+
             // Clear success message after 5 seconds
             setTimeout(() => {
                 setSubmitStatus('');
@@ -38,139 +81,72 @@ const GetInvolved = () => {
         }, 1000);
     };
 
-    const handleSocialClick = (platform) => {
-        // Placeholder function for social media clicks
-        console.log(`${platform} clicked - redirect to social media page when available`);
-    };
-
     return (
-        <div className="get-involved-container">
-            {/* Header Section */}
-            <section className="get-involved-header">
-                <div className="content-wrapper">
-                    <h1 className="get-involved-title">Get Involved</h1>
-                    <p className="get-involved-intro">
+        <div className="get-involved">
+            {/* Header */}
+            <header className="page-header">
+                <div className="container">
+                    <h1>Get Involved</h1>
+                    <p className="lead">
                         Every woman deserves the opportunity to rise. You can be part of that journey.
                     </p>
                 </div>
-            </section>
+            </header>
 
-            {/* Ways to Get Involved Section */}
-            <section className="ways-to-help">
-                <div className="content-wrapper">
-                    <h2 className="section-title">Ways to Get Involved</h2>
-                    <p className="section-subtitle">
-                        Join our mission to empower women and transform communities across Uganda
-                    </p>
-                    
-                    <div className="involvement-grid">
-                        {/* Partner with Us */}
-                        <div className="involvement-card partner-card">
-                            <div className="card-icon">
-                                <FaHandshake className="react-icon" />
-                            </div>
-                            <h3>Partner with Us</h3>
-                            <p>
-                                NGOs, local governments, and institutions can collaborate on programs or research. 
-                                Together, we can amplify our impact and reach more communities.
-                            </p>
-                            <ul className="involvement-list">
-                                <li>Program collaboration opportunities</li>
-                                <li>Research partnerships</li>
-                                <li>Resource sharing initiatives</li>
-                                <li>Joint advocacy campaigns</li>
-                            </ul>
-                            <button 
-                                className="involvement-btn primary-btn"
-                                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                            >
-                                Explore Partnership
-                            </button>
-                        </div>
-
-                        {/* Volunteer or Intern */}
-                        <div className="involvement-card volunteer-card">
-                            <div className="card-icon">
-                                <FaUsers className="react-icon" />
-                            </div>
-                            <h3>Volunteer or Intern</h3>
-                            <p>
-                                Support our field trainings, communications, or research. Share your skills 
-                                and passion while gaining meaningful experience in grassroots development.
-                            </p>
-                            <ul className="involvement-list">
-                                <li>Field training facilitation</li>
-                                <li>Communications and storytelling</li>
-                                <li>Research and documentation</li>
-                                <li>Program support and coordination</li>
-                            </ul>
-                            <button 
-                                className="involvement-btn primary-btn"
-                                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                            >
-                                Join Our Team
-                            </button>
-                        </div>
-
-                        {/* Champion Twezule */}
-                        <div className="involvement-card champion-card">
-                            <div className="card-icon">
-                                <FaStar className="react-icon" />
-                            </div>
-                            <h3>Champion Twezule</h3>
-                            <p>
-                                Share our story, connect us with networks or funders. Be our voice in your 
-                                community and help us expand our reach to empower more women.
-                            </p>
-                            <ul className="involvement-list">
-                                <li>Share our story and mission</li>
-                                <li>Connect us with potential funders</li>
-                                <li>Introduce us to your networks</li>
-                                <li>Advocate for women's empowerment</li>
-                            </ul>
-                            <button 
-                                className="involvement-btn primary-btn"
-                                onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                            >
-                                Become a Champion
-                            </button>
-                        </div>
+            {/* Ways to Get Involved */}
+            <section className="section" aria-labelledby="ways-title">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 id="ways-title">Ways to Get Involved</h2>
+                        <p className="lead">
+                            Join our mission to empower women and transform communities across Uganda
+                        </p>
                     </div>
 
-                    {/* Donation Section */}
-                    <div className="future-donation-section">
-                        <div className="donation-card">
+                    <div className="gi-ways">
+                        {WAYS.map(({ id, icon: Icon, title, text, points, action }) => (
+                            <article className="card gi-way" id={id} key={id}>
+                                <span className="icon-mark" aria-hidden="true"><Icon /></span>
+                                <h3>{title}</h3>
+                                <p className="gi-way__text">{text}</p>
+                                <ul className="check-list gi-way__list">
+                                    {points.map((point) => <li key={point}>{point}</li>)}
+                                </ul>
+                                <button type="button" className="btn btn--secondary btn--block gi-way__action" onClick={goToContactForm}>
+                                    {action}
+                                </button>
+                            </article>
+                        ))}
+                    </div>
+
+                    {/* Donation */}
+                    <div className="gi-donate">
+                        <div>
                             <h3>Support Our Mission Financially</h3>
                             <p>
-                                Your generous contributions through our partner Omprakash directly fund 
+                                Your generous contributions through our partner Omprakash directly fund
                                 women's empowerment programs in Uganda. Every donation makes a difference.
                             </p>
-                            <a
-                                href="https://www.omprakash.org/global/twezule-pathways"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="involvement-btn donate-btn"
-                            >
-                                Donate via Omprakash
-                            </a>
                         </div>
+                        <a href={DONATE_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+                            Donate via Omprakash
+                            <span className="visually-hidden"> (opens in a new tab)</span>
+                        </a>
                     </div>
                 </div>
             </section>
 
-            {/* Contact Form Section */}
-            <section className="contact-form-section" id="contact-form">
-                <div className="content-wrapper">
-                    <div className="form-header">
-                        <h2 className="section-title">Let's Connect</h2>
-                        <p className="form-subtitle">
-                            We'd love to hear from you. Together, we rise.
-                        </p>
+            {/* Contact Form */}
+            <section className="section section--alt" id="contact-form" aria-labelledby="contact-form-title">
+                <div className="container">
+                    <div className="section-header">
+                        <h2 id="contact-form-title" tabIndex={-1}>Let's Connect</h2>
+                        <p className="lead">We'd love to hear from you. Together, we rise.</p>
                     </div>
 
-                    <div className="contact-form-container">
-                        <form onSubmit={handleSubmit} className="contact-form">
-                            <div className="form-group">
+                    <div className="gi-contact">
+                        <form onSubmit={handleSubmit} className="card form gi-contact__form">
+                            <div className="field">
                                 <label htmlFor="name">Full Name *</label>
                                 <input
                                     type="text"
@@ -179,12 +155,13 @@ const GetInvolved = () => {
                                     value={formData.name}
                                     onChange={handleInputChange}
                                     required
+                                    autoComplete="name"
                                     placeholder="Enter your full name"
-                                    className="form-input"
+                                    className="input"
                                 />
                             </div>
 
-                            <div className="form-group">
+                            <div className="field">
                                 <label htmlFor="email">Email Address *</label>
                                 <input
                                     type="email"
@@ -193,12 +170,14 @@ const GetInvolved = () => {
                                     value={formData.email}
                                     onChange={handleInputChange}
                                     required
+                                    autoComplete="email"
+                                    spellCheck={false}
                                     placeholder="Enter your email address"
-                                    className="form-input"
+                                    className="input"
                                 />
                             </div>
 
-                            <div className="form-group">
+                            <div className="field">
                                 <label htmlFor="message">Message *</label>
                                 <textarea
                                     id="message"
@@ -206,84 +185,68 @@ const GetInvolved = () => {
                                     value={formData.message}
                                     onChange={handleInputChange}
                                     required
-                                    placeholder="Tell us how you'd like to get involved or ask us anything..."
+                                    placeholder="Tell us how you'd like to get involved or ask us anything…"
                                     rows="5"
-                                    className="form-textarea"
+                                    className="input"
                                 ></textarea>
                             </div>
 
-                            <button 
-                                type="submit" 
-                                className={`submit-btn ${isSubmitting ? 'submitting' : ''}`}
-                                disabled={isSubmitting}
-                            >
-                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                            <button type="submit" className="btn btn--primary gi-contact__submit" disabled={isSubmitting} aria-busy={isSubmitting}>
+                                {isSubmitting ? (<><span className="spinner" aria-hidden="true"></span> Sending…</>) : 'Send Message'}
                             </button>
 
-                            {submitStatus === 'success' && (
-                                <div className="success-message">
-                                    <p>Thank you for reaching out! We'll get back to you soon.</p>
-                                </div>
-                            )}
+                            <div role="status" aria-live="polite">
+                                {submitStatus === 'success' && (
+                                    <div className="form-status">
+                                        <FaCheck aria-hidden="true" />
+                                        <p>Thank you for reaching out! We'll get back to you soon.</p>
+                                    </div>
+                                )}
+                            </div>
                         </form>
 
-                        <div className="contact-info">
-                            <h3>Get in Touch</h3>
-                            <div className="contact-details">
-                                <div className="contact-item">
-                                    <div className="contact-icon"><FaEnvelope /></div>
-                                    <div>
-                                        <p className="contact-label">Email</p>
-                                        <a href="mailto:evelynmwondha@twezulepathways.org" className="contact-value">
+                        <aside className="gi-contact__info" aria-labelledby="gi-contact-info-title">
+                            <h3 id="gi-contact-info-title">Get in Touch</h3>
+                            <ul className="info-list">
+                                <li>
+                                    <span className="icon-mark" aria-hidden="true"><FaEnvelope /></span>
+                                    <div className="info-list__content">
+                                        <span className="info-list__label">Email</span>
+                                        <a href="mailto:evelynmwondha@twezulepathways.org" className="info-list__value">
                                             evelynmwondha@twezulepathways.org
                                         </a>
                                     </div>
-                                </div>
-                                <div className="contact-item">
-                                    <div className="contact-icon"><FaPhoneAlt /></div>
-                                    <div>
-                                        <p className="contact-label">Phone</p>
-                                        <a href="tel:+256772444876" className="contact-value">
-                                            +256 772 444 876
-                                        </a>
+                                </li>
+                                <li>
+                                    <span className="icon-mark" aria-hidden="true"><FaPhoneAlt /></span>
+                                    <div className="info-list__content">
+                                        <span className="info-list__label">Phone</span>
+                                        <a href="tel:+256772444876" className="info-list__value">+256 772 444 876</a>
                                     </div>
-                                </div>
-                                <div className="contact-item">
-                                    <div className="contact-icon"><FaMapMarkerAlt /></div>
-                                    <div>
-                                        <p className="contact-label">Location</p>
-                                        <p className="contact-value">Kampala, Uganda</p>
+                                </li>
+                                <li>
+                                    <span className="icon-mark" aria-hidden="true"><FaMapMarkerAlt /></span>
+                                    <div className="info-list__content">
+                                        <span className="info-list__label">Location</span>
+                                        <span className="info-list__value">Kampala, Uganda</span>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                            </ul>
 
-                            <div className="social-connect">
+                            <div className="gi-social">
                                 <h4>Follow Our Journey</h4>
-                                <div className="social-links">
-                                    <button 
-                                        className="social-link linkedin"
-                                        onClick={() => handleSocialClick('LinkedIn')}
-                                        type="button"
-                                    >
-                                        <span>LinkedIn</span>
-                                    </button>
-                                    <button 
-                                        className="social-link facebook"
-                                        onClick={() => handleSocialClick('Facebook')}
-                                        type="button"
-                                    >
-                                        <span>Facebook</span>
-                                    </button>
-                                    <button 
-                                        className="social-link instagram"
-                                        onClick={() => handleSocialClick('Instagram')}
-                                        type="button"
-                                    >
-                                        <span>Instagram</span>
-                                    </button>
-                                </div>
+                                <ul className="gi-social__links">
+                                    {SOCIAL_LINKS.map((social) => (
+                                        <li key={social.name}>
+                                            <a href={social.href} className="btn btn--secondary btn--sm" target="_blank" rel="noopener noreferrer">
+                                                {social.name}
+                                                <span className="visually-hidden"> (opens in a new tab)</span>
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
-                        </div>
+                        </aside>
                     </div>
                 </div>
             </section>

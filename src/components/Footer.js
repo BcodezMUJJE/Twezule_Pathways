@@ -2,196 +2,163 @@ import "./FooterStyles.css";
 import { Link } from "react-router-dom";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 
+const DONATE_URL = "https://www.omprakash.org/global/twezule-pathways";
+
+const SOCIAL_LINKS = [
+    {
+        name: "Facebook",
+        href: "https://www.facebook.com/twezulepathways",
+        label: "Follow us on Facebook",
+        path: "M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z",
+    },
+    {
+        name: "Instagram",
+        href: "https://www.instagram.com/twezulepathways",
+        label: "Follow us on Instagram",
+        path: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z",
+    },
+    {
+        name: "Twitter",
+        href: "https://twitter.com/twezulepathways",
+        label: "Follow us on Twitter",
+        path: "M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z",
+    },
+    {
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/company/twezule-pathways",
+        label: "Follow us on LinkedIn",
+        path: "M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z",
+    },
+    {
+        name: "YouTube",
+        href: "https://www.youtube.com/@twezulepathways",
+        label: "Subscribe to our YouTube channel",
+        path: "M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z",
+    },
+];
+
 const Footer = () => {
     return (
-        <footer className="footer">
-            {/* Main Footer Content */}
-            <div className="footer-main">
-                <div className="content-wrapper">
-                    <div className="footer-content">
-                        {/* Brand Section */}
-                        <div className="footer-brand">
-                            <h2 className="footer-title">Twezule Pathways</h2>
-                            <p className="footer-tagline">
-                                Empowering women, transforming communities
-                            </p>
-                            <p className="footer-description">
-                                A Ugandan women-led organization empowering grassroots women and communities 
-                                to rise from vulnerability to self-reliance.
-                            </p>
-                        </div>
+        <footer className="site-footer">
+            <div className="container">
+                <div className="site-footer__grid">
+                    {/* Brand */}
+                    <div className="site-footer__brand">
+                        <p className="site-footer__name">Twezule Pathways</p>
+                        <p className="site-footer__tagline">Empowering women, transforming communities</p>
+                        <p className="site-footer__description">
+                            A Ugandan women-led organization empowering grassroots women and communities
+                            to rise from vulnerability to self-reliance.
+                        </p>
+                    </div>
 
-                        {/* Quick Links */}
-                        <div className="footer-section">
-                            <h4>Quick Links</h4>
-                            <nav className="footer-nav">
-                                <Link to="/">Home</Link>
-                                <Link to="/about">About</Link>
-                                <Link to="/programs">Programs</Link>
-                                <Link to="/impact">Impact</Link>
-                                <Link to="/get-involved">Get Involved</Link>
-                            </nav>
-                        </div>
+                    {/* Quick Links */}
+                    <nav className="site-footer__column" aria-labelledby="footer-quick-links">
+                        <h2 id="footer-quick-links" className="site-footer__heading">Quick Links</h2>
+                        <ul className="site-footer__links">
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about">About</Link></li>
+                            <li><Link to="/programs">Programs</Link></li>
+                            <li><Link to="/impact">Impact</Link></li>
+                            <li><Link to="/get-involved">Get Involved</Link></li>
+                        </ul>
+                    </nav>
 
-                        {/* Programs */}
-                        <div className="footer-section">
-                            <h4>Our Programs</h4>
-                            <nav className="footer-nav">
-                                <a href="/programs#shg-training">Self Help Groups</a>
-                                <a href="/programs#safety-training">Safety & Power Training</a>
-                                <a href="/programs#leadership">Leadership Development</a>
-                                <a href="/programs#community">Community Empowerment</a>
-                            </nav>
-                        </div>
+                    {/* Programs */}
+                    <nav className="site-footer__column" aria-labelledby="footer-programs">
+                        <h2 id="footer-programs" className="site-footer__heading">Our Programs</h2>
+                        <ul className="site-footer__links">
+                            <li><Link to="/programs#shg-training">Self Help Groups</Link></li>
+                            <li><Link to="/programs#safety-training">Safety &amp; Power Training</Link></li>
+                            <li><Link to="/programs#leadership">Leadership Development</Link></li>
+                            <li><Link to="/programs#community">Community Empowerment</Link></li>
+                        </ul>
+                    </nav>
 
-                        {/* Contact Info */}
-                        <div className="footer-section">
-                            <h4>Contact Us</h4>
-                            <div className="contact-info">
-                                <div className="contact-item">
-                                    <div className="contact-icon"><FaEnvelope /></div>
-                                    <div>
-                                        <p className="contact-label">Email</p>
-                                        <a href="mailto:evelynmwondha@twezulepathways.org" className="contact-value">
-                                            evelynmwondha@twezulepathways.org
-                                        </a>
-                                    </div>
+                    {/* Contact */}
+                    <div className="site-footer__column">
+                        <h2 className="site-footer__heading">Contact Us</h2>
+                        <ul className="site-footer__contact">
+                            <li>
+                                <FaEnvelope aria-hidden="true" />
+                                <div>
+                                    <span className="site-footer__label">Email</span>
+                                    <a href="mailto:evelynmwondha@twezulepathways.org">
+                                        evelynmwondha@<wbr />twezulepathways.org
+                                    </a>
                                 </div>
-                                <div className="contact-item">
-                                    <div className="contact-icon"><FaPhoneAlt /></div>
-                                    <div>
-                                        <p className="contact-label">Phone</p>
-                                        <a href="tel:+256772444876" className="contact-value">
-                                            +256 772 444 876
-                                        </a>
-                                    </div>
+                            </li>
+                            <li>
+                                <FaPhoneAlt aria-hidden="true" />
+                                <div>
+                                    <span className="site-footer__label">Phone</span>
+                                    <a href="tel:+256772444876">+256 772 444 876</a>
                                 </div>
-                                <div className="contact-item">
-                                    <div className="contact-icon"><FaMapMarkerAlt /></div>
-                                    <div>
-                                        <p className="contact-label">Location</p>
-                                        <p className="contact-value">Kampala, Uganda</p>
-                                    </div>
+                            </li>
+                            <li>
+                                <FaMapMarkerAlt aria-hidden="true" />
+                                <div>
+                                    <span className="site-footer__label">Location</span>
+                                    <span>Kampala, Uganda</span>
                                 </div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
+                    </div>
 
-                        {/* Get Involved */}
-                        <div className="footer-section">
-                            <h4>Get Involved</h4>
-                            <div className="involvement-links">
-                                <a href="/get-involved#volunteer" className="involvement-link">
-                                    Volunteer with Us
-                                </a>
-                                <a href="/get-involved#partner" className="involvement-link">
-                                    Partner with Us
-                                </a>
-                                <a href="/get-involved#champion" className="involvement-link">
-                                    Champion Twezule
-                                </a>
-                                <a 
-                                    href="https://www.omprakash.org/global/twezule-pathways" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="involvement-link donate-link"
-                                >
+                    {/* Get Involved */}
+                    <nav className="site-footer__column" aria-labelledby="footer-get-involved">
+                        <h2 id="footer-get-involved" className="site-footer__heading">Get Involved</h2>
+                        <ul className="site-footer__links">
+                            <li><Link to="/get-involved#volunteer">Volunteer with Us</Link></li>
+                            <li><Link to="/get-involved#partner">Partner with Us</Link></li>
+                            <li><Link to="/get-involved#champion">Champion Twezule</Link></li>
+                            <li>
+                                <a href={DONATE_URL} target="_blank" rel="noopener noreferrer">
                                     Donate via Omprakash
+                                    <span className="visually-hidden"> (opens in a new tab)</span>
                                 </a>
-                            </div>
-                        </div>
-                    </div>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-            </div>
 
-            {/* Social Media & Bottom Bar */}
-            <div className="footer-bottom">
-                <div className="content-wrapper">
-                    <div className="footer-bottom-content">
-                        <div className="social-section">
-                            <h4>Follow Our Journey</h4>
-                            <div className="social-links">
-                                <a 
-                                    href="https://www.facebook.com/twezulepathways" 
-                                    className="social-link facebook" 
-                                    aria-label="Follow us on Facebook"
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                                    </svg>
-                                    <span>Facebook</span>
-                                </a>
-                                <a 
-                                    href="https://www.instagram.com/twezulepathways" 
-                                    className="social-link instagram" 
-                                    aria-label="Follow us on Instagram"
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                    </svg>
-                                    <span>Instagram</span>
-                                </a>
-                                <a 
-                                    href="https://twitter.com/twezulepathways" 
-                                    className="social-link twitter" 
-                                    aria-label="Follow us on Twitter"
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                                    </svg>
-                                    <span>Twitter</span>
-                                </a>
-                                <a 
-                                    href="https://www.linkedin.com/company/twezule-pathways" 
-                                    className="social-link linkedin" 
-                                    aria-label="Follow us on LinkedIn"
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                    </svg>
-                                    <span>LinkedIn</span>
-                                </a>
-                                <a 
-                                    href="https://www.youtube.com/@twezulepathways" 
-                                    className="social-link youtube" 
-                                    aria-label="Subscribe to our YouTube channel"
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                >
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                                    </svg>
-                                    <span>YouTube</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="mission-statement">
-                            <p className="mission-quote">
-                                "When a woman is empowered, a community rises."
-                            </p>
-                            <p className="mission-attribution">
-                                — Evelyn Mwondha, Co-Founder and Executive Director
-                            </p>
-                        </div>
+                <div className="site-footer__middle">
+                    <div>
+                        <h2 className="site-footer__heading">Follow Our Journey</h2>
+                        <ul className="site-footer__social">
+                            {SOCIAL_LINKS.map((social) => (
+                                <li key={social.name}>
+                                    <a
+                                        href={social.href}
+                                        className="site-footer__social-link"
+                                        aria-label={social.label}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                            <path d={social.path} />
+                                        </svg>
+                                        <span>{social.name}</span>
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
 
-                    <div className="copyright">
-                        <div className="copyright-content">
-                            <p>&copy; 2026 Twezule Pathways. All rights reserved.</p>
-                            <div className="legal-links">
-                                <Link to="/privacy-policy">Privacy Policy</Link>
-                                <Link to="/terms-of-service">Terms of Service</Link>
-                            </div>
-                        </div>
-                    </div>
+                    <figure className="site-footer__quote">
+                        <blockquote>
+                            <p>“When a woman is empowered, a community rises.”</p>
+                        </blockquote>
+                        <figcaption>— Evelyn Mwondha, Co-Founder and Executive Director</figcaption>
+                    </figure>
+                </div>
+
+                <div className="site-footer__bottom">
+                    <p>&copy; 2026 Twezule Pathways. All rights reserved.</p>
+                    <ul className="site-footer__legal">
+                        <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                        <li><Link to="/terms-of-service">Terms of Service</Link></li>
+                    </ul>
                 </div>
             </div>
         </footer>

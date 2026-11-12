@@ -1,96 +1,102 @@
-import React, { Component } from "react";
+import React, { useCallback, useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "./NavbarStyles.css";
 import { MenuItems } from "./MenuItems";
 import TwezuleLogo from "../assets/TwezuleLogo.png";
-import { Link } from "react-router-dom";
 
-class Navbar extends Component {
-  state = { 
-    clicked: false,
-    scrolled: false 
-  };
+const DONATE_URL = "https://www.omprakash.org/global/twezule-pathways";
+const DESKTOP_QUERY = "(min-width: 1080px)";
 
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
+function Navbar() {
+  const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
 
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
+  const close = useCallback(() => setOpen(false), []);
 
-  handleScroll = () => {
-    const isScrolled = window.scrollY > 50;
-    if (isScrolled !== this.state.scrolled) {
-      this.setState({ scrolled: isScrolled });
-    }
-  };
+  // Close the mobile menu whenever the page changes
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
-  handleClick = () => {
-    this.setState({ clicked: !this.state.clicked });
-  };
+  // While open: Escape closes, background does not scroll, and resizing to
+  // desktop width resets the menu
+  useEffect(() => {
+    if (!open) return undefined;
 
-  handleLinkClick = () => {
-    this.setState({ clicked: false });
-  };
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    const media = window.matchMedia(DESKTOP_QUERY);
+    const onMediaChange = (event) => {
+      if (event.matches) setOpen(false);
+    };
 
-  render() {
-    return (
-      <nav className={`NavbarItems ${this.state.scrolled ? 'scrolled' : ''}`}>
-        <Link to="/" className="navbar-logo-container" aria-label="Twezule Pathways Home">
-          <img 
-            src={TwezuleLogo} 
-            alt="Twezule Pathways" 
-            className="navbar-logo"
+    document.addEventListener("keydown", onKeyDown);
+    media.addEventListener("change", onMediaChange);
+    document.body.classList.add("nav-open");
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      media.removeEventListener("change", onMediaChange);
+      document.body.classList.remove("nav-open");
+    };
+  }, [open]);
+
+  return (
+    <header className="site-header">
+      <nav className="site-nav" aria-label="Main">
+        <Link to="/" className="site-nav__brand" aria-label="Twezule Pathways home" onClick={close}>
+          <img
+            src={TwezuleLogo}
+            alt="Twezule Pathways"
+            className="site-nav__logo"
+            width="1024"
+            height="1024"
           />
         </Link>
 
         <button
           type="button"
-          className={`menu-icons ${this.state.clicked ? 'active' : ''}`}
-          onClick={this.handleClick}
-          aria-label="Toggle navigation menu"
-          aria-expanded={this.state.clicked}
+          className="site-nav__toggle"
+          onClick={() => setOpen((value) => !value)}
+          aria-expanded={open}
           aria-controls="primary-navigation"
         >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+          <span className="visually-hidden">{open ? "Close menu" : "Open menu"}</span>
+          <span className="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span className="site-nav__toggle-bar" aria-hidden="true"></span>
+          <span className="site-nav__toggle-bar" aria-hidden="true"></span>
         </button>
 
-        <ul id="primary-navigation" className={this.state.clicked ? "navbar-menu active" : "navbar-menu"}>
-          {MenuItems.map((item, index) => {
-            return (
-              <li key={index}>
-                <Link 
-                  className={item.cName} 
-                  to={item.url}
-                  onClick={this.handleLinkClick}
-                >
-                  <span>{item.title}</span>
-                </Link>
+        <div id="primary-navigation" className={`site-nav__panel${open ? " is-open" : ""}`}>
+          <ul className="site-nav__links">
+            {MenuItems.map((item) => (
+              <li key={item.url}>
+                <NavLink to={item.url} end={item.url === "/"} className="site-nav__link" onClick={close}>
+                  {item.title}
+                </NavLink>
               </li>
-            );
-          })}
-          <Link 
-            to="/get-involved"
-            className="nav-cta-button"
-            onClick={this.handleLinkClick}
-          >
-            <span>Get Involved</span>
-          </Link>
-          <a 
-            href="https://www.omprakash.org/global/twezule-pathways"
-            className="nav-donate-button"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={this.handleLinkClick}
-          >
-            <span>Donate</span>
-          </a>
-        </ul>
+            ))}
+          </ul>
+          <div className="site-nav__actions">
+            <NavLink to="/get-involved" className="btn btn--secondary btn--sm site-nav__action" onClick={close}>
+              Get Involved
+            </NavLink>
+            <a
+              href={DONATE_URL}
+              className="btn btn--primary btn--sm site-nav__action"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={close}
+            >
+              Donate
+              <span className="visually-hidden"> (opens in a new tab)</span>
+            </a>
+          </div>
+        </div>
       </nav>
-    );
-  }
+    </header>
+  );
 }
 
 export default Navbar;

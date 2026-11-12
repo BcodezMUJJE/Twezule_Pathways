@@ -1,146 +1,36 @@
-/* ===================================================
-   NEWSLETTER PAGE — Twezule Pathways
-=================================================== */
+/* ==========================================================================
+   Newsletter page
+   ========================================================================== */
 
-.newsletter-page {
-  min-height: 100vh;
-  background: #F8FAF6;
-  display: flex;
-  flex-direction: column;
+.newsletter__header-inner {
+  display: grid;
+  gap: var(--space-6);
 }
 
-/* ---- Header ---- */
-.newsletter-header {
-  background: linear-gradient(135deg, #2D4A28 0%, #4A6741 50%, #6B8A56 100%);
-  padding: 6.5rem 2rem 3rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
+@media (min-width: 800px) {
+  .newsletter__header-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+  }
 }
 
-.newsletter-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events: none;
+.newsletter__header .lead em {
+  font-family: var(--font-display);
+  font-size: 1.1em;
+  color: var(--text-strong);
 }
 
-.newsletter-header-inner {
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
+.newsletter__viewer {
+  padding-block: var(--space-7) var(--section-space);
 }
 
-.newsletter-eyebrow {
-  display: inline-block;
-  background: rgba(212, 175, 55, 0.2);
-  color: #E8C547;
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 20px;
-  padding: 0.35rem 1.1rem;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  font-family: 'Inter', sans-serif;
-}
-
-.newsletter-page-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 0.75rem;
-  line-height: 1.15;
-}
-
-.newsletter-page-subtitle {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.82);
-  line-height: 1.6;
-}
-
-.newsletter-page-subtitle em {
-  color: #E8C547;
-  font-style: italic;
-}
-
-/* ---- PDF Viewer ---- */
-.nl-pdf-page-wrapper {
-  width: 90%;
-  margin: 2.5rem auto 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.25rem;
-  flex: 1;
-}
-
-.nl-pdf-full-frame {
+/* The PDF keeps its own design; the frame stays neutral */
+.newsletter__frame {
+  display: block;
   width: 100%;
   height: 90vh;
-  border: none;
-  border-radius: 14px;
-  box-shadow: 0 8px 40px rgba(74, 103, 65, 0.18);
-  display: block;
-  background: #fff;
-}
-
-/* ---- Download Button ---- */
-.nl-pdf-actions {
-  display: flex;
-  justify-content: center;
-}
-
-.nl-pdf-download-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, #4A6741, #6B8A56);
-  color: #ffffff;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  padding: 0.7rem 1.8rem;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(74, 103, 65, 0.25);
-  letter-spacing: 0.3px;
-}
-
-.nl-pdf-download-btn:hover {
-  background: linear-gradient(135deg, #2D4A28, #4A6741);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(74, 103, 65, 0.35);
-}
-
-/* ---- Responsive ---- */
-@media (max-width: 768px) {
-  .nl-pdf-page-wrapper {
-    width: 95%;
-  }
-
-  .nl-pdf-full-frame {
-    height: 75vh;
-  }
-
-  .newsletter-header {
-    padding: 5.5rem 1.25rem 2.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .nl-pdf-page-wrapper {
-    width: 98%;
-  }
-
-  .nl-pdf-full-frame {
-    height: 65vh;
-    border-radius: 8px;
-  }
+  min-height: 520px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--surface-alt);
 }

@@ -1,159 +1,62 @@
-/* ===== DONATE PAGE STYLES ===== */
-.donate-container {
-    padding-top: 90px;
-    min-height: 100vh;
+/* ==========================================================================
+   Donate page
+   ========================================================================== */
+
+.donate-grid {
+  display: grid;
+  gap: var(--space-8);
 }
 
-.donate-header {
-    background: linear-gradient(135deg, #4A6741, #6B8A56);
-    padding: 4rem 2rem;
-    text-align: center;
+@media (min-width: 960px) {
+  .donate-grid {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+    gap: clamp(3rem, 1rem + 4vw, 5rem);
+    align-items: start;
+  }
 }
 
-.donate-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    color: #ffffff;
-    margin-bottom: 1rem;
+.donate-info__text {
+  max-width: 40rem;
+  margin-top: var(--space-4);
+  color: var(--text-muted);
 }
 
-.donate-intro {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.9);
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
+.donate-levels {
+  display: grid;
+  margin-top: var(--space-8);
+  border-top: 1px solid var(--color-black);
 }
 
-.donate-content {
-    padding: 4rem 2rem;
-    background: #F0F4ED;
+.donate-levels__item {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: baseline;
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--border);
 }
 
-.donate-content .content-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
+.donate-levels__amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+  line-height: 1;
+  color: var(--text-strong);
+  font-variant-numeric: lining-nums tabular-nums;
 }
 
-.donate-info {
-    margin-bottom: 3rem;
+.donate-levels dd {
+  margin: 0;
+  color: var(--text);
 }
 
-.donate-info h2,
-.donate-cta-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #2D4A28;
-    margin-bottom: 1rem;
+.donate-how p {
+  margin: var(--space-3) 0 var(--space-6);
+  color: var(--text-muted);
 }
 
-.donate-info p,
-.donate-cta-section p {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.05rem;
-    color: #4A6741;
-    line-height: 1.7;
-    margin-bottom: 2rem;
-}
-
-.donation-impact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.impact-item {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-    text-align: center;
-    border: 2px solid #B7C8A3;
-    transition: all 0.3s ease;
-}
-
-.impact-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(74, 103, 65, 0.15);
-    border-color: #D4AF37;
-}
-
-.impact-amount {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #D4AF37;
-    margin-bottom: 0.75rem;
-}
-
-.impact-item p {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.95rem;
-    color: #4A6741;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.donate-cta-section {
-    text-align: center;
-    padding: 3rem;
-    background: #ffffff;
-    border-radius: 20px;
-    border: 2px solid #B7C8A3;
-}
-
-.donate-contact-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #D4AF37, #E8C547);
-    color: #ffffff;
-    border: 2px solid #D4AF37;
-    padding: 1rem 3rem;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 30px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
-}
-
-.donate-contact-button:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
-    background: linear-gradient(135deg, #D4AF37, #F2D962);
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 767px) {
-    .donate-title {
-        font-size: 2.2rem;
-    }
-
-    .donate-header {
-        padding: 3rem 1.5rem;
-    }
-
-    .donate-content {
-        padding: 2.5rem 1.5rem;
-    }
-
-    .donation-impact-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .donate-cta-section {
-        padding: 2rem 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .donation-impact-grid {
-        grid-template-columns: 1fr;
-    }
+@media (min-width: 960px) {
+  .donate-how {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-6));
+  }
 }

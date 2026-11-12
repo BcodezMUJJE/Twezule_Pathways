@@ -1,240 +1,195 @@
 import "./HeroStyles.css";
+import { Link } from "react-router-dom";
 import Leader from "../assets/Leader.jpeg";
 import PhoebeImg from "../assets/Phoebe pic.jpg";
 import {
   FaBriefcase,
-  FaBook,
-  FaComments,
   FaEnvelope,
   FaHandshake,
   FaPhoneAlt,
-  FaShieldAlt,
-  FaStar,
-  FaVideo
+  FaShieldAlt
 } from "react-icons/fa";
 
-function Hero(props) {
+const DONATE_URL = "https://www.omprakash.org/global/twezule-pathways";
+
+function Hero({ imgSrc }) {
   return (
     <>
-      {/* Enhanced Hero Banner */}
-      <div className={`${props.cName} enhanced-hero`}>
-        <img src={props.imgSrc} alt="Twezule Pathways" />
-        <div className="hero-overlay"></div>
-        <div className="hero-text enhanced-hero-text">
-          <div className="hero-badge"><FaStar /> Empowering Communities Since 2025</div>
-          <h1 className="hero-main-title">
-            <span className="title-line-1">Together We</span>
-            <span className="title-line-2 gradient-text">Rise</span>
-          </h1>
-          <p className="hero-subtitle">Lighting pathways from vulnerability to self-reliance across Uganda</p>
-          <div className="hero-cta-group">
-            <a href="/about" className="primary-cta">
-              <span>Discover Our Story</span>
-            </a>
-            <a href="/get-involved" className="secondary-cta">
-              <span>Get Involved</span>
-            </a>
-          </div>
-        </div>
-        <div className="floating-elements">
-          <div className="float-element float-1"></div>
-          <div className="float-element float-2"></div>
-          <div className="float-element float-3"></div>
-        </div>
-      </div>
-
-      {/* Video Section */}
-      <section className="video-section">
-        <div className="video-container">
-          <div className="video-header">
-            <span className="video-badge"><FaVideo /> Watch Our Story</span>
-            <h2 className="video-title">
-              See the <span className="gradient-text">Impact</span> We're Making
-            </h2>
-            <p className="video-subtitle">
-              Experience the transformation happening in communities across Uganda
+      {/* Hero */}
+      <section className="home-hero" aria-labelledby="home-hero-title">
+        <div className="container home-hero__inner">
+          <div className="home-hero__copy">
+            <p className="kicker">Empowering Communities Since 2025</p>
+            <h1 id="home-hero-title" className="home-hero__title">
+              <span>Together We</span> <span>Rise</span>
+            </h1>
+            <p className="home-hero__lead">
+              Lighting pathways from vulnerability to self-reliance across Uganda
             </p>
+            <div className="btn-group">
+              <Link to="/about" className="btn btn--primary">Discover Our Story</Link>
+              <Link to="/get-involved" className="btn btn--secondary">Get Involved</Link>
+            </div>
           </div>
-          <div className="video-wrapper">
+          <figure className="home-hero__media media media--portrait">
+            <img src={imgSrc} alt="Two women embracing and laughing together outdoors" width="1920" height="2560" />
+          </figure>
+        </div>
+      </section>
+
+      {/* Video */}
+      <section className="section section--alt home-video" aria-labelledby="home-video-title">
+        <div className="container">
+          <div className="section-header">
+            <h2 id="home-video-title">See the Impact We’re Making</h2>
+            <p className="lead">Experience the transformation happening in communities across Uganda</p>
+          </div>
+          <div className="home-video__frame">
             <iframe
               src="https://www.youtube.com/embed/tIF7mp3J8xQ?si=fZ5kuipnbcYw4dY6"
               title="Twezule Pathways - Our Story"
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
+              loading="lazy"
               allowFullScreen
             ></iframe>
-            <div className="video-overlay-decoration"></div>
           </div>
-          <div className="video-caption">
-            <p>Join us in creating lasting change for women and communities</p>
-          </div>
+          <p className="home-video__caption">Join us in creating lasting change for women and communities</p>
         </div>
       </section>
 
-      {/* Enhanced Intro Section */}
-      <section className="intro-section enhanced-intro">
-        <div className="intro-content">
-          <div className="intro-text">
-            <h2 className="intro-heading">
-              <span className="highlight-text">Ugandan Women Leading Change</span>
-            </h2>
-            <p className="intro-description">
+      {/* Intro */}
+      <section className="section home-intro" aria-labelledby="home-intro-title">
+        <div className="container home-intro__grid">
+          <h2 id="home-intro-title">Ugandan Women Leading Change</h2>
+          <div className="home-intro__body">
+            <p className="home-intro__text">
               Twezule Pathways is a Ugandan women led organization empowering grassroots women and communities to rise from vulnerability to self-reliance through entrepreneurship, group savings, and leadership development.
             </p>
-            <div className="intro-stats">
-              <div className="stat-item">
-                <span className="stat-number">1+</span>
-                <span className="stat-label">Years Combined Experience</span>
+            <dl className="stat-row">
+              <div className="stat">
+                <dt className="stat__label">Years Combined Experience</dt>
+                <dd className="stat__value">1+</dd>
               </div>
-              <div className="stat-item">
-                <span className="stat-number">100%</span>
-                <span className="stat-label">Women Led</span>
+              <div className="stat">
+                <dt className="stat__label">Women Led</dt>
+                <dd className="stat__value">100%</dd>
               </div>
-            </div>
+            </dl>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Core Program Highlights */}
-      <section className="core-programs">
+      {/* Core programs */}
+      <section className="section section--ruled home-core" aria-labelledby="home-core-title">
         <div className="container">
-          
-          {/* Header */}
           <div className="section-header">
-            <h2 className="section-title">
-              Our <span className="gradient-text">Core Programs</span>
-            </h2>
-            <p className="section-subtitle">
-              Comprehensive training and support that transforms lives
-            </p>
+            <h2 id="home-core-title">Our Core Programs</h2>
+            <p className="lead">Comprehensive training and support that transforms lives</p>
           </div>
-
-          {/* Cards */}
-          <div className="program-grid">
-            
-            <div className="program-card">
-              <div className="icon-wrapper">
-                <FaBriefcase />
-              </div>
+          <div className="feature-grid">
+            <article className="feature">
+              <span className="icon-mark" aria-hidden="true"><FaBriefcase /></span>
               <h3>Entrepreneurship Training</h3>
               <p>
                 Building a strong savings culture and empowering women with practical
                 entrepreneurship skills for sustainable growth.
               </p>
-              <div className="accent-line"></div>
-            </div>
-
-            <div className="program-card">
-              <div className="icon-wrapper">
-                <FaShieldAlt />
-              </div>
-              <h3>Safety & Power Training</h3>
+            </article>
+            <article className="feature">
+              <span className="icon-mark" aria-hidden="true"><FaShieldAlt /></span>
+              <h3>Safety &amp; Power Training</h3>
               <p>
                 Equipping women with knowledge and tools to prevent and respond
                 effectively to gender-based violence.
               </p>
-              <div className="accent-line"></div>
-            </div>
-
-            <div className="program-card">
-              <div className="icon-wrapper">
-                <FaHandshake />
-              </div>
+            </article>
+            <article className="feature">
+              <span className="icon-mark" aria-hidden="true"><FaHandshake /></span>
               <h3>Community Empowerment</h3>
               <p>
                 Strengthening self-help groups while fostering leadership,
                 inclusion, and grassroots transformation.
               </p>
-              <div className="accent-line"></div>
-            </div>
-
+            </article>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Quote / Impact Statement */}
-      <section className="quote-section enhanced-quote">
-        <div className="quote-container">
-          <div className="quote-content">
-            <blockquote className="quote-text" style={{color: 'white'}}>
-              "When a woman is empowered, a community rises."
+      {/* Founders' quote — the one dark moment on the page */}
+      <section className="section section--inverse home-quote" aria-labelledby="home-quote-title">
+        <div className="container">
+          <h2 id="home-quote-title" className="visually-hidden">Our founders</h2>
+          <figure className="home-quote__figure">
+            <blockquote className="home-quote__text">
+              <p>“When a woman is empowered, a community rises.”</p>
             </blockquote>
-            <div className="founder-grid">
-              <div className="founder-card">
-                <div className="quote-image">
-                  <img src={Leader} alt="Evelyn Mwondha" />
-                </div>
-                <div className="author-info">
-                  <span className="author-name">Evelyn Mwondha</span>
-                  <span className="author-title">Co-Founder and Executive Director</span>
+            <figcaption className="home-quote__people">
+              <div className="person">
+                <img src={Leader} alt="Evelyn Mwondha" className="person__photo" width="810" height="1080" loading="lazy" />
+                <div>
+                  <span className="person__name">Evelyn Mwondha</span>
+                  <span className="person__role">Co-Founder and Executive Director</span>
                 </div>
               </div>
-              <div className="founder-card">
-                <div className="quote-image">
-                  <img src={PhoebeImg} alt="Phoebe Hedwig Aringo" />
-                </div>
-                <div className="author-info">
-                  <span className="author-name">Phoebe Hedwig Aringo</span>
-                  <span className="author-title">Co-Founder and Impact Strategist Director</span>
+              <div className="person">
+                <img src={PhoebeImg} alt="Phoebe Hedwig Aringo" className="person__photo" width="960" height="1096" loading="lazy" />
+                <div>
+                  <span className="person__name">Phoebe Hedwig Aringo</span>
+                  <span className="person__role">Co-Founder and Impact Strategist Director</span>
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="quote-bg-pattern"></div>
-        </div>
-      </section>
-
-      {/* Enhanced Call to Action Section */}
-      <section className="cta-section enhanced-cta">
-        <div className="cta-container">
-          <div className="cta-content">
-            <h2 className="cta-title">
-              Join us in <span className="gradient-text">lighting pathways</span> of change
-            </h2>
-            <p className="cta-description">
-              Be part of a movement that's transforming lives and communities across Uganda. 
-              Every contribution, partnership, and voice matters.
-            </p>
-            <div className="cta-buttons enhanced-buttons">
-              <a 
-                href="https://www.omprakash.org/global/twezule-pathways" 
-                className="cta-button primary-action"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span><FaStar /> Get Involved</span>
-              </a>
-              <a href="/programs" className="cta-button secondary-action">
-                <span><FaBook /> Explore Programs</span>
-              </a>
-              <a href="/contact" className="cta-button tertiary-action">
-                <span><FaComments /> Contact Us</span>
-              </a>
-            </div>
-          </div>
-          <div className="contact-info enhanced-contact">
-            <h3>Ready to Connect?</h3>
-            <div className="contact-methods">
-              <div className="contact-method">
-                <span className="contact-icon"><FaPhoneAlt /></span>
-                <div className="contact-details">
-                  <span className="contact-label">Call Us</span>
-                  <span className="contact-value">+256772444876</span>
-                </div>
-              </div>
-              <div className="contact-method">
-                <span className="contact-icon"><FaEnvelope /></span>
-                <div className="contact-details">
-                  <span className="contact-label">Email Us</span>
-                  <span className="contact-value">evelynmwondha@twezulepathways.org</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            </figcaption>
+          </figure>
         </div>
       </section>
     </>
+  );
+}
+
+/* Closing call to action — rendered at the end of the home page */
+export function HomeCallToAction() {
+  return (
+    <section className="section section--ruled home-cta" aria-labelledby="home-cta-title">
+      <div className="container home-cta__grid">
+        <div className="home-cta__copy">
+          <h2 id="home-cta-title">Join us in lighting pathways of change</h2>
+          <p className="lead">
+            Be part of a movement that’s transforming lives and communities across Uganda.
+            Every contribution, partnership, and voice matters.
+          </p>
+          <div className="btn-group">
+            <a href={DONATE_URL} className="btn btn--primary" target="_blank" rel="noopener noreferrer">
+              Donate via Omprakash
+              <span className="visually-hidden"> (opens in a new tab)</span>
+            </a>
+            <Link to="/programs" className="btn btn--secondary">Explore Programs</Link>
+            <Link to="/contact" className="btn btn--secondary">Contact Us</Link>
+          </div>
+        </div>
+        <aside className="home-cta__contact" aria-labelledby="home-cta-connect">
+          <h3 id="home-cta-connect">Ready to Connect?</h3>
+          <ul className="info-list">
+            <li>
+              <span className="icon-mark" aria-hidden="true"><FaPhoneAlt /></span>
+              <div className="info-list__content">
+                <span className="info-list__label">Call Us</span>
+                <a href="tel:+256772444876" className="info-list__value">+256 772 444 876</a>
+              </div>
+            </li>
+            <li>
+              <span className="icon-mark" aria-hidden="true"><FaEnvelope /></span>
+              <div className="info-list__content">
+                <span className="info-list__label">Email Us</span>
+                <a href="mailto:evelynmwondha@twezulepathways.org" className="info-list__value">
+                  evelynmwondha@twezulepathways.org
+                </a>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
   );
 }
 

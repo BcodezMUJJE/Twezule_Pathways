@@ -5,40 +5,17 @@
   "icons": [
     {
       "src": "TwezuleLogo.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "TwezuleLogo.png",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "TwezuleLogo.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "1024x1024",
+      "purpose": "any"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#A8C090",
+  "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
-  "categories": ["lifestyle", "social", "education", "business"],
-  "screenshots": [
-    {
-      "src": "screenshot-wide.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "screenshot-narrow.png",
-      "sizes": "750x1334",
-      "type": "image/png",
-      "form_factor": "narrow"
-    }
-  ]
+  "categories": ["lifestyle", "social", "education", "business"]
 }

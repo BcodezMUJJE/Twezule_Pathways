@@ -1,58 +1,56 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./DonateStyles.css";
+
+const IMPACT_LEVELS = [
+    { amount: "$25", text: "Provides school supplies for one student for a term" },
+    { amount: "$50", text: "Funds a mentorship session for a group of women" },
+    { amount: "$100", text: "Supports a woman through a full skills training program" },
+    { amount: "$250", text: "Sponsors a community workshop reaching dozens of families" },
+];
 
 const Donate = () => {
     return (
-        <div className="donate-container">
-            <section className="donate-header">
-                <div className="content-wrapper">
-                    <h1 className="donate-title">Donate</h1>
-                    <p className="donate-intro">
+        <div className="donate">
+            <header className="page-header">
+                <div className="container">
+                    <h1>Donate</h1>
+                    <p className="lead">
                         Your generosity fuels our mission to empower women and transform communities across Uganda.
                     </p>
                 </div>
-            </section>
+            </header>
 
-            <section className="donate-content">
-                <div className="content-wrapper">
+            <section className="section">
+                <div className="container donate-grid">
                     <div className="donate-info">
                         <h2>Why Your Donation Matters</h2>
-                        <p>
+                        <p className="donate-info__text">
                             Every contribution, no matter the size, helps us provide education, mentorship,
                             and resources to women in need. Your support directly impacts lives and
                             creates lasting change in communities across Uganda.
                         </p>
 
-                        <div className="donation-impact-grid">
-                            <div className="impact-item">
-                                <span className="impact-amount">$25</span>
-                                <p>Provides school supplies for one student for a term</p>
-                            </div>
-                            <div className="impact-item">
-                                <span className="impact-amount">$50</span>
-                                <p>Funds a mentorship session for a group of women</p>
-                            </div>
-                            <div className="impact-item">
-                                <span className="impact-amount">$100</span>
-                                <p>Supports a woman through a full skills training program</p>
-                            </div>
-                            <div className="impact-item">
-                                <span className="impact-amount">$250</span>
-                                <p>Sponsors a community workshop reaching dozens of families</p>
-                            </div>
-                        </div>
+                        <dl className="donate-levels">
+                            {IMPACT_LEVELS.map((level) => (
+                                <div className="donate-levels__item" key={level.amount}>
+                                    <dt className="donate-levels__amount">{level.amount}</dt>
+                                    <dd>{level.text}</dd>
+                                </div>
+                            ))}
+                        </dl>
                     </div>
 
-                    <div className="donate-cta-section">
-                        <h2>How to Donate</h2>
+                    <aside className="card donate-how" aria-labelledby="donate-how-title">
+                        <h2 id="donate-how-title" className="heading-3">How to Donate</h2>
                         <p>
                             We are currently setting up secure online donation options. In the meantime,
                             please reach out to us directly to arrange your contribution.
                         </p>
-                        <a href="/contact" className="donate-contact-button">
-                            <span>Contact Us to Donate</span>
-                        </a>
-                    </div>
+                        <Link to="/contact" className="btn btn--primary btn--block">
+                            Contact Us to Donate
+                        </Link>
+                    </aside>
                 </div>
             </section>
         </div>

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./routes/Home";
@@ -14,12 +14,47 @@ import GetInvolved from "./components/GetInvolved";
 import Donate from "./components/Donate";
 import Newsletter from "./components/Newsletter";
 
+/*
+ * Scroll to the top on every page change, or to the #fragment when a link
+ * targets a section (e.g. /programs#shg-training from the footer).
+ */
+function ScrollManager() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = decodeURIComponent(hash.slice(1));
+      const timer = window.setTimeout(() => {
+        const target = document.getElementById(id);
+        if (target) target.scrollIntoView();
+      }, 0);
+      return () => window.clearTimeout(timer);
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    return undefined;
+  }, [pathname, hash]);
+
+  return null;
+}
+
+function skipToContent(event) {
+  const main = document.getElementById("main");
+  if (!main) return;
+  event.preventDefault();
+  main.focus({ preventScroll: true });
+  main.scrollIntoView();
+}
+
 export default function App() {
   return (
     <Router>
+      <ScrollManager />
       <div className="App">
+        <a href="#main" className="skip-link" onClick={skipToContent}>
+          Skip to main content
+        </a>
         <Navbar />
-        <main className="main-content">
+        <main id="main" className="main-content" tabIndex={-1}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
