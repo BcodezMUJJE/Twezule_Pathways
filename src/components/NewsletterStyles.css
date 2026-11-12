@@ -1,18 +1,307 @@
 /* ==========================================================================
-   Newsletter page
+   Newsletter page — the issue as a readable web article
    ========================================================================== */
 
-.newsletter__viewer {
-  padding-block: var(--section-space);
+/* ---- Layout: contents panel + article ---- */
+.nl-layout {
+  display: grid;
+  gap: var(--space-8);
 }
 
-/* The PDF keeps its own design; the frame stays neutral */
-.newsletter__frame {
-  display: block;
-  width: 100%;
-  height: 90vh;
-  min-height: 520px;
-  border: 1px solid var(--border);
+@media (min-width: 1024px) {
+  .nl-layout {
+    grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+    gap: clamp(3rem, 1rem + 5vw, 6rem);
+    align-items: start;
+  }
+
+  .nl-aside {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-6));
+  }
+}
+
+/* ---- Contents panel ---- */
+.nl-aside {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.nl-aside__title {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: 0.01em;
+  color: var(--text-brand);
+}
+
+.nl-contents {
+  list-style: none;
+  display: grid;
+  border-top: 2px solid var(--color-plum);
+  counter-reset: nl;
+}
+
+.nl-contents li {
+  counter-increment: nl;
+  border-bottom: 1px solid var(--border);
+}
+
+.nl-contents a {
+  display: flex;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1.4;
+  color: var(--text);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nl-contents a::before {
+  content: counter(nl);
+  flex-shrink: 0;
+  width: 1.25rem;
+  font-weight: var(--weight-semibold);
+  color: var(--color-sage);
+}
+
+.nl-contents a:hover {
+  color: var(--text-brand);
+}
+
+.nl-aside__card {
+  display: grid;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background-color: var(--surface-alt);
+  border-radius: var(--radius-md);
+}
+
+.nl-aside__meta {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.nl-aside__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 32px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--text-brand);
+  text-decoration: underline;
+  text-decoration-color: rgba(92, 50, 75, 0.35);
+  text-underline-offset: 0.22em;
+}
+
+.nl-aside__link:hover {
+  text-decoration-color: currentColor;
+}
+
+.nl-aside__link svg {
+  width: 11px;
+  height: 11px;
+}
+
+/* ---- Article ---- */
+.nl-article {
+  max-width: 46rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.nl-section + .nl-section,
+.nl-callout + .nl-section {
+  margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--border);
+}
+
+.nl-section h2 {
+  margin-bottom: var(--space-5);
+}
+
+.nl-section p + p {
+  margin-top: 1.1em;
+}
+
+.nl-section__kicker {
+  margin-bottom: var(--space-3);
+}
+
+.nl-list {
+  margin-top: var(--space-4);
+}
+
+/* Figures */
+.nl-figure {
+  overflow: hidden;
   border-radius: var(--radius-lg);
   background-color: var(--surface-alt);
+}
+
+.nl-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nl-figure--wide {
+  margin-top: var(--space-7);
+  aspect-ratio: 3 / 2;
+}
+
+.nl-figure--wide img {
+  object-position: 50% 45%;
+}
+
+.nl-figure--aside {
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--space-6);
+}
+
+.nl-figure--aside img {
+  object-position: 50% 30%;
+}
+
+@media (min-width: 700px) {
+  /* The founders' message photo sits beside the opening paragraphs */
+  .nl-figure--aside {
+    float: right;
+    width: 42%;
+    aspect-ratio: 3 / 4;
+    margin: var(--space-2) 0 var(--space-5) var(--space-7);
+  }
+
+  .nl-section::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/* Partner Spotlight callout */
+.nl-callout {
+  margin-top: var(--space-9);
+  padding: var(--space-6) var(--space-7);
+  background-color: var(--surface-alt);
+  border-left: 4px solid var(--color-plum);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.nl-callout__title {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+}
+
+/* "We're Live!" note: a small Plum panel */
+.nl-live {
+  margin-top: var(--space-7);
+  padding: var(--space-5) var(--space-6);
+  background-color: var(--color-plum);
+  border-radius: var(--radius-md);
+  color: var(--text-inverse-muted);
+  font-size: var(--text-base);
+}
+
+.nl-section .nl-live p + p {
+  margin-top: var(--space-1);
+}
+
+.nl-live__title {
+  font-weight: var(--weight-semibold);
+  color: var(--color-gold);
+}
+
+.nl-live a {
+  --focus-ring: var(--color-gold);
+  font-weight: var(--weight-semibold);
+  color: var(--color-white);
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
+  text-underline-offset: 0.22em;
+}
+
+/* Pull quote */
+.nl-pullquote {
+  margin: var(--space-8) 0;
+  padding-left: var(--space-6);
+  border-left: 3px solid var(--color-sage);
+}
+
+.nl-pullquote p {
+  font-size: clamp(1.5rem, 1.15rem + 1.4vw, 2.125rem);
+  font-weight: var(--weight-medium);
+  font-style: italic;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--text-brand);
+}
+
+/* Sign-off */
+.nl-section p.nl-signoff {
+  margin-top: var(--space-8);
+  font-size: clamp(1.75rem, 1.3rem + 1.6vw, 2.5rem);
+  font-weight: var(--weight-medium);
+  letter-spacing: -0.03em;
+  color: var(--text-brand);
+}
+
+/* ---- The original designed edition ---- */
+.nl-original__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5) var(--space-8);
+  margin-bottom: clamp(2.5rem, 1.8rem + 2.5vw, 4rem);
+}
+
+.nl-original__header .section-header {
+  margin-bottom: 0;
+}
+
+.nl-pages {
+  list-style: none;
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 22rem));
+}
+
+.nl-page {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  transition: border-color var(--duration-fast) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+
+.nl-page img {
+  width: 100%;
+  height: auto;
+}
+
+.nl-page:hover {
+  border-color: var(--color-plum);
+  transform: translateY(-2px);
+}
+
+.nl-page__label {
+  position: absolute;
+  left: var(--space-3);
+  bottom: var(--space-3);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-plum);
+  color: var(--color-white);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
 }

@@ -20,9 +20,9 @@ The single source of truth is [`src/styles.css`](src/styles.css). Every value be
 
 | Token | HEX | Meaning | Use |
 |---|---|---|---|
-| `--color-gold` | `#E7B94C` | Golden Yellow, the sun | **Giving**: every Donate button. Highlights on plum (kickers, statistics, focus ring). Never as text on white. |
-| `--color-sage` | `#77A875` | Sage Green, the leaves and hills | Soft accents: list markers, tag borders, hover underlines, mobile current-page marker, and its 10% tint for alternate sections. Never as text on white. |
-| `--color-plum` | `#5C324B` | Plum, the "TWEZULE PATHWAYS" lettering | **Primary actions** (buttons), links, current-page pill, kickers, statistics, structural rules, the founders band and the footer |
+| `--color-gold` | `#E7B94C` | Golden Yellow, the sun | **Giving**: every Donate button. Highlights on plum (hero kickers, footer headings, statistics, focus ring). Never as text on white. |
+| `--color-sage` | `#77A875` | Sage Green, the leaves and hills | The closing call-to-action band (solid, black text), list markers, tag borders, hover underlines, mobile current-page marker, and its 10% tint for alternate sections. Never as text on white. |
+| `--color-plum` | `#5C324B` | Plum, the "TWEZULE PATHWAYS" lettering | **Page hero bands**, primary actions (buttons), links, current-page pill, kickers, statistics, structural rules, the founders band, the Get Involved donation panel and the footer |
 | `--color-white` | `#FFFFFF` | — | Page background, cards, text on plum and photos |
 | `--color-black` | `#000000` | — | Headings, strong text, secondary-button outlines, the hero backdrop |
 
@@ -154,7 +154,7 @@ Headings are tracked tight (−0.02 to −0.04em) and use `text-wrap: balance`; 
 | Primary | `.btn--primary` | Plum, white text | Black, white text | Main action on light surfaces |
 | **Accent** | `.btn--accent` | **Gold, black text** | Black, gold text | **Donate / giving only** |
 | Secondary | `.btn--secondary` | White, black text, black outline | Black, white text | Alternative actions |
-| Primary on plum | inside `.section--inverse` | Gold, black text | White, plum text | Plum bands |
+| Primary on plum | inside `.section--inverse` | **White, plum text** | Sage tint, black text | Plum bands and plum page heroes (Gold stays reserved for giving) |
 | Secondary on plum | inside `.section--inverse` | Transparent, white text, white outline | White, plum text | Plum bands |
 | Primary over photo | inside `.on-photo` | White, black text | Gold, black text | Home hero |
 | Secondary over photo | inside `.on-photo` | Transparent, white outline | White, black text | Home hero |
@@ -189,16 +189,33 @@ Buttons are 48px tall (`.btn--sm` 42px), padded 0 32px (`.btn--sm` 0 24px), Figt
 
 | Part | Desktop (≥1024px) | Mobile & tablet (<1024px) |
 |---|---|---|
-| Layout | Logo plate left · centred link group · "Get Involved" text link + gold "Donate" pill right | Logo plate left · gold "Donate" + labelled "Menu" right |
+| Layout | Logo plate left · centred link group · "Get Involved" link + gold "Donate" pill right. From 1280px the links sit at the true page centre; at 1024–1279px they centre between the logo and the actions, so nothing can overlap. | Logo plate left · gold "Donate" + labelled "Menu" right |
 | Logo | 64px on a white 16px-radius plate | 52px plate (46px under 360px) |
 | Link group | Pill with a sage-tint background; links are 38px pills; hover is black at 6%; **current page is a plum pill with white text** | Full-screen white panel, Figtree 24–32px links; current page in plum with a sage marker |
-| Over the home hero (top of page) | Bar transparent with white text; link group is translucent black; current page is a white pill; hover underlines are gold | Menu button sits on a translucent black pill |
-| After scrolling / other pages | Solid white bar with a `#E5E5E5` hairline | Same |
+| Over any page hero (top of page) | Bar transparent with white text; link group and "Get Involved" sit on translucent black pills; current page is a white pill; hover underlines are gold | Menu button sits on a translucent black pill |
+| After scrolling | Solid white bar with a `#E5E5E5` hairline | Same |
 | Behaviour | Sticky; `aria-current="page"`; focus moves to `<main>` on page change | Focus moves into the open menu; the rest of the page is `inert`; scroll locked; Escape returns focus to Menu |
 
-### 8.2 Home hero
+### 8.2 Page hero (`PageHero` component, every page)
 
-A full-screen photograph runs under the transparent navbar, with the headline, supporting text and buttons at the bottom left. The neutral black scrim is stronger at the top (for the nav) and the bottom-left (for the text), and the photo is cropped so the women's faces sit above the text. On phones (<600px) the photograph sits on top and fades into black, and the text sits below on black, so no text covers a face.
+Every page opens with `src/components/PageHero.js`, tucked under the transparent navbar:
+
+| Variant | Used on | Look |
+|---|---|---|
+| Photo, `size="full"` | Home | Full-screen photograph, neutral black scrim, headline bottom-left; kicker on a dark pill |
+| Photo, `size="page"` | About | Same treatment, 72% of the screen height |
+| Brand (Plum) | Programs, Impact, Get Involved, Contact, Donate, Newsletter | Plum band; gold kicker, white headline, white-80% lead, optional pill actions |
+| Brand, `size="compact"` | Privacy Policy, Terms of Service | Shorter plum band |
+
+Photo heroes are cropped so text never covers a face. On phones (<600px) the photograph sits on top and fades into black, with the text below. Pass actions as children; they pick up the photo or plum button variants automatically.
+
+### 8.3 Closing call to action (`CtaBand`)
+
+A solid Sage band before the footer on content pages (About, Programs, Impact, Newsletter): black headline and text (7.64:1), a gold "Donate via Omprakash" button outlined in black so its edge stays clear on sage, and a plum "Get Involved" button. It isn't used on pages that are themselves the action (Get Involved, Contact, Donate) or on legal pages.
+
+### 8.4 Footer
+
+Plum background. The brand column holds the **logo on a white plate**, the tagline, the description and a gold Donate button. Then four link columns with gold headings: Explore, Our Programs, Get Involved and Contact Us (verified email, phone and location). A bottom bar carries the copyright, legal links and round social icons (gold on hover). The layout is five columns from 1080px, four from 768px, and two on phones.
 
 **CSS scoping:** shared classes live in `styles.css`; page classes are prefixed (`home-`, `about-`, `impact-`, `gi-`, `contact-`, `donate-`, `newsletter__`, `programs-`, `site-nav__`, `site-footer__`). Never add unprefixed classes to a page stylesheet.
 
@@ -208,12 +225,14 @@ A full-screen photograph runs under the transparent navbar, with the headline, s
 |---|---|
 | < 480px | Buttons in `.btn-group` go full width |
 | < 600px | Home hero stacks: photo on top, text on black below |
-| 600px | Footer two columns; Impact metrics two columns |
+| 600px | Impact metrics two columns |
+| 768px | Footer four columns |
 | 700–800px | Founders side by side; team rows; donation panel; newsletter header |
 | 900px | `.split` rows; footer middle row |
 | 960px | Content + sidebar layouts (Contact, Get Involved form, Donate, home CTA) |
-| **1024px** | Desktop navigation; founders band beside the quote; video beside its text; Impact metrics four columns |
-| 1080px | Footer five columns |
+| **1024px** | Desktop navigation (links centred between logo and actions); founders band beside the quote; video beside its text; Impact metrics four columns |
+| 1280px | Navbar links move to the true page centre |
+| 1080px | Footer five columns (brand + four) |
 
 Verified at 320, 375, 390, 430, 768, 1023, 1024, 1280, 1440 and 1920px.
 

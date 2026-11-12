@@ -110,6 +110,14 @@
   text-decoration-color: var(--color-plum);
 }
 
+/* Over a hero it sits on the same translucent pill as the link group,
+   so it stays legible over bright parts of any photograph */
+.is-overlay .site-nav__get-involved {
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-full);
+  background-color: rgba(0, 0, 0, 0.42);
+}
+
 .is-overlay .site-nav__get-involved.active,
 .is-overlay .site-nav__get-involved:hover {
   text-decoration-color: var(--color-gold);
@@ -170,10 +178,12 @@
    ========================================================================== */
 
 @media (min-width: 1024px) {
+  /* Below 1280px the links centre between the logo and the actions, so the
+     zones can never overlap */
   .site-nav {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    gap: var(--space-6);
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: var(--space-5);
   }
 
   .site-nav__brand { justify-self: start; }
@@ -227,6 +237,14 @@
 
   .site-nav__panel-footer {
     display: none;
+  }
+}
+
+/* From 1280px there is room for the links to sit at the true page centre */
+@media (min-width: 1280px) {
+  .site-nav {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: var(--space-6);
   }
 }
 

@@ -385,3 +385,106 @@ Screenshots: `docs/design-review/landing-nav-{1440,1024,390}-{before,after}.jpg`
 Screenshots: `docs/design-review/brand-home-{1440,1024,768,390}.jpg`, `brand-nav-scrolled-1440.jpg`, `brand-mobile-menu-390.jpg`.
 
 **Not covered:** Safari and Firefox, real devices, and screen-reader testing.
+
+---
+
+## H. Round 4: site-wide redesign (every page, navbar, homepage and footer)
+
+The brand system of section G now runs through **every page**, using the same reference-inspired structure throughout. Each page opens with a hero under the transparent navbar, continues with content sections on white and sage-tint surfaces, and ends with a consistent close and a redesigned footer.
+
+### H.1 What was wrong at the start of this round
+
+- **Inner pages looked like a different website.** They opened with a plain white text block, while the homepage opened with a bold photo hero (`docs/design-review/site/` and the round-4 baseline screenshots).
+- **Gold was leaking into non-giving buttons:** the primary buttons on plum sections were gold.
+- **The footer had no logo** and repeated the homepage quote.
+
+### H.2 New shared components
+
+| Component | Purpose |
+|---|---|
+| `PageHero` (`src/components/PageHero.js` + `.css`) | One hero for every page. Photo variant (home full-screen, About), plum brand variant (all other pages), compact variant (legal pages). Kicker, `h1`, lead and pill actions. Handles the scrim, the face-safe photo crop and phone stacking. |
+| `CtaBand` (`src/components/CtaBand.js` + `.css`) | Solid sage closing band with "Join us in lighting pathways of change" (existing copy), a gold Donate button and a plum Get Involved button |
+| Footer (rebuilt) | Plum footer with the logo on a white plate, organised columns and an icon social bar |
+
+### H.3 Page-by-page changes
+
+| Page | Hero | Changes |
+|---|---|---|
+| **Home** `/` | Full-screen photo | Same design as Round 3, now built on the shared `PageHero` |
+| **About** `/about` | Photo hero (training session, `Tw7.JPG`), 72% of the screen height | The story paragraph is split: its first sentence is the hero lead, and the founding sentence is a large statement beside a ruled list of the three highlights (wording unchanged). Purpose on a sage tint with plum rules. Approach. Team profiles with plum roles and rounded portraits. Closing sage band. |
+| **Programs** `/programs` | Plum | Programs rendered from one data list; each starts with a plum rule, with larger rounded photos and anchors kept (`#shg-training`, `#safety-training`, `#leadership`, `#community`). Future programs on a sage tint. Closing sage band. (The unused "embedded on the home page" mode was removed.) |
+| **Impact** `/impact` | Plum | Metrics grid under a plum rule; stories on a sage tint with sage location tags; partner names as plum pills. Closing sage band. |
+| **Get Involved** `/get-involved` | Plum + **Donate via Omprakash** (gold) + **Send Us a Message** (jumps to the existing form) | Option cards topped with a plum rule. The donation panel is now a plum block with a gold button. Form section on a sage tint. |
+| **Contact** `/contact` | Plum + Email Us (white) + Call Us (outline) | Form card and details list unchanged in behaviour; map on a sage tint |
+| **Donate** `/donate` | Plum | Amounts in plum under a plum rule; sticky "How to Donate" card (text unchanged) |
+| **Newsletter** `/newsletter` | Plum + **Download Newsletter PDF** | PDF frame with rounded corners; closing sage band |
+| **Privacy Policy / Terms of Service** | Compact plum | Narrow reading column (placeholder text unchanged) |
+
+### H.4 Navigation bar
+
+- Transparent over **every** page hero at the top of the page, solid white once scrolled.
+- Over a hero, the link group and "Get Involved" sit on translucent dark pills, so they stay legible over any photograph.
+- **Overlap fix:** at 1024–1279px the links now centre between the logo and the actions. Previously the link group could overlap "Get Involved" at 1024px. From 1280px they return to the true page centre.
+- Clicking a link to the page you're already on (for example "Home" in the footer while on the home page) now returns to the top. Before, nothing happened.
+
+### H.5 Footer redesign
+
+- **Brand column:** the logo on a white plate, the tagline, the description and a gold "Donate via Omprakash" button.
+- **Explore:** Home, About, Programs, Impact, Newsletter, Contact.
+- **Our Programs:** the four program anchors.
+- **Get Involved:** Ways to Get Involved, Volunteer, Partner, Champion.
+- **Contact Us:** the verified email, phone and location already on the site, with gold icons.
+- **Bottom bar:** copyright, Privacy and Terms, and round social icons for the five existing profile links (gold on hover).
+- Gold column headings, white-80% links that turn white with a gold underline on hover.
+- Five columns on desktop, four on tablet, two on phones.
+- The repeated quote was removed; it remains on the homepage. No contact details or social accounts were invented.
+
+### H.6 How the five colours are balanced
+
+| Colour | Role across the site |
+|---|---|
+| **Plum** | The frame of every page (hero band and footer), primary buttons, links, current page, structural rules, statistics |
+| **Golden Yellow** | Only the most important highlights: every Donate button, hero kickers and footer headings on plum, statistics on plum. Never text on white. |
+| **Sage Green** | One solid band per content page (the closing call to action), 10% tint for alternate sections, list markers, tags and hover accents |
+| **White** | Page background and breathing space; text and buttons on plum and photos |
+| **Black** | Headings and body text, secondary-button outlines, the photo backdrop and scrim |
+
+Per page, each section uses at most one strong colour (plum *or* sage) plus gold for a single action. A typical inner page reads: plum hero, then white and sage-tint content, then the sage band, then the plum footer.
+
+### H.7 Testing (final build)
+
+| Test | Scope | Result |
+|---|---|---|
+| Production build | — | Compiled successfully, no warnings (77.9 kB JS, 8.6 kB CSS gzipped) |
+| Development server (React StrictMode) | Site, nav and sweep suites | Compiled successfully; all suites pass |
+| Layout and accessibility sweep | 10 pages × 10 widths (320, 375, 390, 430, 768, 1023, 1024, 1280, 1440, 1920) | **100/100**: no horizontal scroll or overflow, one `h1`, zero DOM-measurable contrast failures, no undersized targets, no console or HTTP errors |
+| Real-pixel contrast (hero and transparent navbar text) | 10 pages × 7 sizes (320×640 to 1920×1080) | **All pass**, worst case 4.32:1 on large text (needs 3:1) |
+| Navbar zone overlap | 13 widths (1024–1920) × 4 pages × top/scrolled | **No overlap** (new test, added after it found the 1024px overlap) |
+| Site-wide functional suite | Every page's hero, `h1`, CTA band, footer logo and images; logo integrity in navbar and footer; every footer link and anchor; both forms (validation, focus, sending state, announced success); Get Involved hero and card jumps to the form; every gold Donate link; newsletter PDF; home program anchors; CTA links; console | **44/44** |
+| Navbar and landing behaviour | Transparent-to-solid on home and inner pages, active states, keyboard order, mobile menu (focus, inert, Escape, scroll lock), hero sizing, every landing link, brand colours of buttons and footer | **51/51** |
+| Rendered colour inventory | All pages, desktop and mobile, top and scrolled | Only the five brand colours plus documented tints |
+
+Screenshots: `docs/design-review/site/` holds all page first screens on desktop and mobile, full-length desktop pages, and the footer on desktop, tablet and mobile.
+
+### H.8 Issues found and fixed this round
+
+1. Inner pages didn't match the homepage. Fixed with the shared `PageHero` and `CtaBand`.
+2. Gold was used for non-giving primary buttons on plum. These are now white pills; gold means giving everywhere.
+3. Same-page links did nothing. They now scroll to the top.
+4. The navbar link group overlapped "Get Involved" at 1024px. Fixed with the centring rule, and a regression test was added.
+5. "Get Involved" over the About photo measured 4.26:1. It now sits on a translucent pill.
+6. Black structural rules on Impact and Donate, and a stale "monochrome" code comment. Rules are now plum and the comment is corrected.
+7. The footer lacked the logo and repeated the homepage quote. Fixed.
+
+### H.9 Functionality preserved
+
+All 10 routes and their content. Both forms behave exactly as before, with the same validation, messages and simulated send. All anchors, the Omprakash donation links, `mailto:`/`tel:` links, the YouTube video, the Google Map, the newsletter PDF (embedded and download), the existing social links, the skip link, and focus management on page changes. No dependencies were added.
+
+### H.10 Remaining issues (unchanged by design work, need owner decisions)
+
+1. **The forms still don't send messages.** They need a form service or backend.
+2. Content inconsistencies: "1+" vs "25+" years; the `/donate` page text ("setting up online donations") vs the Omprakash buttons; placeholder Privacy and Terms; impact data "coming soon".
+3. Social profile URLs are unverified, and "Twitter" is now "X".
+4. The logo PNG is 1.6 MB, and photos are not yet WebP.
+5. `build/` and `build.zip` have not been regenerated (run `npm run build` to deploy).
+6. Not tested in Safari or Firefox, on real devices, or with screen readers.
