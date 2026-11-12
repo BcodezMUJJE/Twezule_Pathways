@@ -20,7 +20,9 @@ import Newsletter from "./components/Newsletter";
  * After an in-app page change, keyboard/screen-reader focus moves to <main>.
  */
 function ScrollManager() {
-  const { pathname, hash } = useLocation();
+  // `key` changes on every navigation — including a link to the page you are
+  // already on — so those clicks also return to the top.
+  const { pathname, hash, key } = useLocation();
   const previousPath = useRef(pathname);
 
   useEffect(() => {
@@ -39,7 +41,7 @@ function ScrollManager() {
     }
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     return undefined;
-  }, [pathname, hash]);
+  }, [pathname, hash, key]);
 
   return null;
 }

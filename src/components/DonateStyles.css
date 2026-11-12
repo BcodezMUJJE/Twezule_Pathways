@@ -24,7 +24,7 @@
 .donate-levels {
   display: grid;
   margin-top: var(--space-8);
-  border-top: 1px solid var(--color-black);
+  border-top: 2px solid var(--color-plum);
 }
 
 .donate-levels__item {
@@ -40,7 +40,9 @@
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
   line-height: 1;
-  color: var(--text-strong);
+  font-weight: var(--weight-medium);
+  letter-spacing: -0.03em;
+  color: var(--text-brand);
   font-variant-numeric: lining-nums tabular-nums;
 }
 
