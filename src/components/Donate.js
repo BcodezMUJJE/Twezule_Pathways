@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./DonateStyles.css";
+import PageHero from "./PageHero";
 
 const IMPACT_LEVELS = [
     { amount: "$25", text: "Provides school supplies for one student for a term" },
@@ -12,14 +13,11 @@ const IMPACT_LEVELS = [
 const Donate = () => {
     return (
         <div className="donate">
-            <header className="page-header">
-                <div className="container">
-                    <h1>Donate</h1>
-                    <p className="lead">
-                        Your generosity fuels our mission to empower women and transform communities across Uganda.
-                    </p>
-                </div>
-            </header>
+            <PageHero
+                id="donate-title"
+                title="Donate"
+                lead="Your generosity fuels our mission to empower women and transform communities across Uganda."
+            />
 
             <section className="section">
                 <div className="container donate-grid">

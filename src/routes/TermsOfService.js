@@ -1,15 +1,12 @@
 import React from "react";
+import PageHero from "../components/PageHero";
 
 export default function TermsOfService() {
   return (
     <>
-      <header className="page-header">
-        <div className="container">
-          <h1>Terms of Service</h1>
-        </div>
-      </header>
+      <PageHero id="termsofservice-title" size="compact" title="Terms of Service" />
       <section className="section">
-        <div className="container prose">
+        <div className="container container--narrow prose">
           <p>
             This page is a placeholder. Add your website terms here (acceptable use, disclaimers, limitations,
             and contact information).

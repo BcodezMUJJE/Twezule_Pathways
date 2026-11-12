@@ -2,61 +2,53 @@
    About page
    ========================================================================== */
 
-/* ---- Story (page header with photograph) ---- */
-.about-story h1 {
-  max-width: none;
+/* ---- Hero: a taller photo hero ---- */
+.about-hero {
+  min-height: clamp(480px, 72vh, 780px);
 }
 
-.about-story__text {
-  max-width: 36rem;
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem);
-  line-height: 1.5;
-  color: var(--text);
+.about-hero .page-hero__image {
+  object-position: 50% 35%;
 }
 
-.split__body.about-story__body > .about-story__text {
-  margin-top: var(--space-6);
-  color: var(--text);
-}
-
-.about-story__highlights {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3) var(--space-6);
-  padding-top: var(--space-5);
-  border-top: 1px solid var(--border);
-}
-
-.split__body.about-story__body > .about-story__highlights {
-  margin-top: var(--space-7);
-}
-
-.about-story__highlights li {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
-  color: var(--text-strong);
-}
-
-.about-story__highlights svg {
-  width: 14px;
-  height: 14px;
+/* ---- How we began ---- */
+.about-founding__grid {
+  display: grid;
+  gap: var(--space-8);
 }
 
 @media (min-width: 900px) {
-  .about-story__media {
-    aspect-ratio: 4 / 5;
+  .about-founding__grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: clamp(3rem, 1rem + 5vw, 6rem);
+    align-items: start;
   }
 }
 
-@media (max-width: 899px) {
-  .about-story__media {
-    aspect-ratio: 3 / 2;
-  }
+.about-founding__statement {
+  max-width: 30ch;
+  font-size: clamp(1.625rem, 1.2rem + 1.6vw, 2.5rem);
+  font-weight: var(--weight-medium);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: var(--color-black);
+}
+
+.about-founding__highlights {
+  list-style: none;
+  display: grid;
+  border-top: 2px solid var(--color-plum);
+}
+
+.about-founding__highlights li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+  border-bottom: 1px solid var(--border);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  color: var(--color-black);
 }
 
 /* ---- Purpose ---- */
@@ -66,9 +58,8 @@
 
 .feature p.about-purpose__text {
   max-width: 36rem;
-  font-family: var(--font-display);
   font-size: var(--text-lg);
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--text);
 }
 
@@ -99,7 +90,11 @@
   display: grid;
   gap: var(--space-6);
   padding-block: var(--space-8);
-  border-top: 1px solid var(--color-black);
+  border-top: 1px solid var(--border);
+}
+
+.about-team__member:first-child {
+  border-top: 2px solid var(--color-plum);
 }
 
 .about-team__member:last-child {
@@ -116,6 +111,7 @@
 
 .about-team__photo {
   max-width: 280px;
+  border-radius: var(--radius-lg);
 }
 
 .about-team__photo img {
@@ -126,10 +122,11 @@
   margin-top: var(--space-2);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  color: var(--text-muted);
+  color: var(--text-brand);
 }
 
 .about-team__bio {
   margin-top: var(--space-5);
+  max-width: 44rem;
   color: var(--text);
 }

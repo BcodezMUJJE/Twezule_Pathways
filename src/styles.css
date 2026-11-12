@@ -1,41 +1,59 @@
 /* ==========================================================================
    Twezule Pathways — Design System
    --------------------------------------------------------------------------
-   Rule #1: the logo is the ONLY coloured brand element. Everything in the
-   interface uses the neutral tokens below. Photographs keep their natural
-   colour. Never extract or reuse the logo's colours. See DESIGN_SYSTEM.md.
+   Official brand palette: Golden Yellow, Sage Green, Plum, White, Black.
+   Contrast rules (WCAG 2.2 AA):
+     • Gold and Sage carry BLACK text only (white on them fails).
+     • Plum carries WHITE (or Gold) text.
+     • Gold = giving (Donate). Plum = primary actions and depth.
+       Sage = soft surfaces and decorative accents, never text on white.
+   The logo is shown exactly as supplied. See DESIGN_SYSTEM.md.
    ========================================================================== */
 
 :root {
-  /* ---- Neutral palette (the only interface colours) ---- */
+  /* ---- Official brand palette ---- */
+  --color-gold: #E7B94C;   /* Golden Yellow — the sun */
+  --color-sage: #77A875;   /* Sage Green — the leaves and hills */
+  --color-plum: #5C324B;   /* Plum — the "TWEZULE PATHWAYS" lettering */
   --color-white: #FFFFFF;
-  --color-off-white: #F7F7F7;
-  --color-grey-200: #EAEAEA;   /* light grey: hairlines, dividers */
-  --color-grey-400: #9CA3AF;   /* medium grey: text on dark only, decorative, disabled */
-  --color-grey-500: #8A8A8A;   /* adjusted: form-control borders (3.45:1 on white) */
-  --color-grey-600: #6B6B6B;   /* adjusted: placeholders, meta text (5.3:1 on white) */
-  --color-grey-700: #404040;   /* dark grey: secondary text (10.4:1 on white) */
-  --color-charcoal: #1F1F1F;   /* body text (16.4:1 on white) */
-  --color-black: #111111;      /* headings, primary actions, dark bands */
+  --color-black: #000000;
+
+  /* ---- Tints: black, white or a brand colour at reduced strength ---- */
+  --color-sage-tint: #F1F6F1;   /* Sage 10% on white — alternate sections */
+  --color-line: #E5E5E5;        /* Black 10% — hairlines, dividers */
+  --color-line-strong: #8A8A8A; /* Black 46% — form-control borders (3.45:1) */
+  --color-ink-subtle: #6B6B6B;  /* Black 58% — placeholders, meta (5.33:1) */
+  --color-ink-muted: #4D4D4D;   /* Black 70% — secondary text (8.45:1) */
+  --color-ink: #1A1A1A;         /* Black 90% — body text (17.4:1) */
+
+  /* Legacy aliases kept so every page inherits the brand palette */
+  --color-off-white: var(--color-sage-tint);
+  --color-grey-200: var(--color-line);
+  --color-grey-400: var(--color-line-strong);
+  --color-grey-500: var(--color-line-strong);
+  --color-grey-600: var(--color-ink-subtle);
+  --color-grey-700: var(--color-ink-muted);
+  --color-charcoal: var(--color-ink);
 
   /* ---- Semantic roles (use these in components) ---- */
   --surface: var(--color-white);
-  --surface-alt: var(--color-off-white);
-  --surface-inverse: var(--color-black);
-  --text: var(--color-charcoal);
+  --surface-alt: var(--color-sage-tint);
+  --surface-inverse: var(--color-plum);
+  --text: var(--color-ink);
   --text-strong: var(--color-black);
-  --text-muted: var(--color-grey-700);
-  --text-subtle: var(--color-grey-600);
+  --text-muted: var(--color-ink-muted);
+  --text-subtle: var(--color-ink-subtle);
+  --text-brand: var(--color-plum);
   --text-inverse: var(--color-white);
-  --text-inverse-muted: var(--color-grey-400);
-  --border: var(--color-grey-200);
-  --border-strong: var(--color-grey-500);
-  --border-inverse: var(--color-grey-700);
-  --focus-ring: var(--color-black);
+  --text-inverse-muted: rgba(255, 255, 255, 0.8);
+  --border: var(--color-line);
+  --border-strong: var(--color-line-strong);
+  --border-inverse: rgba(255, 255, 255, 0.24);
+  --focus-ring: var(--color-plum);
 
   /* ---- Typography ---- */
-  --font-display: 'Newsreader', Georgia, 'Times New Roman', serif;
-  --font-body: 'Public Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Figtree', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Figtree', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 
   --text-xs: 0.8125rem;   /* 13px — tags, fine print */
   --text-sm: 0.9375rem;   /* 15px — labels, buttons, nav, meta */
@@ -173,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--weight-medium);
   line-height: var(--leading-heading);
   color: var(--text-strong);
-  letter-spacing: -0.012em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
   overflow-wrap: break-word;
 }
@@ -181,17 +199,19 @@ h1, h2, h3, h4, h5, h6 {
 h1, .heading-1 {
   font-size: var(--text-3xl);
   line-height: var(--leading-tight);
-  letter-spacing: -0.022em;
+  letter-spacing: -0.035em;
 }
 
 h2, .heading-2 {
   font-size: var(--text-2xl);
-  letter-spacing: -0.018em;
+  letter-spacing: -0.03em;
 }
 
 h3, .heading-3 {
   font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
+  letter-spacing: -0.015em;
 }
 
 h4, .heading-4 {
@@ -209,6 +229,10 @@ h4, .heading-4 {
   color: var(--text-strong);
 }
 
+.heading-3 {
+  font-weight: var(--weight-semibold);
+}
+
 p {
   text-wrap: pretty;
 }
@@ -223,7 +247,7 @@ strong {
 }
 
 ::selection {
-  background: var(--color-black);
+  background: var(--color-plum);
   color: var(--color-white);
 }
 
@@ -263,9 +287,9 @@ strong {
   top: var(--space-4);
   z-index: var(--z-skip);
   padding: var(--space-3) var(--space-4);
-  background: var(--color-black);
+  background: var(--color-plum);
   color: var(--color-white);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
   text-decoration: none;
@@ -275,7 +299,7 @@ strong {
 .skip-link:focus,
 .skip-link:focus-visible {
   transform: none;
-  outline: 2px solid var(--color-white);
+  outline: 2px solid var(--color-gold);
   outline-offset: 2px;
 }
 
@@ -320,7 +344,7 @@ strong {
 }
 
 .section--inverse {
-  --focus-ring: var(--color-white);
+  --focus-ring: var(--color-gold);
   background-color: var(--surface-inverse);
   color: var(--text-inverse);
 }
@@ -338,24 +362,6 @@ strong {
   margin-top: var(--space-4);
 }
 
-/* Page header: the top of every inner page */
-.page-header {
-  padding-block: clamp(3rem, 2rem + 4.5vw, 6.5rem) clamp(2.5rem, 1.6rem + 3.5vw, 5rem);
-  border-bottom: 1px solid var(--border);
-}
-
-.page-header h1 {
-  max-width: 20ch;
-}
-
-.page-header .lead {
-  margin-top: var(--space-5);
-}
-
-.page-header .btn-group {
-  margin-top: var(--space-7);
-}
-
 /* Small context line above a page title. Sentence case, never all caps. */
 .kicker {
   display: block;
@@ -365,7 +371,11 @@ strong {
   font-weight: var(--weight-semibold);
   line-height: 1.4;
   letter-spacing: 0.005em;
-  color: var(--text-muted);
+  color: var(--text-brand);
+}
+
+.section--inverse .kicker {
+  color: var(--color-gold);
 }
 
 .lead {
@@ -388,7 +398,11 @@ strong {
 }
 
 /* ==========================================================================
-   Buttons
+   Buttons — pill shaped
+   Primary  = Plum, white text      (main action on light surfaces)
+   Accent   = Gold, black text      (Donate / giving — always)
+   Secondary= White, black text, outline
+   On dark (.section--inverse) and on photos (.on-photo) they adapt.
    ========================================================================== */
 
 .btn {
@@ -397,9 +411,9 @@ strong {
   justify-content: center;
   gap: var(--space-2);
   min-height: var(--control-height);
-  padding: 0 var(--space-5);
-  border: 1px solid transparent;
-  border-radius: var(--radius-sm);
+  padding: 0 var(--space-6);
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-full);
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
@@ -427,31 +441,42 @@ strong {
   transform: translateY(1px);
 }
 
-/* Primary: black with white text. One per view. */
+/* Primary: Plum with white text (10.4:1) */
 .btn--primary {
-  background-color: var(--color-black);
+  background-color: var(--color-plum);
   color: var(--color-white);
 }
 
 .btn--primary:hover {
-  background-color: var(--color-grey-700);
+  background-color: var(--color-black);
 }
 
-/* Secondary: white with dark text and a grey border */
+/* Accent: Gold with black text (11.4:1). Reserved for giving. */
+.btn--accent {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+}
+
+.btn--accent:hover {
+  background-color: var(--color-black);
+  color: var(--color-gold);
+}
+
+/* Secondary: white with black text and outline */
 .btn--secondary {
   background-color: var(--color-white);
   color: var(--color-black);
-  border-color: var(--color-grey-400);
-}
-
-.btn--secondary:hover {
-  background-color: var(--color-off-white);
   border-color: var(--color-black);
 }
 
+.btn--secondary:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
 .btn--sm {
-  min-height: 40px;
-  padding: 0 var(--space-4);
+  min-height: 42px;
+  padding: 0 var(--space-5);
 }
 
 .btn--block {
@@ -460,31 +485,65 @@ strong {
 
 .btn:disabled,
 .btn[aria-disabled="true"] {
-  background-color: var(--color-grey-200);
+  background-color: var(--color-line);
   border-color: transparent;
-  color: var(--color-grey-600);
+  color: var(--color-ink-subtle);
   cursor: not-allowed;
 }
 
-/* Buttons on dark surfaces invert */
+/* On Plum sections: primary turns white (Gold stays reserved for giving),
+   secondary outlines in white */
 .section--inverse .btn--primary {
   background-color: var(--color-white);
-  color: var(--color-black);
+  color: var(--color-plum);
 }
 
 .section--inverse .btn--primary:hover {
-  background-color: var(--color-grey-200);
+  background-color: var(--color-sage-tint);
+  color: var(--color-black);
+}
+
+.section--inverse .btn--accent:hover {
+  background-color: var(--color-white);
+  color: var(--color-plum);
 }
 
 .section--inverse .btn--secondary {
   background-color: transparent;
   color: var(--color-white);
-  border-color: var(--color-grey-400);
+  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .section--inverse .btn--secondary:hover {
-  background-color: var(--color-charcoal);
+  background-color: var(--color-white);
   border-color: var(--color-white);
+  color: var(--color-plum);
+}
+
+/* Over photographs: solid white or white outline */
+.on-photo {
+  --focus-ring: var(--color-white);
+}
+
+.on-photo .btn--primary {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.on-photo .btn--primary:hover {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+}
+
+.on-photo .btn--secondary {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.85);
+}
+
+.on-photo .btn--secondary:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 
 .btn-group {
@@ -499,14 +558,14 @@ strong {
   }
 }
 
-/* Inline text link */
+/* Inline text link: Plum with a soft underline */
 .link {
-  color: var(--text-strong);
+  color: var(--text-brand);
   font-weight: var(--weight-semibold);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
-  text-decoration-color: var(--color-grey-400);
+  text-decoration-color: rgba(92, 50, 75, 0.35);
   transition: text-decoration-color var(--duration-fast) var(--ease-out);
   overflow-wrap: anywhere;
 }
@@ -530,14 +589,14 @@ strong {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   background-color: var(--surface);
-  color: var(--text-strong);
+  color: var(--text-brand);
   font-size: 1.125rem;
 }
 
 .section--inverse .icon-mark {
   background-color: transparent;
   border-color: var(--border-inverse);
-  color: var(--text-inverse);
+  color: var(--color-gold);
 }
 
 /* Status tag: carries information ("In development", a place name) */
@@ -546,8 +605,9 @@ strong {
   align-items: center;
   gap: var(--space-2);
   padding: 0.3rem 0.7rem;
-  border: 1px solid var(--color-grey-400);
+  border: 1px solid var(--color-sage);
   border-radius: var(--radius-full);
+  background-color: var(--color-sage-tint);
   font-size: var(--text-xs);
   font-weight: var(--weight-semibold);
   line-height: 1.3;
@@ -579,8 +639,8 @@ strong {
   left: 0;
   top: 0.82em;
   width: 1rem;
-  height: 1px;
-  background-color: var(--text-strong);
+  height: 2px;
+  background-color: var(--color-sage);
 }
 
 /* Columns separated by a strong top rule (instead of boxed cards) */
@@ -592,7 +652,7 @@ strong {
 
 .feature {
   padding-top: var(--space-5);
-  border-top: 1px solid var(--color-black);
+  border-top: 2px solid var(--color-plum);
 }
 
 .feature h3,
@@ -692,8 +752,8 @@ strong {
   font-size: clamp(2.5rem, 2rem + 2vw, 3.5rem);
   font-weight: var(--weight-regular);
   line-height: 1;
-  letter-spacing: -0.02em;
-  color: var(--text-strong);
+  letter-spacing: -0.03em;
+  color: var(--text-brand);
   font-variant-numeric: lining-nums tabular-nums;
 }
 
@@ -703,7 +763,7 @@ strong {
   color: var(--text-muted);
 }
 
-.section--inverse .stat__value { color: var(--text-inverse); }
+.section--inverse .stat__value { color: var(--color-gold); }
 .section--inverse .stat__label { color: var(--text-inverse-muted); }
 
 /* Contact details list */
@@ -742,10 +802,11 @@ strong {
 }
 
 a.info-list__value {
+  color: var(--text-brand);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.22em;
-  text-decoration-color: var(--color-grey-400);
+  text-decoration-color: rgba(92, 50, 75, 0.35);
   transition: text-decoration-color var(--duration-fast) var(--ease-out);
 }
 
@@ -843,8 +904,8 @@ textarea.input {
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
   background-color: var(--surface-alt);
-  border: 1px solid var(--color-black);
-  border-left-width: 4px;
+  border: 1px solid var(--color-sage);
+  border-left: 4px solid var(--color-plum);
   border-radius: var(--radius-sm);
   color: var(--text-strong);
 }

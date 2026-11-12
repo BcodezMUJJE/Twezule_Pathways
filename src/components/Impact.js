@@ -1,6 +1,8 @@
 import React from "react";
 import { FaPiggyBank, FaHome, FaGraduationCap, FaHandshake, FaUsers, FaMapMarkerAlt } from "react-icons/fa";
 import "./ImpactStyles.css";
+import PageHero from "./PageHero";
+import CtaBand from "./CtaBand";
 import StoryOneImg from "../assets/Tw4.JPG";
 import StoryTwoImg from "../assets/Tw6.JPG";
 import StoryThreeImg from "../assets/Tw2.JPG";
@@ -43,13 +45,12 @@ const Impact = () => {
     return (
         <div className="impact">
             {/* Header */}
-            <header className="page-header">
-                <div className="container">
-                    <p className="kicker">Creating Lasting Change</p>
-                    <h1>Our Impact: Stories of Women Rising</h1>
-                    <p className="lead">Witnessing transformation, one woman and one community at a time</p>
-                </div>
-            </header>
+            <PageHero
+                id="impact-title"
+                kicker="Creating Lasting Change"
+                title="Our Impact: Stories of Women Rising"
+                lead="Witnessing transformation, one woman and one community at a time"
+            />
 
             {/* Highlights */}
             <section className="section" aria-labelledby="impact-highlights-title">
@@ -138,6 +139,8 @@ const Impact = () => {
                     </div>
                 </div>
             </section>
+
+            <CtaBand />
         </div>
     );
 };

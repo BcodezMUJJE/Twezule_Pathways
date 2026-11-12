@@ -9,6 +9,10 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
 }
 
+.gi-way {
+  border-top: 2px solid var(--color-plum);
+}
+
 .gi-way h3 {
   margin: var(--space-5) 0 var(--space-3);
 }
@@ -35,8 +39,8 @@
   display: grid;
   gap: var(--space-5);
   margin-top: var(--space-9);
-  padding: clamp(1.75rem, 1rem + 3vw, 3rem);
-  background-color: var(--surface-alt);
+  padding: clamp(1.75rem, 1rem + 3vw, 3.5rem);
+  background-color: var(--color-plum);
   border-radius: var(--radius-lg);
 }
 
@@ -55,7 +59,7 @@
 .gi-donate p {
   max-width: 38rem;
   margin-top: var(--space-3);
-  color: var(--text-muted);
+  color: var(--text-inverse-muted);
 }
 
 /* ---- Contact form ---- */

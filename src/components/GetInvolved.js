@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaHandshake, FaUsers, FaStar, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaCheck } from "react-icons/fa";
 import "./GetInvolvedStyles.css";
+import PageHero from "./PageHero";
 
 const DONATE_URL = "https://www.omprakash.org/global/twezule-pathways";
 
@@ -84,14 +85,19 @@ const GetInvolved = () => {
     return (
         <div className="get-involved">
             {/* Header */}
-            <header className="page-header">
-                <div className="container">
-                    <h1>Get Involved</h1>
-                    <p className="lead">
-                        Every woman deserves the opportunity to rise. You can be part of that journey.
-                    </p>
-                </div>
-            </header>
+            <PageHero
+                id="get-involved-title"
+                title="Get Involved"
+                lead="Every woman deserves the opportunity to rise. You can be part of that journey."
+            >
+                <a href={DONATE_URL} target="_blank" rel="noopener noreferrer" className="btn btn--accent">
+                    Donate via Omprakash
+                    <span className="visually-hidden"> (opens in a new tab)</span>
+                </a>
+                <button type="button" className="btn btn--secondary" onClick={goToContactForm}>
+                    Send Us a Message
+                </button>
+            </PageHero>
 
             {/* Ways to Get Involved */}
             <section className="section" aria-labelledby="ways-title">
@@ -120,7 +126,7 @@ const GetInvolved = () => {
                     </div>
 
                     {/* Donation */}
-                    <div className="gi-donate">
+                    <div className="gi-donate section--inverse">
                         <div>
                             <h3>Support Our Mission Financially</h3>
                             <p>
@@ -128,7 +134,7 @@ const GetInvolved = () => {
                                 women's empowerment programs in Uganda. Every donation makes a difference.
                             </p>
                         </div>
-                        <a href={DONATE_URL} target="_blank" rel="noopener noreferrer" className="btn btn--primary">
+                        <a href={DONATE_URL} target="_blank" rel="noopener noreferrer" className="btn btn--accent">
                             Donate via Omprakash
                             <span className="visually-hidden"> (opens in a new tab)</span>
                         </a>

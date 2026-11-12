@@ -1,6 +1,8 @@
 import React from "react";
 import { FaBriefcase, FaHandshake, FaStar, FaBullseye, FaBinoculars } from "react-icons/fa";
 import "./AboutUsStyles.css";
+import PageHero from "./PageHero";
+import CtaBand from "./CtaBand";
 import CatherineImg from "../assets/Catherine Nakayiza.JPG";
 import PhoebeImg from "../assets/Phoebe pic.jpg";
 import GodfredImg from "../assets/Godfrey Ofumbi.jpg";
@@ -62,27 +64,32 @@ function AboutUs() {
     return (
         <div className="about">
             {/* Our Story */}
-            <header className="page-header about-story">
-                <div className="container split">
-                    <div className="split__body about-story__body">
-                        <p className="kicker">Our Journey Since 2025</p>
-                        <h1>Our Story</h1>
-                        <p className="about-story__text">
-                            Twezule Pathways was born from a deep desire to see women thrive and lead change in their communities.
-                            Founded by Phoebe Hedwig Aringo and Evelyn Mwondha, who have dedicated over 25 years to empowering
-                            women through programs that ignite self-worth and economic power.
-                        </p>
-                        <ul className="about-story__highlights">
-                            <li><FaStar aria-hidden="true" /> Women-Led Organization</li>
-                            <li><FaHandshake aria-hidden="true" /> African-Rooted Solutions</li>
-                            <li><FaBullseye aria-hidden="true" /> Community-Driven Impact</li>
-                        </ul>
-                    </div>
-                    <figure className="split__media media media--portrait about-story__media">
-                        <img src={StoryImg} alt="Women taking part in a community training session, one raising her hand to speak" width="1920" height="1280" />
-                    </figure>
+            <PageHero
+                id="about-title"
+                className="about-hero"
+                image={StoryImg}
+                imageAlt="Women taking part in a community training session, one raising her hand to speak"
+                imageWidth="1920"
+                imageHeight="1280"
+                kicker="Our Journey Since 2025"
+                title="Our Story"
+                lead="Twezule Pathways was born from a deep desire to see women thrive and lead change in their communities."
+            />
+
+            {/* How we began */}
+            <section className="section about-founding" aria-label="How Twezule Pathways began">
+                <div className="container about-founding__grid">
+                    <p className="about-founding__statement">
+                        Founded by Phoebe Hedwig Aringo and Evelyn Mwondha, who have dedicated over 25 years to empowering
+                        women through programs that ignite self-worth and economic power.
+                    </p>
+                    <ul className="about-founding__highlights">
+                        <li><span className="icon-mark" aria-hidden="true"><FaStar /></span> Women-Led Organization</li>
+                        <li><span className="icon-mark" aria-hidden="true"><FaHandshake /></span> African-Rooted Solutions</li>
+                        <li><span className="icon-mark" aria-hidden="true"><FaBullseye /></span> Community-Driven Impact</li>
+                    </ul>
                 </div>
-            </header>
+            </section>
 
             {/* Vision & Mission */}
             <section className="section section--alt" aria-labelledby="purpose-title">
@@ -133,7 +140,7 @@ function AboutUs() {
             </section>
 
             {/* Team */}
-            <section className="section section--alt" aria-labelledby="team-title">
+            <section className="section section--ruled" aria-labelledby="team-title">
                 <div className="container">
                     <div className="about-team__header">
                         <div className="section-header">
@@ -178,6 +185,8 @@ function AboutUs() {
                     </ul>
                 </div>
             </section>
+
+            <CtaBand />
         </div>
     );
 }

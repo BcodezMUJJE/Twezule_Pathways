@@ -2,26 +2,8 @@
    Newsletter page
    ========================================================================== */
 
-.newsletter__header-inner {
-  display: grid;
-  gap: var(--space-6);
-}
-
-@media (min-width: 800px) {
-  .newsletter__header-inner {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: end;
-  }
-}
-
-.newsletter__header .lead em {
-  font-family: var(--font-display);
-  font-size: 1.1em;
-  color: var(--text-strong);
-}
-
 .newsletter__viewer {
-  padding-block: var(--space-7) var(--section-space);
+  padding-block: var(--section-space);
 }
 
 /* The PDF keeps its own design; the frame stays neutral */
@@ -31,6 +13,6 @@
   height: 90vh;
   min-height: 520px;
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background-color: var(--surface-alt);
 }

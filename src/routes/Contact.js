@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { FaEnvelope, FaMapMarkerAlt, FaMobileAlt, FaPaperPlane, FaClock, FaCheck, FaExclamationCircle } from "react-icons/fa";
 import "../components/ContactStyles.css";
+import PageHero from "../components/PageHero";
 
 const FIELD_ORDER = ['name', 'email', 'message'];
 
@@ -85,24 +86,19 @@ function Contact() {
   return (
     <div className="contact">
       {/* Header */}
-      <header className="page-header">
-        <div className="container">
-          <p className="kicker">Let's Connect</p>
-          <h1>Get In Touch</h1>
-          <p className="lead">
-            Have questions about our programs or want to partner with us? We'd love to hear from you.
-            Reach out and let's start a conversation that makes a difference.
-          </p>
-          <div className="btn-group">
-            <a href="mailto:evelynmwondha@twezulepathways.org" className="btn btn--primary">
-              <FaEnvelope aria-hidden="true" /> Email Us
-            </a>
-            <a href="tel:+256772444876" className="btn btn--secondary">
-              <FaMobileAlt aria-hidden="true" /> Call Us
-            </a>
-          </div>
-        </div>
-      </header>
+      <PageHero
+        id="contact-title"
+        kicker="Let’s Connect"
+        title="Get In Touch"
+        lead="Have questions about our programs or want to partner with us? We’d love to hear from you. Reach out and let’s start a conversation that makes a difference."
+      >
+        <a href="mailto:evelynmwondha@twezulepathways.org" className="btn btn--primary">
+          <FaEnvelope aria-hidden="true" /> Email Us
+        </a>
+        <a href="tel:+256772444876" className="btn btn--secondary">
+          <FaMobileAlt aria-hidden="true" /> Call Us
+        </a>
+      </PageHero>
 
       {/* Form + details */}
       <section className="section">

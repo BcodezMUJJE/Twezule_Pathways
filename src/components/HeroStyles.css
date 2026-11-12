@@ -3,101 +3,6 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   Hero
-   Breakout grid: copy aligns to the page container on the left; the
-   photograph runs to the right edge of the screen, in natural colour.
-   -------------------------------------------------------------------------- */
-.home-hero {
-  display: grid;
-  grid-template-columns:
-    [full-start] minmax(var(--gutter), 1fr)
-    [content-start] minmax(0, calc(var(--container) / 2))
-    [middle] minmax(0, calc(var(--container) / 2))
-    [content-end] minmax(var(--gutter), 1fr) [full-end];
-}
-
-.home-hero__copy {
-  grid-column: content-start / content-end;
-  padding-block: clamp(2.25rem, 1.5rem + 3vw, 4rem) var(--space-8);
-}
-
-.home-hero__title {
-  max-width: 12ch;
-  font-size: clamp(3.25rem, 1.1rem + 5.4vw, 6.25rem);
-  font-weight: var(--weight-regular);
-  line-height: 0.96;
-  letter-spacing: -0.035em;
-}
-
-.home-hero__title span {
-  display: block;
-}
-
-.home-hero__lead {
-  max-width: 34rem;
-  margin-top: var(--space-6);
-  font-size: clamp(1.0625rem, 0.95rem + 0.45vw, 1.3125rem);
-  line-height: 1.6;
-  color: var(--text-muted);
-}
-
-.home-hero__actions {
-  margin-top: var(--space-7);
-}
-
-.home-hero__media {
-  grid-column: full-start / full-end;
-  position: relative;
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
-  background-color: var(--surface-alt);
-}
-
-.home-hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 28%;
-}
-
-@media (min-width: 600px) and (max-width: 899px) {
-  .home-hero__media {
-    aspect-ratio: 16 / 10;
-  }
-}
-
-@media (min-width: 900px) {
-  .home-hero {
-    min-height: clamp(560px, calc(100vh - var(--header-height) - 72px), 820px);
-    min-height: clamp(560px, calc(100svh - var(--header-height) - 72px), 820px);
-  }
-
-  .home-hero__copy {
-    grid-column: content-start / middle;
-    align-self: center;
-    padding-block: var(--space-9);
-    padding-right: clamp(2rem, 4vw, 5rem);
-  }
-
-  .home-hero__copy,
-  .home-hero__media {
-    grid-row: 1;
-  }
-
-  .home-hero__media {
-    grid-column: middle / full-end;
-    aspect-ratio: auto;
-    border-bottom-left-radius: var(--radius-lg);
-  }
-
-  /* Taken out of flow so the portrait photo never stretches the hero */
-  .home-hero__media img {
-    position: absolute;
-    inset: 0;
-  }
-}
-
-/* --------------------------------------------------------------------------
    Core programs
    -------------------------------------------------------------------------- */
 .home-programs__header {
@@ -153,7 +58,7 @@
 }
 
 .home-program:hover .home-program__link {
-  text-decoration-color: currentColor;
+  text-decoration-color: var(--color-plum);
 }
 
 .home-program__link:focus-visible {
@@ -178,7 +83,7 @@
   margin-top: var(--space-4);
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
-  color: var(--text-strong);
+  color: var(--text-brand);
 }
 
 .home-program__more svg {
@@ -245,7 +150,7 @@
 }
 
 .section--inverse .home-leaders__title {
-  color: var(--text-inverse-muted);
+  color: var(--color-gold);
 }
 
 .home-leaders__quote {
@@ -383,7 +288,7 @@
   flex-shrink: 0;
   width: 13px;
   height: 13px;
-  color: var(--text-muted);
+  color: var(--color-plum);
 }
 
 .home-cta__contact a {
@@ -391,9 +296,9 @@
   align-items: center;
   min-height: 32px;
   font-weight: var(--weight-semibold);
-  color: var(--text-strong);
+  color: var(--text-brand);
   text-decoration: underline;
-  text-decoration-color: var(--color-grey-400);
+  text-decoration-color: rgba(92, 50, 75, 0.35);
   text-underline-offset: 0.22em;
   overflow-wrap: anywhere;
   transition: text-decoration-color var(--duration-fast) var(--ease-out);
@@ -410,8 +315,8 @@
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
   letter-spacing: 0;
-  color: var(--text-muted);
-  border-bottom: 1px solid var(--color-black);
+  color: var(--text-brand);
+  border-bottom: 2px solid var(--color-plum);
 }
 
 .home-cta__ways ul {
@@ -441,7 +346,8 @@
 .home-cta__way-title {
   font-family: var(--font-display);
   font-size: var(--text-xl);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.015em;
   line-height: var(--leading-snug);
   text-decoration: underline;
   text-decoration-color: transparent;
@@ -459,11 +365,12 @@
   flex-shrink: 0;
   width: 12px;
   height: 12px;
+  color: var(--color-plum);
   transition: transform var(--duration-fast) var(--ease-out);
 }
 
 .home-cta__way:hover .home-cta__way-title {
-  text-decoration-color: currentColor;
+  text-decoration-color: var(--color-sage);
 }
 
 .home-cta__way:hover .home-cta__way-icon {

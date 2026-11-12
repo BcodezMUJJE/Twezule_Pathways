@@ -352,3 +352,36 @@ The functional suite covers:
 Screenshots: `docs/design-review/landing-nav-{1440,1024,390}-{before,after}.jpg` and `mobile-menu-390-after.jpg`.
 
 **Not covered:** Safari and Firefox, real devices, and screen-reader testing. Only Chromium was automated.
+
+---
+
+## G. Round 3: official brand colours and the reference homepage layout (12 November 2026)
+
+**This round supersedes the monochrome direction of sections B–F.** At the owner's request the interface now uses the official palette: Golden Yellow `#E7B94C`, Sage Green `#77A875`, Plum `#5C324B`, White `#FFFFFF` and Black `#000000`. The attached reference homepage guided the navbar and hero layout; its branding and content were not copied. The full rules are in `DESIGN_SYSTEM.md`.
+
+### G.1 Changes
+
+| Area | Change |
+|---|---|
+| Colour tokens (`styles.css`) | Brand palette plus documented tints. Legacy token names re-mapped, so every page inherits the palette consistently without being restructured. Plum for primary actions, links, kickers, statistics, rules, the founders band and the footer. Gold reserved for giving (all Donate buttons). Sage for soft surfaces and decorative accents. |
+| Contrast-driven rules | White text fails on gold (1.84:1) and sage (2.75:1), so both carry black text only. Plum carries white or gold text. |
+| Typography | **Figtree** (one family, real italics) replaces Newsreader + Public Sans, echoing the reference's clean geometric sans and the logo's lettering |
+| Buttons | Pill shaped. Primary plum; accent gold (Donate); secondary black outline; dedicated variants on plum sections and over photos. |
+| Navbar | Reference arrangement. Logo on a white plate (top left, logo unchanged); centred link group as a pill with a plum (or white, over the photo) current-page pill; "Get Involved" text link + gold "Donate" pill. Transparent over the home hero, solid white after scrolling and on every other page. Mobile: gold Donate + labelled Menu on a translucent dark pill. |
+| Home hero | Full-screen photo under the navbar with a neutral black scrim. Headline: *"Empowering Ugandan women to rise from vulnerability to self-reliance"* (from existing copy), with "Together We Rise" as a gold kicker. Supporting line and white + outline pill buttons at the bottom left. Photo cropped so text never covers a face; on phones the photo stacks above the text on black. |
+| Other home sections | Programs (white, plum links), video (sage tint), founders band (plum, gold kicker and statistics), call to action (gold Donate, plum details), plum footer |
+| Small cross-page change | The Get Involved page's "Donate via Omprakash" button became gold, so gold always means giving |
+
+### G.2 Testing
+
+| Test | Result |
+|---|---|
+| Production build / dev server | Compiled successfully, no warnings / no React warnings |
+| Layout and accessibility sweep (10 pages × 10 widths, 320–1920px) | **100/100 pass** (text over the hero photo is checked by the pixel test below) |
+| **Real-pixel contrast** of text over the hero photo and transparent navbar (7 sizes, 320×640 to 1920×1080; worst-case brightest 5% of the photo behind each line) | **All pass**, worst 4.32:1 on large headline text (needs 3:1). This test found and fixed four issues: the gold kicker (2.5–3.7:1) now sits on a dark pill, the mobile Menu pill was darkened (3.0 → 5.7:1), the top scrim was strengthened ("Get Involved" at 1024px: 3.96 → 4.86:1), and text was taken off the photo on phones. |
+| Navbar and landing behaviour (production and dev server) | **50/50 pass**: the earlier 43 checks plus transparent-to-solid header, hero filling the first screen at five sizes, neutral-only scrim, and Donate gold / primary plum / footer plum. This suite also caught a 1px white line above the hero, now fixed. |
+| Rendered colour inventory (all 10 pages, desktop and mobile, top and scrolled) | Only the five brand colours plus documented black/white/sage tints |
+
+Screenshots: `docs/design-review/brand-home-{1440,1024,768,390}.jpg`, `brand-nav-scrolled-1440.jpg`, `brand-mobile-menu-390.jpg`.
+
+**Not covered:** Safari and Firefox, real devices, and screen-reader testing.

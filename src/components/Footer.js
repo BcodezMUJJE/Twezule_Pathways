@@ -1,6 +1,7 @@
 import "./FooterStyles.css";
 import { Link } from "react-router-dom";
 import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import TwezuleLogo from "../assets/TwezuleLogo.png";
 
 const DONATE_URL = "https://www.omprakash.org/global/twezule-pathways";
 
@@ -44,23 +45,30 @@ const Footer = () => {
                 <div className="site-footer__grid">
                     {/* Brand */}
                     <div className="site-footer__brand">
-                        <p className="site-footer__name">Twezule Pathways</p>
+                        <Link to="/" className="site-footer__logo" aria-label="Twezule Pathways home">
+                            <img src={TwezuleLogo} alt="Twezule Pathways" width="1024" height="1024" loading="lazy" />
+                        </Link>
                         <p className="site-footer__tagline">Empowering women, transforming communities</p>
                         <p className="site-footer__description">
                             A Ugandan women-led organization empowering grassroots women and communities
                             to rise from vulnerability to self-reliance.
                         </p>
+                        <a href={DONATE_URL} target="_blank" rel="noopener noreferrer" className="btn btn--accent btn--sm">
+                            Donate via Omprakash
+                            <span className="visually-hidden"> (opens in a new tab)</span>
+                        </a>
                     </div>
 
-                    {/* Quick Links */}
-                    <nav className="site-footer__column" aria-labelledby="footer-quick-links">
-                        <h2 id="footer-quick-links" className="site-footer__heading">Quick Links</h2>
+                    {/* Explore */}
+                    <nav className="site-footer__column" aria-labelledby="footer-explore">
+                        <h2 id="footer-explore" className="site-footer__heading">Explore</h2>
                         <ul className="site-footer__links">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About</Link></li>
                             <li><Link to="/programs">Programs</Link></li>
                             <li><Link to="/impact">Impact</Link></li>
-                            <li><Link to="/get-involved">Get Involved</Link></li>
+                            <li><Link to="/newsletter">Newsletter</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
                         </ul>
                     </nav>
 
@@ -75,89 +83,61 @@ const Footer = () => {
                         </ul>
                     </nav>
 
+                    {/* Get Involved */}
+                    <nav className="site-footer__column" aria-labelledby="footer-get-involved">
+                        <h2 id="footer-get-involved" className="site-footer__heading">Get Involved</h2>
+                        <ul className="site-footer__links">
+                            <li><Link to="/get-involved">Ways to Get Involved</Link></li>
+                            <li><Link to="/get-involved#volunteer">Volunteer with Us</Link></li>
+                            <li><Link to="/get-involved#partner">Partner with Us</Link></li>
+                            <li><Link to="/get-involved#champion">Champion Twezule</Link></li>
+                        </ul>
+                    </nav>
+
                     {/* Contact */}
                     <div className="site-footer__column">
                         <h2 className="site-footer__heading">Contact Us</h2>
                         <ul className="site-footer__contact">
                             <li>
                                 <FaEnvelope aria-hidden="true" />
-                                <div>
-                                    <span className="site-footer__label">Email</span>
-                                    <a href="mailto:evelynmwondha@twezulepathways.org">
-                                        evelynmwondha@<wbr />twezulepathways.org
-                                    </a>
-                                </div>
+                                <a href="mailto:evelynmwondha@twezulepathways.org">
+                                    evelynmwondha@<wbr />twezulepathways.org
+                                </a>
                             </li>
                             <li>
                                 <FaPhoneAlt aria-hidden="true" />
-                                <div>
-                                    <span className="site-footer__label">Phone</span>
-                                    <a href="tel:+256772444876">+256 772 444 876</a>
-                                </div>
+                                <a href="tel:+256772444876">+256 772 444 876</a>
                             </li>
                             <li>
                                 <FaMapMarkerAlt aria-hidden="true" />
-                                <div>
-                                    <span className="site-footer__label">Location</span>
-                                    <span>Kampala, Uganda</span>
-                                </div>
+                                <span>Kampala, Uganda</span>
                             </li>
                         </ul>
                     </div>
-
-                    {/* Get Involved */}
-                    <nav className="site-footer__column" aria-labelledby="footer-get-involved">
-                        <h2 id="footer-get-involved" className="site-footer__heading">Get Involved</h2>
-                        <ul className="site-footer__links">
-                            <li><Link to="/get-involved#volunteer">Volunteer with Us</Link></li>
-                            <li><Link to="/get-involved#partner">Partner with Us</Link></li>
-                            <li><Link to="/get-involved#champion">Champion Twezule</Link></li>
-                            <li>
-                                <a href={DONATE_URL} target="_blank" rel="noopener noreferrer">
-                                    Donate via Omprakash
-                                    <span className="visually-hidden"> (opens in a new tab)</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <div className="site-footer__middle">
-                    <div>
-                        <h2 className="site-footer__heading">Follow Our Journey</h2>
-                        <ul className="site-footer__social">
-                            {SOCIAL_LINKS.map((social) => (
-                                <li key={social.name}>
-                                    <a
-                                        href={social.href}
-                                        className="site-footer__social-link"
-                                        aria-label={social.label}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-                                            <path d={social.path} />
-                                        </svg>
-                                        <span>{social.name}</span>
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <figure className="site-footer__quote">
-                        <blockquote>
-                            <p>“When a woman is empowered, a community rises.”</p>
-                        </blockquote>
-                        <figcaption>— Evelyn Mwondha, Co-Founder and Executive Director</figcaption>
-                    </figure>
                 </div>
 
                 <div className="site-footer__bottom">
-                    <p>&copy; 2026 Twezule Pathways. All rights reserved.</p>
+                    <p className="site-footer__copyright">&copy; 2026 Twezule Pathways. All rights reserved.</p>
                     <ul className="site-footer__legal">
                         <li><Link to="/privacy-policy">Privacy Policy</Link></li>
                         <li><Link to="/terms-of-service">Terms of Service</Link></li>
+                    </ul>
+                    <ul className="site-footer__social" aria-label="Follow Our Journey">
+                        {SOCIAL_LINKS.map((social) => (
+                            <li key={social.name}>
+                                <a
+                                    href={social.href}
+                                    className="site-footer__social-link"
+                                    aria-label={social.label}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                                        <path d={social.path} />
+                                    </svg>
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>

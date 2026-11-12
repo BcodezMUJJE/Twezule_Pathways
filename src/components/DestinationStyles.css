@@ -1,9 +1,19 @@
 /* ==========================================================================
-   Programs (/programs and embedded on the home page)
+   Programs page
    ========================================================================== */
 
 .programs-list__title {
   max-width: 18ch;
+}
+
+.programs-list__media {
+  border-radius: var(--radius-lg);
+}
+
+/* A plum rule marks the start of each program */
+.programs-list .split__body {
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-plum);
 }
 
 .programs-future__grid {
@@ -12,10 +22,8 @@
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
 }
 
-.programs-future__card .heading-3 {
+.programs-future__card h3 {
   margin: var(--space-5) 0 var(--space-3);
-  font-size: var(--text-xl);
-  line-height: var(--leading-snug);
 }
 
 .programs-future__card p {

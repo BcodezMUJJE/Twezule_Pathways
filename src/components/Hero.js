@@ -1,5 +1,6 @@
 import "./HeroStyles.css";
 import { Link } from "react-router-dom";
+import PageHero from "./PageHero";
 import { FaChevronRight, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import Leader from "../assets/Leader.jpeg";
 import PhoebeImg from "../assets/Phoebe pic.jpg";
@@ -55,26 +56,20 @@ function Hero({ imgSrc }) {
   return (
     <>
       {/* ---- Hero ---- */}
-      <section className="home-hero" aria-labelledby="home-hero-title">
-        <div className="home-hero__copy">
-          <p className="kicker">Empowering Communities Since 2025</p>
-          <h1 id="home-hero-title" className="home-hero__title">
-            <span>Together We</span> <span>Rise</span>
-          </h1>
-          <p className="home-hero__lead">
-            Lighting pathways from vulnerability to self-reliance across Uganda — a women-led
-            organization empowering grassroots women through entrepreneurship, group savings,
-            and leadership development.
-          </p>
-          <div className="btn-group home-hero__actions">
-            <Link to="/get-involved" className="btn btn--primary">Get Involved</Link>
-            <Link to="/about" className="btn btn--secondary">Discover Our Story</Link>
-          </div>
-        </div>
-        <figure className="home-hero__media">
-          <img src={imgSrc} alt="Two women embracing and laughing together outdoors" width="1920" height="2560" />
-        </figure>
-      </section>
+      <PageHero
+        id="home-hero-title"
+        size="full"
+        image={imgSrc}
+        imageAlt="Two women embracing and laughing together outdoors"
+        imageWidth="1920"
+        imageHeight="2560"
+        kicker="Together We Rise"
+        title="Empowering Ugandan women to rise from vulnerability to self-reliance"
+        lead="A women-led organization empowering grassroots communities since 2025 through entrepreneurship, group savings, and leadership development."
+      >
+        <Link to="/get-involved" className="btn btn--primary">Get Involved</Link>
+        <Link to="/about" className="btn btn--secondary">Discover Our Story</Link>
+      </PageHero>
 
       {/* ---- What we do ---- */}
       <section className="section home-programs" aria-labelledby="home-programs-title">
@@ -178,7 +173,7 @@ function Hero({ imgSrc }) {
               Every contribution, partnership, and voice matters.
             </p>
             <div className="btn-group">
-              <a href={DONATE_URL} className="btn btn--primary" target="_blank" rel="noopener noreferrer">
+              <a href={DONATE_URL} className="btn btn--accent" target="_blank" rel="noopener noreferrer">
                 Donate via Omprakash
                 <span className="visually-hidden"> (opens in a new tab)</span>
               </a>

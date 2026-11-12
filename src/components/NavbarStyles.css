@@ -1,22 +1,34 @@
 /* ==========================================================================
    Site header & navigation
-   Desktop (≥1024px): logo | centred links | actions
-   Mobile & tablet:   logo | Donate + Menu  → full-screen menu panel
-   The logo is the only colour here.
+   Desktop (≥1024px): logo | centred link group (pill) | Get Involved + Donate
+   Mobile & tablet:   logo | Donate + Menu → full-screen menu panel
+   Home page: transparent over the hero photograph until the page scrolls.
+   The logo always sits on a white plate so its original colours stay legible.
    ========================================================================== */
 
 .site-header {
   position: sticky;
   top: 0;
   z-index: var(--z-header);
+  color: var(--color-ink);
   background-color: var(--color-white);
   border-bottom: 1px solid transparent;
-  transition: border-color var(--duration-base) var(--ease-out);
+  transition:
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
 }
 
 .site-header.is-scrolled,
 .site-header.is-menu-open {
   border-bottom-color: var(--border);
+}
+
+/* Transparent state over the home hero */
+.site-header.is-overlay {
+  --focus-ring: var(--color-white);
+  background-color: transparent;
+  color: var(--color-white);
 }
 
 .site-nav {
@@ -31,21 +43,24 @@
   padding-inline: var(--gutter);
 }
 
-/* ---- Logo: displayed exactly as supplied ---- */
+/* ---- Logo on a white plate (logo itself untouched) ---- */
 .site-nav__brand {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  border-radius: var(--radius-sm);
+  padding: 6px;
+  background-color: var(--color-white);
+  border-radius: 16px;
 }
 
 .site-nav__logo {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
 }
 
-/* ---- Links ---- */
+/* ---- Link group ---- */
 .site-nav__links {
   list-style: none;
 }
@@ -57,32 +72,47 @@
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
   letter-spacing: 0.005em;
-  color: var(--text-muted);
+  color: inherit;
   text-decoration: none;
   white-space: nowrap;
-  transition: color var(--duration-fast) var(--ease-out);
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
 }
 
-.site-nav__link:hover,
-.site-nav__link.active {
-  color: var(--text-strong);
-}
-
-.site-nav__link.active {
-  font-weight: var(--weight-semibold);
-}
-
-/* ---- Actions ---- */
+/* ---- Right-hand actions ---- */
 .site-nav__actions {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-5);
 }
 
-/* "Get Involved" when that page is open */
+.site-nav__get-involved {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
+  white-space: nowrap;
+  transition: text-decoration-color var(--duration-fast) var(--ease-out);
+}
+
+.site-nav__get-involved:hover {
+  text-decoration-color: var(--color-sage);
+}
+
 .site-nav__get-involved.active {
-  border-color: var(--color-black);
-  box-shadow: inset 0 0 0 1px var(--color-black);
+  text-decoration-color: var(--color-plum);
+}
+
+.is-overlay .site-nav__get-involved.active,
+.is-overlay .site-nav__get-involved:hover {
+  text-decoration-color: var(--color-gold);
 }
 
 /* ---- Menu toggle (mobile & tablet) ---- */
@@ -95,8 +125,8 @@
   padding: 0 var(--space-2);
   background: transparent;
   border: 0;
-  border-radius: var(--radius-sm);
-  color: var(--text-strong);
+  border-radius: var(--radius-full);
+  color: inherit;
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
 }
@@ -140,7 +170,6 @@
    ========================================================================== */
 
 @media (min-width: 1024px) {
-  /* Three zones; the links stay optically centred on the page */
   .site-nav {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
@@ -151,38 +180,49 @@
   .site-nav__panel { justify-self: center; }
   .site-nav__actions { justify-self: end; }
 
+  /* Grouped links in one pill, like a segmented control */
   .site-nav__links {
     display: flex;
     align-items: center;
-    gap: clamp(1.25rem, 0.2rem + 1.6vw, 2.25rem);
+    gap: 2px;
+    padding: 5px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-sage-tint);
+    transition: background-color var(--duration-base) var(--ease-out);
   }
 
   .site-nav__link {
-    height: var(--header-height);
+    height: 38px;
+    padding: 0 clamp(0.75rem, 0.1rem + 0.9vw, 1.125rem);
+    border-radius: var(--radius-full);
   }
 
-  /* 2px bar on the header's bottom edge: grey preview on hover, black when active */
-  .site-nav__link::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -1px;
-    height: 2px;
-    background-color: transparent;
-    transition: background-color var(--duration-fast) var(--ease-out);
+  .site-nav__link:hover {
+    background-color: rgba(0, 0, 0, 0.06);
   }
 
-  .site-nav__link:hover::after {
-    background-color: var(--color-grey-200);
+  .site-nav__link.active {
+    background-color: var(--color-plum);
+    color: var(--color-white);
+    font-weight: var(--weight-semibold);
   }
 
-  .site-nav__link.active::after {
-    background-color: var(--color-black);
+  /* Over the photo: translucent dark group, white active pill */
+  .is-overlay .site-nav__links {
+    background-color: rgba(0, 0, 0, 0.42);
+  }
+
+  .is-overlay .site-nav__link:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+
+  .is-overlay .site-nav__link.active {
+    background-color: var(--color-white);
+    color: var(--color-black);
   }
 
   .site-nav__link:focus-visible {
-    outline-offset: -4px;
+    outline-offset: 2px;
   }
 
   .site-nav__panel-footer {
@@ -195,9 +235,18 @@
    ========================================================================== */
 
 @media (max-width: 1023px) {
+  .site-nav__brand {
+    padding: 5px;
+    border-radius: 14px;
+  }
+
   .site-nav__logo {
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .site-nav__actions {
+    gap: var(--space-3);
   }
 
   .site-nav__get-involved {
@@ -206,6 +255,13 @@
 
   .site-nav__toggle {
     display: inline-flex;
+  }
+
+  /* Over the photo the toggle gets a translucent dark pill for contrast */
+  .is-overlay .site-nav__toggle {
+    margin-right: 0;
+    padding: 0 var(--space-4);
+    background-color: rgba(0, 0, 0, 0.6);
   }
 
   /* Full-screen panel below the header */
@@ -217,6 +273,7 @@
     justify-content: space-between;
     gap: var(--space-8);
     padding: var(--space-3) var(--gutter) calc(var(--space-7) + env(safe-area-inset-bottom));
+    color: var(--color-ink);
     background-color: var(--color-white);
     overflow-y: auto;
     overscroll-behavior: contain;
@@ -253,23 +310,25 @@
     min-height: 60px;
     font-family: var(--font-display);
     font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);
-    font-weight: var(--weight-regular);
-    letter-spacing: -0.01em;
-    color: var(--text-strong);
+    font-weight: var(--weight-medium);
+    letter-spacing: -0.02em;
+    color: var(--color-black);
   }
 
   .site-nav__link.active {
-    font-weight: var(--weight-medium);
+    color: var(--color-plum);
+    font-weight: var(--weight-semibold);
   }
 
-  /* Current page: a short black bar before the label */
+  /* Current page: a short Sage bar before the label */
   .site-nav__link.active::before {
     content: '';
     flex-shrink: 0;
     width: 18px;
-    height: 2px;
+    height: 3px;
     margin-right: var(--space-3);
-    background-color: var(--color-black);
+    border-radius: 2px;
+    background-color: var(--color-sage);
   }
 
   .site-nav__panel-footer {
@@ -302,16 +361,17 @@
     flex-shrink: 0;
     width: 14px;
     height: 14px;
-    color: var(--text-muted);
+    color: var(--color-plum);
   }
 
   .site-nav__contact a {
     display: inline-flex;
     align-items: center;
     min-height: 32px;
-    color: var(--text-strong);
+    color: var(--color-plum);
+    font-weight: var(--weight-semibold);
     text-decoration: underline;
-    text-decoration-color: var(--color-grey-400);
+    text-decoration-color: rgba(92, 50, 75, 0.35);
     text-underline-offset: 0.22em;
     overflow-wrap: anywhere;
   }
@@ -320,12 +380,12 @@
 /* Very small phones: keep Donate + Menu on one line */
 @media (max-width: 359px) {
   .site-nav__logo {
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
   }
 
   .site-nav__donate {
-    padding-inline: var(--space-3);
+    padding-inline: var(--space-4);
   }
 
   .site-nav__actions {

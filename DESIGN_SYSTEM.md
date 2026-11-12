@@ -2,115 +2,118 @@
 
 The single source of truth is [`src/styles.css`](src/styles.css). Every value below exists there as a CSS custom property. **Components must use the tokens, never raw values.**
 
+> **Direction (owner decision, 12 November 2026):** the interface uses the official Twezule Pathways brand palette (Golden Yellow, Sage Green, Plum, White and Black). This replaces the earlier monochrome direction, in which only the logo carried colour.
+
 ---
 
-## 1. The logo rule
-
-> **The logo is the only coloured brand element on the website.**
+## 1. Brand and logo rules
 
 - Display `src/assets/TwezuleLogo.png` exactly as supplied: no recolouring, filters, shadows, blend modes, opacity changes, redrawing, cropping or distortion. Keep its 1:1 aspect ratio.
-- **Never extract the logo's colours** (golden yellow `#E7B94C`, sage green `#77A875`, plum `#5C324B`, and their shading tones `#320B1F`, `#669A5E`, `#E9B22D`, `#C8B556`) for buttons, links, text, borders, icons, backgrounds, gradients, highlights or hover effects.
-- Place the logo on white (`#FFFFFF`) or off-white (`#F7F7F7`). The plum wordmark has too little contrast on dark surfaces, so the dark footer uses the organisation name set in type instead.
-- Photographs, videos, the Google Map and the PDF newsletter keep their natural colours. Never tint or overlay a photograph with colour, and never convert real photographs to black and white to "match" the interface.
-- Introducing any new brand or accent colour requires the owner's explicit approval.
+- The logo always sits on white. In the navbar it sits on a white rounded plate, so its plum lettering stays legible when the bar is transparent over the home hero photo.
+- The interface may use only the five brand colours below, plus the documented tints (2.2). **Do not introduce other colours** without the owner's approval.
+- Don't use all three brand colours heavily in one section. A typical section uses white or a sage tint as its surface, plus *one* of plum or gold for emphasis.
+- No decorative gradients. The only gradient on the site is the neutral black scrim that keeps text readable over the home hero photo. Photographs are never colour-tinted.
 
-## 2. Colour tokens
+## 2. Colour
 
-### 2.1 Palette
+### 2.1 Official palette
 
-| Token | HEX | Role |
-|---|---|---|
-| `--color-white` | `#FFFFFF` | Page background, cards, inputs, text on dark |
-| `--color-off-white` | `#F7F7F7` | Alternate section surface, hover fill |
-| `--color-grey-200` | `#EAEAEA` | Hairlines, dividers, card borders |
-| `--color-grey-400` | `#9CA3AF` | Secondary text **on dark only**, secondary-button border, tag border |
-| `--color-grey-500` | `#8A8A8A` | Form-control borders *(adjusted shade, see 2.3)* |
-| `--color-grey-600` | `#6B6B6B` | Placeholders, meta text, disabled text *(adjusted shade)* |
-| `--color-grey-700` | `#404040` | Secondary text, primary-button hover, dividers on dark |
-| `--color-charcoal` | `#1F1F1F` | Body text |
-| `--color-black` | `#111111` | Headings, primary buttons, focus ring, dark bands, footer |
+| Token | HEX | Meaning | Use |
+|---|---|---|---|
+| `--color-gold` | `#E7B94C` | Golden Yellow, the sun | **Giving**: every Donate button. Highlights on plum (kickers, statistics, focus ring). Never as text on white. |
+| `--color-sage` | `#77A875` | Sage Green, the leaves and hills | Soft accents: list markers, tag borders, hover underlines, mobile current-page marker, and its 10% tint for alternate sections. Never as text on white. |
+| `--color-plum` | `#5C324B` | Plum, the "TWEZULE PATHWAYS" lettering | **Primary actions** (buttons), links, current-page pill, kickers, statistics, structural rules, the founders band and the footer |
+| `--color-white` | `#FFFFFF` | — | Page background, cards, text on plum and photos |
+| `--color-black` | `#000000` | — | Headings, strong text, secondary-button outlines, the hero backdrop |
 
-### 2.2 Semantic roles (use these in components)
+### 2.2 Tints (black, white or a brand colour at reduced strength)
+
+| Token | HEX | Derived from | Use |
+|---|---|---|---|
+| `--color-sage-tint` | `#F1F6F1` | Sage at 10% | Alternate section surface (`.section--alt`), nav link group, tags, form status |
+| `--color-ink` | `#1A1A1A` | Black at 90% | Body text |
+| `--color-ink-muted` | `#4D4D4D` | Black at 70% | Secondary text, lead paragraphs |
+| `--color-ink-subtle` | `#6B6B6B` | Black at 58% | Placeholders, meta, "coming soon" |
+| `--color-line` | `#E5E5E5` | Black at 10% | Hairlines and dividers (also light text in the plum footer) |
+| `--color-line-strong` | `#8A8A8A` | Black at 46% | Form-control borders |
+| `rgba(255,255,255,0.8)` | ≈ `#DED6DB` on plum | White at 80% | Secondary text on plum |
+| `rgba(255,255,255,0.24)` | — | White at 24% | Dividers on plum |
+| `rgba(0,0,0,0.42–0.8)` | — | Black | Hero scrim, nav link group over the photo, Menu button and kicker pills over the photo |
+
+### 2.3 Semantic roles (use these in components)
 
 | Token | Value | Use |
 |---|---|---|
-| `--surface` / `--surface-alt` / `--surface-inverse` | white / off-white / black | Section backgrounds |
-| `--text` | charcoal | Paragraphs |
-| `--text-strong` | black | Headings, labels, values |
-| `--text-muted` | `#404040` | Lead paragraphs, descriptions |
-| `--text-subtle` | `#6B6B6B` | Placeholders, "coming soon", hints |
-| `--text-inverse` / `--text-inverse-muted` | white / `#9CA3AF` | Text on `#111111` |
-| `--border` / `--border-strong` / `--border-inverse` | `#EAEAEA` / `#8A8A8A` / `#404040` | Dividers / form controls / dividers on dark |
-| `--focus-ring` | black (white inside `.section--inverse` and the footer) | Keyboard focus outline |
+| `--surface` / `--surface-alt` / `--surface-inverse` | white / sage tint / **plum** | Section backgrounds |
+| `--text` / `--text-strong` | ink / black | Paragraphs / headings and values |
+| `--text-muted` / `--text-subtle` | `#4D4D4D` / `#6B6B6B` | Descriptions / hints |
+| `--text-brand` | plum | Kickers, links, statistics |
+| `--text-inverse` / `--text-inverse-muted` | white / white 80% | Text on plum |
+| `--border` / `--border-strong` / `--border-inverse` | `#E5E5E5` / `#8A8A8A` / white 24% | Dividers / form controls / dividers on plum |
+| `--focus-ring` | plum (gold on plum sections, white over photos and in the transparent navbar) | Keyboard focus outline |
 
-### 2.3 Contrast (WCAG 2.2 AA)
+### 2.4 Contrast rules (WCAG 2.2 AA, computed)
 
-| Foreground on background | Ratio | Allowed use |
+| Pairing | Ratio | Verdict |
 |---|---|---|
-| `#111111` on `#FFFFFF` | 18.88:1 | Any text |
-| `#1F1F1F` on `#FFFFFF` | 16.48:1 | Any text |
-| `#404040` on `#FFFFFF` | 10.37:1 | Any text |
-| `#404040` on `#F7F7F7` | 9.68:1 | Any text |
-| `#6B6B6B` on `#FFFFFF` | 5.33:1 | Small text OK |
-| `#6B6B6B` on `#F7F7F7` | 4.97:1 | Small text OK |
-| `#8A8A8A` on `#FFFFFF` | 3.45:1 | **Non-text only** (input borders: meets 3:1) |
-| `#9CA3AF` on `#FFFFFF` | 2.54:1 | **Never for text on light surfaces** (decorative/disabled only) |
-| `#9CA3AF` on `#111111` | 7.44:1 | Secondary text on dark |
-| `#EAEAEA` on `#111111` | 15.70:1 | Links on dark |
-| `#FFFFFF` on `#111111` | 18.88:1 | Primary button label, text on dark |
-| `#FFFFFF` on `#404040` | 10.37:1 | Primary button label on hover |
+| Black on White | 21.00:1 | Any text |
+| Ink `#1A1A1A` on White | 17.40:1 | Any text |
+| Plum on White / on Sage tint | 10.43 / 9.53:1 | Any text: links, kickers, statistics |
+| White on Plum | 10.43:1 | Any text: primary buttons, plum sections |
+| Gold on Plum | 5.68:1 | Any text: kickers and statistics on plum |
+| White 80% on Plum | 7.33:1 | Secondary text on plum |
+| Black on Gold | 11.44:1 | Donate button label |
+| Black on Sage | 7.64:1 | Allowed (text on solid sage) |
+| `#4D4D4D` on White / Sage tint | 8.45 / 7.73:1 | Any text |
+| `#6B6B6B` on White / Sage tint | 5.33 / 4.87:1 | Small text OK |
+| `#8A8A8A` on White | 3.45:1 | Non-text only (form borders) |
+| **White on Gold** | **1.84:1** | ❌ Never |
+| **White on Sage** | **2.75:1** | ❌ Never |
+| **Gold text on White** | **1.84:1** | ❌ Never |
+| **Sage text on White** | **2.75:1** | ❌ Never; sage is decorative on light surfaces |
 
-Two shades were added to the brief's palette purely for accessibility. `#8A8A8A` exists because the brief's `#9CA3AF` is below the 3:1 minimum for form-control borders. `#6B6B6B` exists because `#9CA3AF` is below 4.5:1 for placeholder and meta text.
+**Text over photographs:** these contrast figures come from real pixels, not formulas. They were measured behind the hero and navbar text at 320 to 1920px, against the brightest 5% of the photo behind each line. Worst case: 4.32:1 on large headline text (3:1 required). Small text over the photo (nav links, the Menu button, the kicker) sits on a translucent black pill.
 
-### 2.4 What not to do
+### 2.5 What not to do
 
-- No gradients (`linear-`, `radial-`, `conic-gradient`), glows, coloured shadows or `background-clip: text`.
+- No decorative gradients, glows, coloured shadows or `background-clip: text`.
+- No colour tints on photographs.
 - No third-party brand colours on social links.
 - No colour-only meaning: errors use a thicker black border, an icon and text.
+- Never place white text on gold or sage, or gold or sage text on white.
 
 ## 3. Typography
 
 | Role | Family | Token |
 |---|---|---|
-| Headings, display, quotes, statistics | **Newsreader** (Google Fonts, variable, optical sizes 6–72, weights 400–600, italic 400–500) | `--font-display` |
-| Body, interface, labels, buttons, navigation | **Public Sans** (Google Fonts, variable, weights 400–700) | `--font-body` |
+| Headings, body, interface | **Figtree** (Google Fonts, variable, weights 400–700, true italics 400–600) | `--font-display`, `--font-body` |
 
-Loaded once in `public/index.html` with `display=swap`. Fallbacks: Georgia / Times New Roman, and system-ui / Segoe UI / Roboto / Arial.
+Figtree is geometric like the logo's lettering and matches the clean, confident sans of the reference design. It is loaded once in `public/index.html` with `display=swap`; the fallback is system-ui / Segoe UI / Roboto / Arial.
 
 ### 3.1 Type scale
 
 | Token | Size | Used for |
 |---|---|---|
-| `--text-display` | `clamp(3rem → 6.25rem)`, 48→100px | Display text (the home hero title uses its own `clamp(3.25rem → 6.25rem)`, 52→100px) |
+| Home hero title | `clamp(2.5rem → 5.25rem)`, 40→84px, weight 500, tracking −0.04em | Home `h1` only |
 | `--text-3xl` | `clamp(2.5rem → 4.25rem)`, 40→68px | `h1` / `.heading-1` (page titles) |
 | `--text-2xl` | `clamp(1.875rem → 2.75rem)`, 30→44px | `h2` / `.heading-2` (section titles) |
-| `--text-xl` | 1.5rem, 24px | `h3` / `.heading-3` (item titles) |
+| `--text-xl` | 1.5rem, 24px, weight 600 | `h3` / `.heading-3` (item titles) |
 | `--text-lg` | 1.25rem, 20px | `.lead` paragraphs, person names |
 | `--text-base` | 1.0625rem, 17px | Body text |
 | `--text-sm` | 0.9375rem, 15px | Labels, buttons, navigation, meta |
 | `--text-xs` | 0.8125rem, 13px | Tags, fine print |
 
-`h4` / `.heading-4` uses Public Sans 17px semibold for small labelled groups.
-
 ### 3.2 Weights and line heights
 
 | Token | Value | Use |
 |---|---|---|
-| `--weight-regular` | 400 | Body, hero title, quotes, statistics |
-| `--weight-medium` | 500 | Headings (Newsreader), nav links |
-| `--weight-semibold` | 600 | Labels, buttons, active nav, kickers |
+| `--weight-regular` | 400 | Body, quotes, statistics |
+| `--weight-medium` | 500 | `h1`/`h2`, nav links |
+| `--weight-semibold` | 600 | `h3`, labels, buttons, active nav, kickers |
 | `--weight-bold` | 700 | Reserved |
-| `--leading-tight` | 1.04 | `h1` |
-| `--leading-heading` | 1.15 | `h2` |
-| `--leading-snug` | 1.3 | `h3`, `h4` |
-| `--leading-body` | 1.65 | Paragraphs |
+| `--leading-tight` / `--leading-heading` / `--leading-snug` / `--leading-body` | 1.04 / 1.15 / 1.3 / 1.65 | `h1` / `h2` / `h3`–`h4` / paragraphs |
 
-Rules:
-- Headings use `text-wrap: balance`; paragraphs use `text-wrap: pretty`.
-- Keep line length under about 68 characters (`--measure`).
-- Don't highlight one word in a heading with a different colour, weight or gradient.
-- No all-caps labels. Sentence or title case, as written.
-- A **kicker** (`.kicker`, small semibold grey line above a page title) is used only when it adds information (e.g. "Empowering Communities Since 2025").
+Headings are tracked tight (−0.02 to −0.04em) and use `text-wrap: balance`; paragraphs use `text-wrap: pretty`. Keep lines under about 68 characters. Don't highlight single words in headings. No all-caps labels. A **kicker** (`.kicker`, plum, small semibold) appears above a title only when it adds information.
 
 ## 4. Spacing scale (4px base)
 
@@ -127,133 +130,110 @@ Rules:
 |---|---|
 | `--section-space` | `clamp(4rem → 7.5rem)`, 64→120px vertical padding per section |
 | `--gutter` | `clamp(1.25rem → 3rem)`, 20→48px side padding |
-| `--container` | 75rem (1200px) content width (`.container`) |
-| `--container-narrow` | 47.5rem (760px) reading width (`.container--narrow`) |
+| `--container` / `--container-narrow` | 1200px / 760px |
 | `--header-height` | 88px desktop, 72px below 1024px |
 
 ## 5. Borders, radii and elevation
 
 | Token | Value | Use |
 |---|---|---|
-| `--radius-sm` | 6px | Buttons, inputs, icon tiles, focus targets |
+| `--radius-sm` | 6px | Inputs, icon tiles |
 | `--radius-md` | 12px | Cards, photographs, embeds |
-| `--radius-lg` | 20px | Home hero photo, large panels |
-| `--radius-full` | 999px | Tags, footer social pills |
+| `--radius-lg` | 20px | Large panels |
+| `--radius-full` | 999px | **All buttons**, nav link pills, tags, social pills |
 
-- **Dividers:** `1px solid var(--border)` (`#EAEAEA`).
-- **Section/feature rules:** `1px solid var(--color-black)` above a feature column or list group, to signal structure.
-- **Cards:** `1px solid var(--border)`, no shadow. Use them only for things that carry an action or are distinct entities (Get Involved options, future programs, partners, forms).
-- **Elevation:** none. There are no box-shadows apart from the inset ring on invalid inputs and on the active "Get Involved" nav button.
+- Dividers: `1px solid var(--border)`.
+- Structural rules: `2px solid var(--color-plum)` above feature columns and the "Ways to Get Involved" list.
+- Cards: `1px solid var(--border)`, no shadow; only for actions or distinct entities.
+- Elevation: none. The only box-shadows are the inset rings on invalid inputs.
 
-## 6. Buttons
+## 6. Buttons (pill shaped)
 
 | Variant | Class | Rest | Hover | Use |
 |---|---|---|---|---|
-| Primary | `.btn .btn--primary` | `#111111` background, white text | `#404040` background | One main action per view |
-| Secondary | `.btn .btn--secondary` | White background, `#111111` text, `#9CA3AF` border | `#F7F7F7` background, `#111111` border | Alternative actions |
-| Primary on dark | inside `.section--inverse` | White background, black text | `#EAEAEA` background | Dark bands |
-| Secondary on dark | inside `.section--inverse` | Transparent, white text, `#9CA3AF` border | `#1F1F1F` background, white border | Dark bands |
+| Primary | `.btn--primary` | Plum, white text | Black, white text | Main action on light surfaces |
+| **Accent** | `.btn--accent` | **Gold, black text** | Black, gold text | **Donate / giving only** |
+| Secondary | `.btn--secondary` | White, black text, black outline | Black, white text | Alternative actions |
+| Primary on plum | inside `.section--inverse` | Gold, black text | White, plum text | Plum bands |
+| Secondary on plum | inside `.section--inverse` | Transparent, white text, white outline | White, plum text | Plum bands |
+| Primary over photo | inside `.on-photo` | White, black text | Gold, black text | Home hero |
+| Secondary over photo | inside `.on-photo` | Transparent, white outline | White, black text | Home hero |
 
-| Property | Value |
-|---|---|
-| Height | 48px (`--control-height`); `.btn--sm` 40px |
-| Padding | 0 24px (`.btn--sm`: 0 16px) |
-| Font | Public Sans 15px, weight 600 |
-| Radius | 6px |
-| Icons | Optional, 1em, before or after the label; always `aria-hidden="true"` |
-| Pressed | `translateY(1px)` |
-| Disabled | `#EAEAEA` background, `#6B6B6B` text, `cursor: not-allowed`, plus the `disabled` attribute |
-| Loading | `.spinner` + "Sending…", `disabled` and `aria-busy="true"` |
-| Groups | `.btn-group` (wraps; buttons go full-width below 480px) |
-| Links that open a new tab | Add `<span className="visually-hidden"> (opens in a new tab)</span>` |
-
-Use `<Link>` / `<NavLink>` for internal pages, `<a>` for external URLs and `<button>` for actions.
+Buttons are 48px tall (`.btn--sm` 42px), padded 0 32px (`.btn--sm` 0 24px), Figtree 15px weight 600, with a 1.5px border. Pressed: down 1px. Disabled: `#E5E5E5` with `#6B6B6B` text and the `disabled` attribute. Loading: spinner + "Sending…" + `aria-busy`. Links that open a new tab carry a visually hidden "(opens in a new tab)".
 
 ## 7. Form inputs
 
 | Element | Specification |
 |---|---|
-| Wrapper | `.field`: label above the control, 8px gap |
-| Label | Public Sans 15px semibold `#111111`, always visible, connected with `htmlFor`. Required fields end with ` *` and carry `required` + `aria-required="true"`. |
-| Control | `.input`: 48px minimum height, 12px 16px padding, 16px text (prevents iOS zoom), white background, `1px solid #8A8A8A`, 6px radius |
-| Textarea | `.input`: 152px minimum height, vertical resize |
-| Placeholder | `#6B6B6B`; ends with "…" when it invites free text. Never a replacement for a label. |
-| Hover | Border `#404040` |
-| Focus | Border `#111111` + `2px solid #111111` outline, 1px offset |
-| Invalid | `aria-invalid="true"`: black border + 1px inset black ring; message below in `.field-error` with an icon, linked through `aria-describedby`; focus moves to the first invalid field on submit |
-| Success | `.form-status` inside a `role="status" aria-live="polite"` region |
-| Autofill | `autoComplete="name"` / `"email"`; `spellCheck={false}` on email |
+| Label | Figtree 15px semibold black, always visible, linked with `htmlFor`; required fields end with ` *` and set `required` + `aria-required` |
+| Control | 48px minimum height, 16px text, white background, `1px solid #8A8A8A`, 6px radius; hover border `#4D4D4D` |
+| Focus | Black border + 2px plum outline |
+| Invalid | Black border + inset ring, icon + message linked by `aria-describedby`; focus moves to the first invalid field |
+| Success | `.form-status` (sage tint, sage border, 4px plum left edge) in a `role="status"` live region |
 
 ## 8. Layout components
 
 | Class | Purpose |
 |---|---|
-| `.page-header` | Top of every inner page: optional `.kicker`, `h1`, `.lead`, optional `.btn-group`; hairline below |
-| `.section`, `.section--alt`, `.section--ruled`, `.section--inverse` | Vertical rhythm; off-white surface; hairline top border; dark band (max one per page, plus the footer) |
-| `.section-header` | Heading and lead above a section's content (max 46rem) |
-| `.feature-grid` + `.feature` | Columns separated by a black top rule (instead of boxed cards) |
-| `.split` (+ `.split--reverse`) | Image + text row, two columns from 900px |
-| `.media` (+ `.media--portrait`) | Photo frame, 3:2 or 4:5, `object-fit: cover`, 12px radius |
-| `.stat-row` + `.stat` | `<dl>` statistics: label in the DOM first, value shown first |
-| `.info-list` | Contact details with hairline dividers |
-| `.check-list` | List with a short black rule as the bullet |
-| `.icon-mark` | 44px outlined square holding a black icon |
-| `.tag` | Status/location pill with a grey border |
-| `.card` | Bordered container (see section 5) |
+| `.page-header` | Top of inner pages: optional plum `.kicker`, `h1`, `.lead` |
+| `.section` / `--alt` / `--ruled` / `--inverse` | Rhythm; sage-tint surface; hairline top; plum band |
+| `.feature-grid` + `.feature` | Columns under a 2px plum rule |
+| `.split`, `.media` | Image + text rows; photo frames (12px radius, natural colour) |
+| `.stat-row` + `.stat` | Statistics in plum (gold on plum) |
+| `.check-list` | List with a 2px sage marker |
+| `.icon-mark` | 44px outlined square with a plum icon (gold on plum) |
+| `.tag` | Pill with a sage border on a sage tint |
+| `.on-photo` | Context for controls placed over photographs |
 
 ### 8.1 Header and navigation
 
 | Part | Desktop (≥1024px) | Mobile & tablet (<1024px) |
 |---|---|---|
-| Layout | Three zones on a grid: logo left, links centred on the page, actions right | Logo left; **Donate** button and a labelled **Menu** button right |
-| Height / logo | 88px bar, logo 72×72px | 72px bar, logo 60×60px (52px under 360px) |
-| Links | Public Sans 15px, weight 500, `#404040`; hover `#111111` with a grey 2px bar; current page semibold `#111111` with a black 2px bar on the header's bottom edge | Full-screen white panel: Newsreader 24–32px links divided by hairlines; current page marked with a short black bar |
-| Actions | "Get Involved" (secondary, small) + "Donate" (primary, small). "Get Involved" gains a black border on its own page. | Donate stays in the bar; "Get Involved" and the email/phone links sit at the bottom of the panel |
-| Border | Transparent at the top of the page; `#EAEAEA` hairline once scrolled or when the menu is open | Same |
-| Behaviour | Sticky. Every link sets `aria-current="page"` via `NavLink`. | Opening moves focus to the first link, makes the rest of the page `inert`, and locks background scroll. Escape closes and returns focus to the Menu button; choosing a link or widening to desktop also closes it. |
+| Layout | Logo plate left · centred link group · "Get Involved" text link + gold "Donate" pill right | Logo plate left · gold "Donate" + labelled "Menu" right |
+| Logo | 64px on a white 16px-radius plate | 52px plate (46px under 360px) |
+| Link group | Pill with a sage-tint background; links are 38px pills; hover is black at 6%; **current page is a plum pill with white text** | Full-screen white panel, Figtree 24–32px links; current page in plum with a sage marker |
+| Over the home hero (top of page) | Bar transparent with white text; link group is translucent black; current page is a white pill; hover underlines are gold | Menu button sits on a translucent black pill |
+| After scrolling / other pages | Solid white bar with a `#E5E5E5` hairline | Same |
+| Behaviour | Sticky; `aria-current="page"`; focus moves to `<main>` on page change | Focus moves into the open menu; the rest of the page is `inert`; scroll locked; Escape returns focus to Menu |
 
-After any in-app page change, focus moves to `<main id="main">` (`tabindex="-1"`) and the page scrolls to the top, or to the `#section` in the link.
+### 8.2 Home hero
 
-**CSS scoping:** shared classes live in `styles.css`. Page-specific classes are prefixed per page (`home-`, `about-`, `impact-`, `gi-`, `contact-`, `donate-`, `newsletter__`, `programs-`, `site-nav__`, `site-footer__`). The old site broke because 41 classes collided across files, so never add an unprefixed class to a page stylesheet.
+A full-screen photograph runs under the transparent navbar, with the headline, supporting text and buttons at the bottom left. The neutral black scrim is stronger at the top (for the nav) and the bottom-left (for the text), and the photo is cropped so the women's faces sit above the text. On phones (<600px) the photograph sits on top and fades into black, and the text sits below on black, so no text covers a face.
+
+**CSS scoping:** shared classes live in `styles.css`; page classes are prefixed (`home-`, `about-`, `impact-`, `gi-`, `contact-`, `donate-`, `newsletter__`, `programs-`, `site-nav__`, `site-footer__`). Never add unprefixed classes to a page stylesheet.
 
 ## 9. Responsive breakpoints
 
-Mobile-first (`min-width`) unless noted.
-
 | Breakpoint | What changes |
 |---|---|
-| < 480px | Buttons in `.btn-group` and form submit buttons go full width |
-| 600px | Footer becomes two columns; Impact metrics become two columns |
-| 700–800px | Founders sit side by side (700); team rows put the photo beside the text (720); donation panel and newsletter header go side by side (800) |
-| **900px** | Main two-column layouts: home hero (copy + photo to the screen edge), `.split` rows, footer middle |
-| 960px | Content + sidebar layouts: Contact, Get Involved form, Donate, home CTA, team header |
-| 1024px | Impact metrics become four columns |
-| **1024px** | Desktop navigation appears (below it: Donate + labelled Menu button + full-screen panel); home founders band goes side by side; video beside its text |
-| 1080px | Footer becomes five columns |
+| < 480px | Buttons in `.btn-group` go full width |
+| < 600px | Home hero stacks: photo on top, text on black below |
+| 600px | Footer two columns; Impact metrics two columns |
+| 700–800px | Founders side by side; team rows; donation panel; newsletter header |
+| 900px | `.split` rows; footer middle row |
+| 960px | Content + sidebar layouts (Contact, Get Involved form, Donate, home CTA) |
+| **1024px** | Desktop navigation; founders band beside the quote; video beside its text; Impact metrics four columns |
+| 1080px | Footer five columns |
 
-Verified at 320, 375, 390, 430, 768, 1023, 1024, 1079, 1080, 1120, 1200, 1280, 1440 and 1920px.
+Verified at 320, 375, 390, 430, 768, 1023, 1024, 1280, 1440 and 1920px.
 
 ## 10. Interaction states
 
 | State | Treatment |
 |---|---|
-| Hover (links) | Underline appears or thickens to 2px; colour moves to `#111111` |
-| Hover (buttons) | Background or border darkens/lightens (section 6) |
-| Focus | `:focus-visible` only: `2px solid` ring in `--focus-ring`, 3px offset (white on dark surfaces). Never remove an outline without a replacement. |
-| Active page | Desktop nav: semibold black label with a 2px black bar at the header's bottom edge. Mobile: short bar before the label. Both set `aria-current="page"` (automatic via `NavLink`). |
-| Pressed | Buttons move down 1px |
-| Disabled | See section 6 |
-| Motion | Transitions list their properties (never `all`): 150ms for colour, 220ms for the menu panel, `cubic-bezier(0.2, 0, 0, 1)`. No looping or decorative animation. |
-| Reduced motion | `prefers-reduced-motion: reduce` disables transitions, animations and smooth scrolling |
-| Forced colours | Buttons, inputs, cards and tags get `CanvasText` borders |
+| Hover (nav links) | Pill fill: black 6% (white 16% over the photo) |
+| Hover (text links) | Underline appears or thickens: plum, sage on "Get Involved" and "Ways" titles, gold over the photo |
+| Hover (buttons) | See section 6 |
+| Focus | `:focus-visible` 2px ring, 3px offset: plum, gold on plum, white over photos |
+| Active page | Plum pill (white pill over the photo); mobile plum label + sage marker; `aria-current="page"` |
+| Motion | Explicit-property transitions (150ms colour, 220ms panel/header); none under `prefers-reduced-motion` |
 
 ## 11. Accessibility checklist for new work
 
-- [ ] One `<h1>` per page; heading levels in order (use `.heading-N` classes to change size, not level)
-- [ ] Text meets the contrast table in 2.3
-- [ ] Every image has meaningful `alt` (or `alt=""` if decorative), plus `width`/`height`; below-the-fold images get `loading="lazy"`
-- [ ] Icons next to text are `aria-hidden="true"`
-- [ ] Interactive targets are at least 24×24px (buttons 40–48px)
-- [ ] Forms follow section 7
-- [ ] Works from 320px to 1920px with no horizontal scrolling
-- [ ] Keyboard: everything reachable, the focus ring is visible, and Escape closes overlays
+- [ ] One `<h1>` per page; heading levels in order
+- [ ] Every colour pairing appears as allowed in 2.4; text over photos is measured against the real image
+- [ ] Images have meaningful `alt`, plus `width`/`height`; lazy-load below the fold
+- [ ] Icons beside text are `aria-hidden="true"`
+- [ ] Targets ≥24×24px (buttons 42–48px)
+- [ ] Works from 320px to 1920px with no horizontal scroll
+- [ ] Keyboard: everything reachable, focus visible, Escape closes overlays

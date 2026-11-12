@@ -8,6 +8,13 @@ import TwezuleLogo from "../assets/TwezuleLogo.png";
 const DONATE_URL = "https://www.omprakash.org/global/twezule-pathways";
 const DESKTOP_QUERY = "(min-width: 1024px)";
 
+// Pages that open with a dark hero (photo or Plum band): the bar starts
+// transparent over it and turns solid white once the page scrolls.
+const HERO_ROUTES = [
+  "/", "/about", "/programs", "/impact", "/contact", "/get-involved",
+  "/donate", "/newsletter", "/privacy-policy", "/terms-of-service",
+];
+
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -69,8 +76,11 @@ function Navbar() {
     };
   }, [open]);
 
+  const overlay = HERO_ROUTES.includes(pathname) && !scrolled && !open;
+
   const headerClass = [
     "site-header",
+    overlay ? "is-overlay" : "",
     scrolled ? "is-scrolled" : "",
     open ? "is-menu-open" : "",
   ].filter(Boolean).join(" ");
@@ -105,7 +115,7 @@ function Navbar() {
 
           {/* Mobile & tablet only: secondary action and contact details */}
           <div className="site-nav__panel-footer">
-            <NavLink to="/get-involved" className="btn btn--secondary btn--block" onClick={close}>
+            <NavLink to="/get-involved" className="btn btn--primary btn--block" onClick={close}>
               Get Involved
             </NavLink>
             <ul className="site-nav__contact">
@@ -122,12 +132,12 @@ function Navbar() {
         </div>
 
         <div className="site-nav__actions">
-          <NavLink to="/get-involved" className="btn btn--secondary btn--sm site-nav__get-involved" onClick={close}>
+          <NavLink to="/get-involved" className="site-nav__get-involved" onClick={close}>
             Get Involved
           </NavLink>
           <a
             href={DONATE_URL}
-            className="btn btn--primary btn--sm site-nav__donate"
+            className="btn btn--accent btn--sm site-nav__donate"
             target="_blank"
             rel="noopener noreferrer"
             onClick={close}
