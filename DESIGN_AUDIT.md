@@ -20,7 +20,7 @@ Before and after screenshots are in [`docs/design-review/`](docs/design-review/)
 | Pages (routes) | `/` Home, `/about`, `/programs`, `/impact`, `/contact`, `/get-involved`, `/donate`, `/newsletter`, `/privacy-policy`, `/terms-of-service` |
 | Integrations | YouTube embed (home), Google Maps embed (contact), Omprakash donation page (external link), `mailto:`/`tel:` links, a PDF newsletter (embedded and downloadable), Google Fonts, Font Awesome CDN |
 | Forms | Contact form (custom validation) and Get Involved form (native `required` validation). **Neither sends data anywhere.** Both simulate success with a `setTimeout`. There is no backend. |
-| Logo | `src/assets/TwezuleLogo.png`: 1024×1024 RGBA PNG, 1.59 MB, 86% transparent pixels. Measured logo colours: sage green ≈ `#78A878` (mark), gold ≈ `#F0C048` (sun), plum ≈ `#603048` (wordmark). |
+| Logo | `src/assets/TwezuleLogo.png`: 1024×1024 RGBA PNG, 1.59 MB, 86% transparent pixels. Measured logo colours: golden yellow `#E7B94C` (sun), sage green `#77A875` (leaves), plum `#5C324B` (wordmark), plus minor shading tones `#320B1F`, `#669A5E`, `#E9B22D` and `#C8B556`. |
 
 ## 2. Visual design assessment
 

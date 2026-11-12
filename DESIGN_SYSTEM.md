@@ -9,7 +9,7 @@ The single source of truth is [`src/styles.css`](src/styles.css). Every value be
 > **The logo is the only coloured brand element on the website.**
 
 - Display `src/assets/TwezuleLogo.png` exactly as supplied: no recolouring, filters, shadows, blend modes, opacity changes, redrawing, cropping or distortion. Keep its 1:1 aspect ratio.
-- **Never extract the logo's colours** (sage ≈ `#78A878`, gold ≈ `#F0C048`, plum ≈ `#603048`) for buttons, links, text, borders, icons, backgrounds, gradients, highlights or hover effects.
+- **Never extract the logo's colours** (golden yellow `#E7B94C`, sage green `#77A875`, plum `#5C324B`, and their shading tones `#320B1F`, `#669A5E`, `#E9B22D`, `#C8B556`) for buttons, links, text, borders, icons, backgrounds, gradients, highlights or hover effects.
 - Place the logo on white (`#FFFFFF`) or off-white (`#F7F7F7`). The plum wordmark has too little contrast on dark surfaces, so the dark footer uses the organisation name set in type instead.
 - Photographs, videos, the Google Map and the PDF newsletter keep their natural colours. Never tint or overlay a photograph with colour, and never convert real photographs to black and white to "match" the interface.
 - Introducing any new brand or accent colour requires the owner's explicit approval.
