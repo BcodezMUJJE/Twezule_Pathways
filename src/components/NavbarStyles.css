@@ -232,11 +232,11 @@
       opacity var(--duration-base) var(--ease-out);
   }
 
-  .site-nav__indicator.is-visible {
+  .site-nav__links > li.site-nav__indicator.is-visible {
     opacity: 1;
   }
 
-  .site-nav__indicator.is-animated {
+  .site-nav__links > li.site-nav__indicator.is-animated {
     transition:
       transform 480ms var(--ease-out-expo),
       width 480ms var(--ease-out-expo),
@@ -244,7 +244,7 @@
       opacity var(--duration-base) var(--ease-out);
   }
 
-  .is-overlay .site-nav__indicator {
+  .is-overlay .site-nav__links > li.site-nav__indicator {
     background-color: var(--color-white);
   }
 

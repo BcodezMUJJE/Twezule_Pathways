@@ -27,34 +27,36 @@ function Navbar() {
   const close = useCallback(() => setOpen(false), []);
 
   // Desktop: one pill slides to the current page's link. It is measured
-  // before paint on every page change, resize and font load; the first
-  // placement is instant, later moves glide.
-  useLayoutEffect(() => {
+  // before paint on every page change (and glides there), and re-measured
+  // without animation on resize and once the web font has loaded.
+  const measureIndicator = useCallback((animate) => {
     const list = linksRef.current;
-    if (!list) return undefined;
+    if (!list) return;
+    const active = list.querySelector(".site-nav__link.active");
+    if (!active || !window.matchMedia(DESKTOP_QUERY).matches) {
+      setIndicator((prev) => ({ ...prev, visible: false, animate: false }));
+      return;
+    }
+    const listBox = list.getBoundingClientRect();
+    const box = active.getBoundingClientRect();
+    setIndicator((prev) => ({
+      x: box.left - listBox.left,
+      width: box.width,
+      visible: true,
+      animate: animate && prev.visible,
+    }));
+  }, []);
 
-    const measure = (animate) => {
-      const active = list.querySelector(".site-nav__link.active");
-      if (!active || !window.matchMedia(DESKTOP_QUERY).matches) {
-        setIndicator((prev) => ({ ...prev, visible: false }));
-        return;
-      }
-      const listBox = list.getBoundingClientRect();
-      const box = active.getBoundingClientRect();
-      setIndicator((prev) => ({
-        x: box.left - listBox.left,
-        width: box.width,
-        visible: true,
-        animate: animate && prev.visible,
-      }));
-    };
+  useLayoutEffect(() => {
+    measureIndicator(true);
+  }, [pathname, measureIndicator]);
 
-    measure(true);
-    const onResize = () => measure(false);
+  useEffect(() => {
+    const onResize = () => measureIndicator(false);
     window.addEventListener("resize", onResize);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => measure(false));
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => measureIndicator(false));
     return () => window.removeEventListener("resize", onResize);
-  }, [pathname]);
+  }, [measureIndicator]);
 
   // Close the mobile menu whenever the page changes
   useEffect(() => {

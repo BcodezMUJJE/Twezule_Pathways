@@ -380,3 +380,17 @@
 .home-cta__way:focus-visible {
   outline-offset: 2px;
 }
+
+/* --------------------------------------------------------------------------
+   Motion — program cards are links: the photo zooms gently on hover/focus
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .home-program__media img {
+    transition: scale 900ms var(--ease-out-expo);
+  }
+
+  .home-program:hover .home-program__media img,
+  .home-program:focus-within .home-program__media img {
+    scale: 1.05;
+  }
+}

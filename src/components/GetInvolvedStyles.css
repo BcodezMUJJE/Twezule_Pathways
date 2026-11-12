@@ -11,6 +11,18 @@
 
 .gi-way {
   border-top: 2px solid var(--color-plum);
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    translate var(--duration-slow) var(--ease-out-expo);
+}
+
+/* Option cards carry an action: a small lift and a Plum outline on hover */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .gi-way:hover,
+  .gi-way:focus-within {
+    translate: 0 -4px;
+    border-color: var(--color-plum);
+  }
 }
 
 .gi-way h3 {

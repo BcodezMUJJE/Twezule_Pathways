@@ -281,17 +281,25 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   background-color: var(--color-white);
-  transition: border-color var(--duration-fast) var(--ease-out), transform var(--duration-base) var(--ease-out);
+  transition: border-color var(--duration-base) var(--ease-out), transform var(--duration-slow) var(--ease-out-expo);
 }
 
 .nl-page img {
   width: 100%;
   height: auto;
+  transition: scale 900ms var(--ease-out-expo);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .nl-page:hover img,
+  .nl-page:focus-visible img {
+    scale: 1.03;
+  }
 }
 
 .nl-page:hover {
   border-color: var(--color-plum);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 .nl-page__label {
