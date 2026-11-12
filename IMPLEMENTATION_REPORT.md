@@ -488,3 +488,28 @@ All 10 routes and their content. Both forms behave exactly as before, with the s
 4. The logo PNG is 1.6 MB, and photos are not yet WebP.
 5. `build/` and `build.zip` have not been regenerated (run `npm run build` to deploy).
 6. Not tested in Safari or Firefox, on real devices, or with screen readers.
+
+---
+
+## I. Newsletter page redesign (12 November 2026)
+
+**Problem:** the Q1 2026 newsletter was shown in an embedded PDF viewer. That meant a grey browser toolbar, a small page, scrolling inside a scrolling page, and on most phones only the first page or nothing at all.
+
+**Now:** the newsletter is published as a web article in the site's design (`src/components/Newsletter.js`):
+- **Hero:** plum hero ("Q1 2026 Newsletter", *Seeds of Hope*) with *Read the Newsletter* and *Download PDF*.
+- **Contents panel:** a sticky "In this issue" panel with the issue details and download links.
+- **Article:**
+  - the newsletter's own text, verified word for word against the PDF (all 666 words)
+  - the three photos extracted from the PDF at native resolution
+  - both original links (Street Business School, MicroTrace Minerals)
+  - Partner Spotlight and "We're Live!" as callouts
+  - a pull quote from Nalongo's story, hidden from screen readers so it isn't read twice
+- **"View the Original Newsletter":** previews of both designed pages, opening the PDF, plus download.
+
+The PDF itself is unchanged and still downloadable. New images are in `src/assets/newsletter/q1-2026/` (about 640 KB total, lazy-loaded).
+
+**Source typos reproduced as published** (owner to confirm before correcting): "I addition" (→ "In addition"), "Babra" three times (→ "Barbra"), and the filename "Quartely News Lettert".
+
+**Tests:** newsletter suite 14/14 (text fidelity, contents links, downloads, previews, external links, images, headings, console). The site-wide, sweep and pixel-contrast suites pass with the new page.
+
+**Publishing future issues:** update `ISSUE`, the article sections and the images in `Newsletter.js`, and add the new PDF and photos under `src/assets/newsletter/<issue>/`.
