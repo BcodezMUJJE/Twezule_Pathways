@@ -69,6 +69,12 @@
   gap: var(--space-3);
 }
 
+/* "Get Involved" button when that page is open */
+.site-nav__action.active {
+  border-color: var(--color-black);
+  box-shadow: inset 0 0 0 1px var(--color-black);
+}
+
 /* ---- Menu toggle (mobile & tablet) ---- */
 .site-nav__toggle {
   position: relative;
