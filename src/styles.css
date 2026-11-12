@@ -102,10 +102,17 @@
   --radius-lg: 20px;   /* large feature panels */
   --radius-full: 999px;
 
-  /* ---- Motion ---- */
+  /* ---- Motion ----
+     One shared rhythm: fast for feedback, base for small UI changes,
+     slow for content entrances. Only opacity and transforms are animated. */
   --duration-fast: 150ms;
   --duration-base: 220ms;
+  --duration-slow: 700ms;
+  --duration-reveal: 900ms;
   --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);   /* calm, decelerating entrances */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --stagger: 80ms;
 
   /* ---- Layers ---- */
   --z-header: 100;
@@ -425,20 +432,34 @@ strong {
   cursor: pointer;
   touch-action: manipulation;
   transition:
-    background-color var(--duration-fast) var(--ease-out),
-    border-color var(--duration-fast) var(--ease-out),
-    color var(--duration-fast) var(--ease-out),
-    transform var(--duration-fast) var(--ease-out);
+    background-color var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out),
+    transform var(--duration-base) var(--ease-out-expo);
 }
 
 .btn svg {
   width: 1em;
   height: 1em;
   flex-shrink: 0;
+  transition: transform var(--duration-base) var(--ease-out-expo);
 }
 
-.btn:active:not(:disabled) {
-  transform: translateY(1px);
+/* Hover: a 2px lift; icons nudge in their direction. Pressed: settle and
+   compress slightly. Disabled buttons never move. */
+@media (hover: hover) {
+  .btn:hover:not(:disabled):not([aria-disabled="true"]) {
+    transform: translateY(-2px);
+  }
+
+  .btn:hover:not(:disabled) svg:last-child:not(:first-child) {
+    transform: translateX(2px);
+  }
+}
+
+.btn:active:not(:disabled):not([aria-disabled="true"]) {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 80ms;
 }
 
 /* Primary: Plum with white text (10.4:1) */
@@ -833,6 +854,12 @@ a.info-list__value:hover {
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
   color: var(--text-strong);
+  transition: color var(--duration-base) var(--ease-out);
+}
+
+/* The label of the field being typed in turns Plum */
+.field:focus-within label {
+  color: var(--text-brand);
 }
 
 .field__hint {
@@ -891,6 +918,7 @@ textarea.input {
   font-size: var(--text-sm);
   font-weight: var(--weight-semibold);
   color: var(--text-strong);
+  animation: feedback-in var(--duration-base) var(--ease-out-expo) both;
 }
 
 .field-error svg {
@@ -902,6 +930,7 @@ textarea.input {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
+  animation: status-in 420ms var(--ease-out-expo) both;
   padding: var(--space-4) var(--space-5);
   background-color: var(--surface-alt);
   border: 1px solid var(--color-sage);
@@ -936,6 +965,65 @@ textarea.input {
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   Motion
+   Feedback keyframes and the scroll-reveal system (see src/motion/ScrollReveal.js).
+   Reveals use the individual `translate` / `scale` properties so they never
+   fight hover effects that use `transform`.
+   ========================================================================== */
+
+@keyframes feedback-in {
+  from { opacity: 0; translate: 0 -4px; }
+  to   { opacity: 1; translate: none; }
+}
+
+@keyframes status-in {
+  from { opacity: 0; translate: 0 8px; scale: 0.98; }
+  to   { opacity: 1; translate: none; scale: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Elements are only hidden once the script has marked them, so content is
+     always visible without JavaScript or with reduced motion. */
+  [data-reveal] {
+    opacity: 0;
+    translate: 0 28px;
+    transition:
+      opacity var(--duration-slow) var(--ease-out-expo),
+      translate var(--duration-reveal) var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal="fade"] { translate: none; }
+  [data-reveal="left"] { translate: -32px 0; }
+  [data-reveal="right"] { translate: 32px 0; }
+
+  [data-reveal].is-revealed {
+    opacity: 1;
+    translate: none;
+  }
+
+  /* Image reveal: the frame stays put, the photo fades in and settles */
+  [data-reveal="image"] {
+    opacity: 1;
+    translate: none;
+  }
+
+  [data-reveal="image"] img {
+    opacity: 0;
+    scale: 1.08;
+    transition:
+      opacity var(--duration-slow) var(--ease-out-expo),
+      scale 1400ms var(--ease-out-expo);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  [data-reveal="image"].is-revealed img {
+    opacity: 1;
+    scale: 1;
+  }
 }
 
 /* ==========================================================================

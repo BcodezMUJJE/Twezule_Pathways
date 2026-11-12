@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import "./styles.css";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -13,11 +13,14 @@ import Impact from "./components/Impact";
 import GetInvolved from "./components/GetInvolved";
 import Donate from "./components/Donate";
 import Newsletter from "./components/Newsletter";
+import ScrollReveal from "./motion/ScrollReveal";
 
 /*
  * Scroll to the top on every page change, or to the #fragment when a link
  * targets a section (e.g. /programs#shg-training from the footer).
  * After an in-app page change, keyboard/screen-reader focus moves to <main>.
+ * Runs before paint (layout effect), so a new page never flashes at the
+ * previous page's scroll position.
  */
 function ScrollManager() {
   // `key` changes on every navigation — including a link to the page you are
@@ -25,7 +28,7 @@ function ScrollManager() {
   const { pathname, hash, key } = useLocation();
   const previousPath = useRef(pathname);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const pageChanged = previousPath.current !== pathname;
     previousPath.current = pathname;
     const main = document.getElementById("main");
@@ -79,6 +82,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      <ScrollReveal />
     </Router>
   );
 }

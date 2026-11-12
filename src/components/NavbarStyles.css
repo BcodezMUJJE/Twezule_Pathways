@@ -76,8 +76,13 @@
   text-decoration: none;
   white-space: nowrap;
   transition:
-    background-color var(--duration-fast) var(--ease-out),
-    color var(--duration-fast) var(--ease-out);
+    background-color var(--duration-base) var(--ease-out),
+    color var(--duration-base) var(--ease-out);
+}
+
+/* The sliding current-page pill (desktop); hidden on mobile */
+.site-nav__indicator {
+  display: none;
 }
 
 /* ---- Right-hand actions ---- */
@@ -196,9 +201,51 @@
     align-items: center;
     gap: 2px;
     padding: 5px;
+    position: relative;
     border-radius: var(--radius-full);
     background-color: var(--color-sage-tint);
     transition: background-color var(--duration-base) var(--ease-out);
+  }
+
+  .site-nav__links > li {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* One pill glides to the current page's link: Plum on the white bar,
+     white over a hero. Measured in Navbar.js. */
+  .site-nav__links > li.site-nav__indicator {
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: var(--indicator-w, 0);
+    border-radius: var(--radius-full);
+    background-color: var(--color-plum);
+    opacity: 0;
+    transform: translateX(var(--indicator-x, 0));
+    pointer-events: none;
+    transition:
+      background-color var(--duration-base) var(--ease-out),
+      opacity var(--duration-base) var(--ease-out);
+  }
+
+  .site-nav__indicator.is-visible {
+    opacity: 1;
+  }
+
+  .site-nav__indicator.is-animated {
+    transition:
+      transform 480ms var(--ease-out-expo),
+      width 480ms var(--ease-out-expo),
+      background-color var(--duration-base) var(--ease-out),
+      opacity var(--duration-base) var(--ease-out);
+  }
+
+  .is-overlay .site-nav__indicator {
+    background-color: var(--color-white);
   }
 
   .site-nav__link {
@@ -212,9 +259,14 @@
   }
 
   .site-nav__link.active {
-    background-color: var(--color-plum);
     color: var(--color-white);
     font-weight: var(--weight-semibold);
+    /* turn white as the pill arrives underneath */
+    transition-delay: 120ms;
+  }
+
+  .site-nav__link.active:hover {
+    background-color: transparent;
   }
 
   /* Over the photo: translucent dark group, white active pill */
@@ -227,7 +279,6 @@
   }
 
   .is-overlay .site-nav__link.active {
-    background-color: var(--color-white);
     color: var(--color-black);
   }
 
@@ -318,7 +369,7 @@
     display: grid;
   }
 
-  .site-nav__links li + li {
+  .site-nav__links li:not(.site-nav__indicator) + li {
     border-top: 1px solid var(--border);
   }
 
@@ -409,4 +460,36 @@
   .site-nav__actions {
     gap: var(--space-2);
   }
+}
+
+/* ==========================================================================
+   Motion — mobile menu: links rise in one after another as the panel opens;
+   on close everything fades out together (exit is quicker than entry).
+   ========================================================================== */
+@media (max-width: 1023px) and (prefers-reduced-motion: no-preference) {
+  .site-nav__links > li:not(.site-nav__indicator),
+  .site-nav__panel-footer {
+    opacity: 0;
+    translate: 0 12px;
+    transition:
+      opacity 160ms var(--ease-out),
+      translate 160ms var(--ease-out);
+  }
+
+  .site-nav__panel.is-open .site-nav__links > li:not(.site-nav__indicator),
+  .site-nav__panel.is-open .site-nav__panel-footer {
+    opacity: 1;
+    translate: none;
+    transition:
+      opacity 420ms var(--ease-out-expo),
+      translate 520ms var(--ease-out-expo);
+  }
+
+  .site-nav__panel.is-open .site-nav__links > li:nth-child(2) { transition-delay: 40ms; }
+  .site-nav__panel.is-open .site-nav__links > li:nth-child(3) { transition-delay: 80ms; }
+  .site-nav__panel.is-open .site-nav__links > li:nth-child(4) { transition-delay: 120ms; }
+  .site-nav__panel.is-open .site-nav__links > li:nth-child(5) { transition-delay: 160ms; }
+  .site-nav__panel.is-open .site-nav__links > li:nth-child(6) { transition-delay: 200ms; }
+  .site-nav__panel.is-open .site-nav__links > li:nth-child(7) { transition-delay: 240ms; }
+  .site-nav__panel.is-open .site-nav__panel-footer { transition-delay: 280ms; }
 }

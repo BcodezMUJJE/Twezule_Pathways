@@ -166,3 +166,54 @@
     min-height: 0;
   }
 }
+
+/* ==========================================================================
+   Motion — the page transition
+   Every page's hero animates in when the page opens: the photograph settles,
+   then kicker → headline → lead → actions rise in sequence. The hero's
+   background is never faded, so navigation shows no blank or white flash.
+   Opacity and the individual `scale` / `translate` properties only.
+   ========================================================================== */
+
+@keyframes hero-rise {
+  from { opacity: 0; translate: 0 24px; }
+  to   { opacity: 1; translate: none; }
+}
+
+@keyframes hero-settle {
+  from { scale: 1.08; }
+  to   { scale: 1; }
+}
+
+@keyframes hero-drift {
+  to { translate: 0 14%; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero__content > * {
+    animation: hero-rise var(--duration-slow) var(--ease-out-expo) both;
+  }
+
+  .page-hero__kicker { animation-delay: 40ms; }
+  .page-hero__title  { animation-delay: 110ms; }
+  .page-hero__lead   { animation-delay: 220ms; }
+  .page-hero__actions { animation-delay: 330ms; }
+
+  .page-hero__image {
+    animation: hero-settle 1800ms var(--ease-out-expo) both;
+  }
+
+  /* Scroll-linked drift: the photo moves a little slower than the page as the
+     hero scrolls away. Pure CSS, ignored by browsers without support. */
+  @supports (animation-timeline: view()) {
+    @media (min-width: 600px) {
+      .page-hero--photo .page-hero__image {
+        animation:
+          hero-settle 1800ms var(--ease-out-expo) both,
+          hero-drift linear both;
+        animation-timeline: auto, view();
+        animation-range: normal, exit 0% exit 100%;
+      }
+    }
+  }
+}

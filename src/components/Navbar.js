@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "./NavbarStyles.css";
@@ -21,8 +21,40 @@ function Navbar() {
   const { pathname } = useLocation();
   const toggleRef = useRef(null);
   const panelRef = useRef(null);
+  const linksRef = useRef(null);
+  const [indicator, setIndicator] = useState({ x: 0, width: 0, visible: false, animate: false });
 
   const close = useCallback(() => setOpen(false), []);
+
+  // Desktop: one pill slides to the current page's link. It is measured
+  // before paint on every page change, resize and font load; the first
+  // placement is instant, later moves glide.
+  useLayoutEffect(() => {
+    const list = linksRef.current;
+    if (!list) return undefined;
+
+    const measure = (animate) => {
+      const active = list.querySelector(".site-nav__link.active");
+      if (!active || !window.matchMedia(DESKTOP_QUERY).matches) {
+        setIndicator((prev) => ({ ...prev, visible: false }));
+        return;
+      }
+      const listBox = list.getBoundingClientRect();
+      const box = active.getBoundingClientRect();
+      setIndicator((prev) => ({
+        x: box.left - listBox.left,
+        width: box.width,
+        visible: true,
+        animate: animate && prev.visible,
+      }));
+    };
+
+    measure(true);
+    const onResize = () => measure(false);
+    window.addEventListener("resize", onResize);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => measure(false));
+    return () => window.removeEventListener("resize", onResize);
+  }, [pathname]);
 
   // Close the mobile menu whenever the page changes
   useEffect(() => {
@@ -103,7 +135,12 @@ function Navbar() {
           ref={panelRef}
           className={`site-nav__panel${open ? " is-open" : ""}`}
         >
-          <ul className="site-nav__links">
+          <ul className="site-nav__links" ref={linksRef}>
+            <li
+              className={`site-nav__indicator${indicator.visible ? " is-visible" : ""}${indicator.animate ? " is-animated" : ""}`}
+              aria-hidden="true"
+              style={{ "--indicator-x": `${indicator.x}px`, "--indicator-w": `${indicator.width}px` }}
+            ></li>
             {MenuItems.map((item) => (
               <li key={item.url}>
                 <NavLink to={item.url} end={item.url === "/"} className="site-nav__link" onClick={close}>
