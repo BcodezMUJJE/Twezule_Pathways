@@ -278,3 +278,77 @@ The site moved from a decorative, logo-coloured interface to a quiet, editorial 
 - **Preserved:** every page, all content, the YouTube video, Google Map, newsletter PDF, Omprakash donation links, contact links and both forms' existing behaviour. No new dependencies.
 
 The highest-value next steps are making the forms actually deliver messages (D.7 #1), resolving the content inconsistencies, and optimising the logo and photo file sizes.
+
+---
+
+## F. Round 2: navigation bar and landing page (12 November 2026)
+
+A second pass focused only on the navbar and the home page, done with the UI/UX Pro Max (landing pattern and navigation rules), Frontend Design and Web Interface Guidelines skills. Other pages are unchanged apart from the shared navbar.
+
+### F.1 Problems found in the round-1 design
+
+| Area | Problem |
+|---|---|
+| Navbar | Logo (a stacked mark-plus-wordmark lockup) shown at 56–64px, so the name was barely legible |
+| Navbar | At 1024px, a common laptop and iPad-landscape width, all links and both buttons were hidden behind an unlabelled hamburger icon |
+| Navbar | On phones, Donate was only reachable inside the menu |
+| Navbar | Desktop links and buttons crammed to the right, leaving an unbalanced gap after the logo |
+| Landing | The hero headline and tagline never said what the organisation actually does |
+| Landing | Hero photo boxed in a rounded card with large dead margins |
+| Landing | Programs appeared twice (icon columns, then the full embedded Programs page) with no link into them from the top of the page |
+| Landing | The closing call to action did not point to the specific ways to get involved |
+
+### F.2 What changed
+
+**Navbar** (`Navbar.js`, `NavbarStyles.css`, `styles.css` header token):
+- Three-zone desktop layout (logo, centred links, actions), measured centred to the pixel.
+- 88px bar with a 72px logo, up from 64px; the logo file is untouched.
+- Full desktop navigation from **1024px** (was 1080px).
+- Mobile and tablet bar: logo, a visible **Donate** button and a **Menu** button with a text label.
+- Menu panel: large serif links, current-page marker, "Get Involved" button, email and phone links.
+- Header hairline appears only after scrolling.
+- Accessibility: the open menu moves focus into itself and makes the rest of the page `inert`; Escape returns focus to the Menu button.
+- `App.js` moves focus to `<main>` after every page change.
+
+**Landing page** (`Hero.js`, `HeroStyles.css`, `routes/Home.js`):
+
+| Section | Change |
+|---|---|
+| Hero | The photograph runs to the right edge of the screen at full hero height, in natural colour (stacked full-width on phones). The lead now says what the organisation does. Primary action "Get Involved", secondary "Discover Our Story". Sized so the hero ends inside the first screen at 1024×768, 1280×800 and 1440×900. |
+| Our Core Programs | One photo-led section. Each program is a single link to its section on `/programs`, plus a "View All Programs" button. |
+| Video | Placed beside its heading on desktop |
+| Founders band (dark) | Titled "Ugandan Women Leading Change". Quote with founders beside it, the stats, and a "Meet Our Leaders" link. |
+| Closing call to action | Donate via Omprakash + Contact Us, phone and email links, and a "Ways to Get Involved" list linking to `#partner`, `#volunteer` and `#champion` |
+
+**Content notes** (no placeholder content added):
+- The hero lead combines two existing sentences: "Lighting pathways from vulnerability to self-reliance across Uganda — a women-led organization empowering grassroots women through entrepreneurship, group savings, and leadership development."
+- The three "Ways to Get Involved" lines are the first sentences of the existing Get Involved page copy.
+- The home page no longer embeds the whole Programs page (detailed rows and Future Programs). That content is unchanged and remains at `/programs`.
+- The "Explore Programs" button is replaced by "View All Programs".
+
+### F.3 Testing
+
+| Test | Result |
+|---|---|
+| Production build | Compiled successfully, no warnings (77.76 kB JS, 7.92 kB CSS gzipped) |
+| Development server | Compiled successfully; no React warnings on any page at 390px and 1280px |
+| Layout and accessibility sweep: 10 pages × 10 widths (320, 375, 390, 430, 768, 1023, 1024, 1280, 1440, 1920) | **100/100 pass**: no overflow or horizontal scroll, one `<h1>` per page, zero contrast failures, no undersized targets, no console or HTTP errors |
+| Navbar and landing functional suite | **43/43 pass**, in both the production build and the development server (React StrictMode) |
+
+The functional suite covers:
+- logo integrity (SHA-256 identical, no filter, 1:1)
+- links centred on the page
+- sticky header and scroll-triggered border
+- all 6 links with correct active state, focus moved to `<main>` and scroll reset
+- Get Involved and Donate buttons
+- keyboard Tab order
+- the 1023/1024px breakpoint
+- the mobile menu: label, focus into the menu, inert page, scroll lock, focus kept inside the header across 16 Tabs, Escape, closing on navigation and on resize
+- the hero fitting the first screen at three desktop sizes, with no photo filter or overlay
+- every landing-page link, including whole-item program clicks and `#section` targets
+- the Donate, phone, email and YouTube integrations
+- image loading, reduced motion, and zero console errors
+
+Screenshots: `docs/design-review/landing-nav-{1440,1024,390}-{before,after}.jpg` and `mobile-menu-390-after.jpg`.
+
+**Not covered:** Safari and Firefox, real devices, and screen-reader testing. Only Chromium was automated.

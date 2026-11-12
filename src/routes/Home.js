@@ -1,15 +1,8 @@
-import Hero, { HomeCallToAction } from "../components/Hero";
+import Hero from "../components/Hero";
 import FieldPhoto from "../assets/pphio1.JPG";
-import Destination from "../components/Destinations";
 
 function Home() {
-  return (
-    <>
-      <Hero imgSrc={FieldPhoto} />
-      <Destination embedded />
-      <HomeCallToAction />
-    </>
-  );
+  return <Hero imgSrc={FieldPhoto} />;
 }
 
 export default Home;

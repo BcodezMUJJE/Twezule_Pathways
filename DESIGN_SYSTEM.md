@@ -81,7 +81,7 @@ Loaded once in `public/index.html` with `display=swap`. Fallbacks: Georgia / Tim
 
 | Token | Size | Used for |
 |---|---|---|
-| `--text-display` | `clamp(3rem → 6.25rem)`, 48→100px | Home hero title only |
+| `--text-display` | `clamp(3rem → 6.25rem)`, 48→100px | Display text (the home hero title uses its own `clamp(3.25rem → 6.25rem)`, 52→100px) |
 | `--text-3xl` | `clamp(2.5rem → 4.25rem)`, 40→68px | `h1` / `.heading-1` (page titles) |
 | `--text-2xl` | `clamp(1.875rem → 2.75rem)`, 30→44px | `h2` / `.heading-2` (section titles) |
 | `--text-xl` | 1.5rem, 24px | `h3` / `.heading-3` (item titles) |
@@ -129,7 +129,7 @@ Rules:
 | `--gutter` | `clamp(1.25rem → 3rem)`, 20→48px side padding |
 | `--container` | 75rem (1200px) content width (`.container`) |
 | `--container-narrow` | 47.5rem (760px) reading width (`.container--narrow`) |
-| `--header-height` | 80px desktop, 68px below 1080px |
+| `--header-height` | 88px desktop, 72px below 1024px |
 
 ## 5. Borders, radii and elevation
 
@@ -201,6 +201,19 @@ Use `<Link>` / `<NavLink>` for internal pages, `<a>` for external URLs and `<but
 | `.tag` | Status/location pill with a grey border |
 | `.card` | Bordered container (see section 5) |
 
+### 8.1 Header and navigation
+
+| Part | Desktop (≥1024px) | Mobile & tablet (<1024px) |
+|---|---|---|
+| Layout | Three zones on a grid: logo left, links centred on the page, actions right | Logo left; **Donate** button and a labelled **Menu** button right |
+| Height / logo | 88px bar, logo 72×72px | 72px bar, logo 60×60px (52px under 360px) |
+| Links | Public Sans 15px, weight 500, `#404040`; hover `#111111` with a grey 2px bar; current page semibold `#111111` with a black 2px bar on the header's bottom edge | Full-screen white panel: Newsreader 24–32px links divided by hairlines; current page marked with a short black bar |
+| Actions | "Get Involved" (secondary, small) + "Donate" (primary, small). "Get Involved" gains a black border on its own page. | Donate stays in the bar; "Get Involved" and the email/phone links sit at the bottom of the panel |
+| Border | Transparent at the top of the page; `#EAEAEA` hairline once scrolled or when the menu is open | Same |
+| Behaviour | Sticky. Every link sets `aria-current="page"` via `NavLink`. | Opening moves focus to the first link, makes the rest of the page `inert`, and locks background scroll. Escape closes and returns focus to the Menu button; choosing a link or widening to desktop also closes it. |
+
+After any in-app page change, focus moves to `<main id="main">` (`tabindex="-1"`) and the page scrolls to the top, or to the `#section` in the link.
+
 **CSS scoping:** shared classes live in `styles.css`. Page-specific classes are prefixed per page (`home-`, `about-`, `impact-`, `gi-`, `contact-`, `donate-`, `newsletter__`, `programs-`, `site-nav__`, `site-footer__`). The old site broke because 41 classes collided across files, so never add an unprefixed class to a page stylesheet.
 
 ## 9. Responsive breakpoints
@@ -212,12 +225,13 @@ Mobile-first (`min-width`) unless noted.
 | < 480px | Buttons in `.btn-group` and form submit buttons go full width |
 | 600px | Footer becomes two columns; Impact metrics become two columns |
 | 700–800px | Founders sit side by side (700); team rows put the photo beside the text (720); donation panel and newsletter header go side by side (800) |
-| **900px** | Main two-column layouts: home hero, intro, `.split` rows, footer middle |
+| **900px** | Main two-column layouts: home hero (copy + photo to the screen edge), `.split` rows, footer middle |
 | 960px | Content + sidebar layouts: Contact, Get Involved form, Donate, home CTA, team header |
 | 1024px | Impact metrics become four columns |
-| **1080px** | Desktop navigation appears (below it: hamburger + full-screen panel); footer becomes five columns |
+| **1024px** | Desktop navigation appears (below it: Donate + labelled Menu button + full-screen panel); home founders band goes side by side; video beside its text |
+| 1080px | Footer becomes five columns |
 
-Verified at 320, 375, 390, 430, 768, 1024, 1079, 1080, 1120, 1200, 1280, 1440 and 1920px.
+Verified at 320, 375, 390, 430, 768, 1023, 1024, 1079, 1080, 1120, 1200, 1280, 1440 and 1920px.
 
 ## 10. Interaction states
 

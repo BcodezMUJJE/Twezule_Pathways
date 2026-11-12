@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./styles.css";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -17,11 +17,18 @@ import Newsletter from "./components/Newsletter";
 /*
  * Scroll to the top on every page change, or to the #fragment when a link
  * targets a section (e.g. /programs#shg-training from the footer).
+ * After an in-app page change, keyboard/screen-reader focus moves to <main>.
  */
 function ScrollManager() {
   const { pathname, hash } = useLocation();
+  const previousPath = useRef(pathname);
 
   useEffect(() => {
+    const pageChanged = previousPath.current !== pathname;
+    previousPath.current = pathname;
+    const main = document.getElementById("main");
+    if (pageChanged && !hash && main) main.focus({ preventScroll: true });
+
     if (hash) {
       const id = decodeURIComponent(hash.slice(1));
       const timer = window.setTimeout(() => {

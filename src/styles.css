@@ -75,7 +75,7 @@
   --container: 75rem;          /* 1200px content width */
   --container-narrow: 47.5rem; /* 760px reading width */
   --measure: 68ch;
-  --header-height: 80px;
+  --header-height: 88px;
   --control-height: 48px;
 
   /* ---- Shape ---- */
@@ -94,8 +94,8 @@
   --z-skip: 1000;
 }
 
-@media (max-width: 1079px) {
-  :root { --header-height: 68px; }
+@media (max-width: 1023px) {
+  :root { --header-height: 72px; }
 }
 
 /* ==========================================================================
